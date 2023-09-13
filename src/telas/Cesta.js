@@ -21,20 +21,20 @@ export default function Cesta () {
 const estilos = StyleSheet.create ({
     
     topo: {
-        width: "100%",
         height: (421 / 583) * width, // não pode ser tamanho fixo
+        width: "100%",
 
     },
 
     titulo: {
-        width: "100%", // tamanho da linha na tela
-        position: "absolute", // mantem posição absoluta para sobrepor a imagem
-        textAlign: "center", // deixa o conteúdo centralizado depenpendendo do "width"
+        color: "white", // cor da fonte
+        fontFamily: "MontserratBold",
         fontSize: 16, // altura da font (conteúdo)
         lineHeight: 26, // altura da linha (container)
-        color: "white", // cor da fonte
-        fontWeight: "bold", // negrito
         padding: 16,
+        position: "absolute", // mantem posição absoluta para sobrepor a imagem
+        textAlign: "center", // deixa o conteúdo centralizado depenpendendo do "width"
+        width: "100%", // tamanho da linha na tela
     },
 
     cesta: {
@@ -44,18 +44,19 @@ const estilos = StyleSheet.create ({
 
     nome: {
         color: "#464646",
+        fontFamily: "MontserratBold",
         fontSize: 26,
         lineHeight: 42,
-        fontWeight: "bold",
     },
     descricao: {
         color: "#A3A3A3",
+        fontFamily: "MontserratRegular",
         fontSize: 16,
         lineHeight: 26,
     },
     preco: {
         color: "#2A9F85",
-        fontWeight: "bold",
+        fontFamily: "MontserratBold",
         fontSize: 26,
         lineHeight: 42,
         marginTop: 8,
