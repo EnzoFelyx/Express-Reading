@@ -3,11 +3,11 @@ import { StyleSheet } from "react-native";
 
 import Texto from "../../../componentes/Texto"
 
-export default function Detalhes() {
+export default function Detalhes({nome, descricao, preco}) {
     return <>
-        <Texto style={estilos.nome}>Cesta de livros</Texto>
-        <Texto style={estilos.descricao}>Confira abaixo seus livros selecionados abaixo antes de finalizar a sua compra:</Texto>
-        <Texto style={estilos.preco}>R$ 40,00</Texto>
+        <Texto style={estilos.nome}>{ nome }</Texto>
+        <Texto style={estilos.descricao}>{ descricao }</Texto>
+        <Texto style={estilos.preco}>{ preco }</Texto>
     </>
 }
 
