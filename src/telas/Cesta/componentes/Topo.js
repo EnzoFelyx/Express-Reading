@@ -9,7 +9,7 @@ const width = Dimensions.get('screen').width;
 export default function Topo() {
     return <>
         <Image source={topo} style={estilos.topo} />
-        <Texto style={estilos.titulo}>Detalhes da Cesta</Texto>
+        <Texto style={estilos.titulo}>Detalhe da Cesta</Texto>
     </>
 }
 
