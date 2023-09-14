@@ -1,6 +1,7 @@
 import { View, StatusBar, SafeAreaView } from 'react-native';
 
 import Cesta from './src/telas/Cesta/Cesta';
+import Explorar from './src/telas/Explorar/Explorar';
 
 import { useFonts, 
          Montserrat_400Regular, 
@@ -23,7 +24,8 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar />
-      <Cesta {...mock} />
+      {/* <Cesta {...mock} /> */}
+      <Explorar/>
     </SafeAreaView>
   );
 }
