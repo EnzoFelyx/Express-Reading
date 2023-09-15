@@ -1,0 +1,2 @@
+explorar -> Quando o titulo ou autor fica mt grande, danifica a formatação das estrelas.
+

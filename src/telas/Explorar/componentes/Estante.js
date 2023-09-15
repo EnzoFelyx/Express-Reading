@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import { FlatList, StyleSheet } from "react-native";
 import Texto from "../../../componentes/Texto";
 import { carregaEstante } from "../../../services/carregaDados";
-import { FlatList, Image, StyleSheet, View } from "react-native";
 import Prateleira from "./Prateleira";
 
 export default function Estante({topo: Topo}) {

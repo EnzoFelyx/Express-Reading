@@ -1,10 +1,11 @@
 import React from "react";
 import Texto from "../../../componentes/Texto";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import Estrelas from "../../../componentes/Estrelas";
 
 export default function Prateleira({ nome, autor, preco, avaliacao, imagem }) {
 
-    return <View style={estilos.prateleira}>
+    return <TouchableOpacity style={estilos.prateleira}>
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
             <View style={estilos.informacao}>
@@ -12,10 +13,11 @@ export default function Prateleira({ nome, autor, preco, avaliacao, imagem }) {
                 <Texto style={estilos.autor}>{autor}</Texto>
                 <Texto style={estilos.preco}>{preco}</Texto>
             </View>
-            <Texto>{avaliacao}</Texto>
-
+            <View style={estilos.avaliacao}>
+                <Estrelas quant={avaliacao} />
+            </View>
         </View>
-    </View>
+    </TouchableOpacity>
 
 }
 
@@ -26,7 +28,7 @@ const estilos = StyleSheet.create({
         marginVertical: 8,
         marginHorizontal: 16,
         flexDirection: "row",
-        borderRadius:6,
+        borderRadius: 6,
         elevation: 3,
     },
 
@@ -51,7 +53,7 @@ const estilos = StyleSheet.create({
         justifyContent: "space-between",
         marginVertical: 6,
     },
-    
+
     nome: {
         fontSize: 16,
         lineHeight: 26,
@@ -68,5 +70,8 @@ const estilos = StyleSheet.create({
         lineHeight: 20,
         fontWeight: "bold",
         color: "#2A9F85",
-    }
+    },
+    avaliacao: {
+        justifyContent: "flex-end",
+    },
 })
