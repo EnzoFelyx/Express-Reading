@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Texto from "../../../componentes/Texto";
 import { carregaEstante } from "../../../services/carregaDados";
 import { FlatList, Image, StyleSheet, View } from "react-native";
+import Prateleira from "./Prateleira";
 
 export default function Estante({topo: Topo}) {
 
@@ -23,14 +24,7 @@ export default function Estante({topo: Topo}) {
 
     return <FlatList
     data={lista}
-    renderItem={({item: { nome, autor, preco, avaliacao, imagem }}) => <View>
-        <Image source={imagem}/>
-        <Texto>{nome}</Texto>
-        <Texto>{autor}</Texto>
-        <Texto>{preco}</Texto>
-        <Texto>{avaliacao}</Texto>
-        </View>
-        }
+    renderItem={({ item }) => <Prateleira {...item}/>}
     keyExtractor={({nome}) => nome}
     ListHeaderComponent={TopoLista}
     />

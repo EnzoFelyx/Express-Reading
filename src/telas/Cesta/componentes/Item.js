@@ -28,6 +28,7 @@ const estilos = StyleSheet.create({
     imagem: {
         width: 60,
         height: 90,
+        borderRadius: 6,
     },
     nome: {
         fontSize: 16,
