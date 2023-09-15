@@ -4,13 +4,13 @@ import Misery from "../../assets/livros/Misery.png";
 import MobyDick from "../../assets/livros/MobyDick.png";
 import PequenoPrincipe from "../../assets/livros/PequenoPrincipe.png";
 
-const gerarNumeroAleatorio = () => {
+const gerarNumeroAleatorio = (min, max) => {
     return Math.floor(Math.random() * ((max - min + 1) + min )) 
 }
 
 const explorar = {
     topo: {
-        titulo: "Detalhes da Cesta",
+        titulo: "Explorar",
         legenda: "Confira as nossas obras em destaque",
     },
 
