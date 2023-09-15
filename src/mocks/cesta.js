@@ -44,13 +44,14 @@ const cesta = {
             preco: "R$ 29,90",
             imagem: MobyDick,
           },
+
           {
             nome: "Moby Dick",
             autor: "Herman Melville",
             preco: "R$ 51,70",
             imagem: PequenoPrincipe,
           }
-        ]
+        ],
       },
 }
 
