@@ -1,32 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import Texto from "../../../componentes/Texto";
-import { carregaEstante } from "../../../services/carregaDados";
 import Prateleira from "./Prateleira";
+import useExplorar from "../../../hooks/useExplorar";
 
-export default function Estante({topo: Topo}) {
+export default function Estante({ topo: Topo }) {
 
-    const [titulo, setTitulo] = useState(''); //declarar sempre no começo
-    const [lista, setLista] = useState('');
-
-    useEffect(() => {
-        const retorno = carregaEstante();
-        setTitulo(retorno.estante.titulo)
-        setLista(retorno.estante.lista)
-    }, []);
+    const [subTitulo, lista] = useExplorar();
 
     const TopoLista = () => {
         return <>
-            <Topo/>
-            <Texto style={estilos.titulo}>{titulo}</Texto>
+            <Topo />
+            <Texto style={estilos.titulo}>{subTitulo}</Texto>
         </>
     }
 
     return <FlatList
-    data={lista}
-    renderItem={({ item }) => <Prateleira {...item}/>}
-    keyExtractor={({nome}) => nome}
-    ListHeaderComponent={TopoLista}
+        data={lista}
+        renderItem={({ item }) => <Prateleira {...item} />}
+        keyExtractor={({ nome }) => nome}
+        ListHeaderComponent={TopoLista}
     />
 }
 

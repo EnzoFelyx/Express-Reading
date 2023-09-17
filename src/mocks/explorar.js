@@ -14,7 +14,7 @@ const explorar = {
         legenda: "Confira as nossas obras em destaque",
     },
     estante:{
-        titulo: "Livros",
+        titulo: "Destaques",
         lista: [
             {
                 nome: "Fahrenheit 451",
@@ -50,7 +50,8 @@ const explorar = {
                 preco: "R$ 51,70",
                 avaliacao: gerarNumeroAleatorio(1,5),
                 imagem: MobyDick,
-              }
+              },
+              
         ]
     }
 }

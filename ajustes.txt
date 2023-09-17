@@ -1,3 +1,5 @@
 explorar -> Quando o titulo ou autor fica mt grande, danifica a formatação das estrelas.
 
 refatorar código otimizando estilos e componentes.
+
+usar useReduce para avaliar livros na tela de livro-info
