@@ -23,8 +23,8 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar />
-      {/* <Cesta /> */}
-      <Explorar/>
+      <Cesta />
+      {/* <Explorar/> */}
       {/* <Produto /> */}
     </SafeAreaView>
   );

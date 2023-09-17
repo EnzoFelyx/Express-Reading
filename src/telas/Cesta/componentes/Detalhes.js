@@ -5,7 +5,7 @@ import { cesta } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 import useEstoque from "../../../hooks/useEstoque";
 import useItens from "../../../hooks/useItens";
-import Item from "./Item";
+import Livro from "../../../componentes/Livro";
 
 export default function Detalhes({ topo: Topo }) {
 
@@ -14,6 +14,8 @@ export default function Detalhes({ topo: Topo }) {
     const lista = useEstoque();
 
     const Preco = useItens();
+
+    const titulo = cesta.itens.titulo;
 
     const TopoLista = () => {
         return <>
@@ -25,13 +27,14 @@ export default function Detalhes({ topo: Topo }) {
                 <TouchableOpacity style={estilos.botaoCaixa}>
                     <Texto style={estilos.botaoTexto}>{botao}</Texto>
                 </TouchableOpacity>
+                <Texto style={estilos.itenTitulo}>{titulo}</Texto>
             </View>
         </>
     }
 
     return <FlatList
         data={lista}
-        renderItem={({ item }) => <Item {...item} />}
+        renderItem={({ item }) => <Livro {...item} avaliacao={false} />}
         keyExtractor={({ nome }) => nome}
         ListHeaderComponent={TopoLista}
     />
@@ -79,42 +82,13 @@ const estilos = StyleSheet.create({
         paddingHorizontal: 16,
     },
 
-});
-
-/* 
-
-import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import Texto from "../../../componentes/Texto";
-import Prateleira from "./Prateleira";
-import useExplorar from "../../../hooks/useExplorar";
-
-export default function Estante({ topo: Topo }) {
-
-    const [subTitulo, lista] = useExplorar();
-
-    const TopoLista = () => {
-        return <>
-            <Topo />
-            <Texto style={estilos.titulo}>{subTitulo}</Texto>
-        </>
-    }
-
-    return <FlatList
-        data={lista}
-        renderItem={({ item }) => <Prateleira {...item} />}
-        keyExtractor={({ nome }) => nome}
-        ListHeaderComponent={TopoLista}
-    />
-}
-
-const estilos = StyleSheet.create({
-    titulo: {
+    itenTitulo: {
+        color: "#464646",
+        fontWeight: "bold",
+        marginTop: 32,
+        marginBottom: 8,
         fontSize: 20,
         lineHeight: 32,
-        marginHorizontal: 16,
-        marginTop: 16,
-        fontWeight: "bold",
-        color: "#464646",
     },
-}) */
+
+});

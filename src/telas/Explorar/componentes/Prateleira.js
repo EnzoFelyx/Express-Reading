@@ -1,22 +1,11 @@
 import React from "react";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import Estrelas from "../../../componentes/Estrelas";
-import Texto from "../../../componentes/Texto";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import Livro from '../../../componentes/Livro';
 
 export default function Prateleira({ nome, autor, preco, avaliacao, imagem }) {
 
     return <TouchableOpacity style={estilos.prateleira}>
-        <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
-        <View style={estilos.conteudo}>
-            <View style={estilos.informacao}>
-                <Texto style={estilos.nome}>{nome}</Texto>
-                <Texto style={estilos.autor}>{autor}</Texto>
-                <Texto style={estilos.preco}>{preco}</Texto>
-            </View>
-            <View style={estilos.avaliacao}>
-                <Estrelas quant={avaliacao} />
-            </View>
-        </View>
+        <Livro nome={nome} autor={autor} preco={preco} avaliacao={avaliacao} imagem={imagem} />
     </TouchableOpacity>
 
 }
@@ -27,51 +16,7 @@ const estilos = StyleSheet.create({
         backgroundColor: "#F6F6F6",
         marginVertical: 8,
         marginHorizontal: 16,
-        flexDirection: "row",
         borderRadius: 6,
         elevation: 3,
-    },
-
-    imagemLivro: {
-        width: 60,
-        height: 90,
-        borderRadius: 6,
-        marginVertical: 16,
-        marginLeft: 16,
-    },
-
-    conteudo: {
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginLeft: 8,
-        marginVertical: 16,
-        marginRight: 16,
-    },
-
-    informacao: {
-        justifyContent: "space-between",
-        marginVertical: 6,
-    },
-
-    nome: {
-        fontSize: 16,
-        lineHeight: 26,
-        color: "#464646",
-        fontWeight: "bold",
-    },
-    autor: {
-        fontSize: 14,
-        lineHeight: 20,
-        color: "#464646",
-    },
-    preco: {
-        fontSize: 14,
-        lineHeight: 20,
-        fontWeight: "bold",
-        color: "#2A9F85",
-    },
-    avaliacao: {
-        justifyContent: "flex-end",
     },
 })
