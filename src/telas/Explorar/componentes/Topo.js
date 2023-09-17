@@ -2,17 +2,16 @@ import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import logo from "../../../../assets/explorarLogo.png";
 import Texto from "../../../componentes/Texto";
-import useTopo from "../../../hooks/useTopo";
-
+import { explorar } from '../../../../config/text.json';
 
 export default function Topo() {
 
-    const [titulo, lista] = useTopo();
+    const { titulo, legenda} = explorar.topo;
 
     return <View style={estilos.topo}>
         <Image source={logo} style={estilos.imagem} />
         <Texto style={estilos.titulo}>{titulo}</Texto>
-        <Texto style={estilos.legenda}>{lista}</Texto>
+        <Texto style={estilos.legenda}>{legenda}</Texto>
     </View>
 }
 

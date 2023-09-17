@@ -1,10 +1,9 @@
 import React from "react";
-
 import Texto from "../../../componentes/Texto";
 import { Image, StyleSheet, View } from "react-native";
 
 
-export default function Item({ item: { nome, autor, preco, imagem } }) {
+export default function Item({ nome, autor, preco, avaliacao, imagem}) {
 
     return <View style={estilos.iten}>
         <Image source={imagem} style={estilos.imagem} />
@@ -46,5 +45,13 @@ const estilos = StyleSheet.create({
         lineHeight: 20,
         fontWeight: "bold",
         color: "#2A9F85",
-    }
+    },
+    itenTitulo: {
+        color: "#464646",
+        fontWeight: "bold",
+        marginTop: 32,
+        marginBottom: 8,
+        fontSize: 20,
+        lineHeight: 32,
+    },
 })

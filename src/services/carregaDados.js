@@ -1,10 +1,10 @@
-import explorar from "../mocks/explorar";
 import cesta from "../mocks/cesta";
+import estoque from "../mocks/estoque";
 
-export const carregaEstante = () => {
-    return explorar;
+export const carregaItensPreco = () => {
+    return cesta;
 }
 
-export const carregaCesta = () => {
-    return cesta;
+export const carregaEstoque = () => {
+    return estoque;
 }

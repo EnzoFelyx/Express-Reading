@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import { carregaCesta } from "../services/carregaDados";
+import { carregaItensPreco } from "../services/carregaDados";
 
 export default function useItens() {
 
-    const [titulo, setTitulo] = useState(''); //declarar sempre no começo
-    const [lista, setLista] = useState('');
+    const [preco, setPreco] = useState(''); //declarar sempre no começo
 
     useEffect(() => {
-        const retorno = carregaCesta();
-        setTitulo(retorno.estante.titulo)
-        setLista(retorno.estante.lista)
+        const retorno = carregaItensPreco();
+        setPreco(retorno.preco)
     }, []);
 
-    return [titulo, lista];
+    return preco;
 }

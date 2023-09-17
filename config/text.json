@@ -1,0 +1,24 @@
+{
+    "cesta": {
+        "topo": {
+            "titulo": "Detalhes da Cesta"
+        },
+        "detalhes": {
+            "nome": "Cesta de livros",
+            "descricao": "Confira abaixo seus livros selecionados abaixo antes de finalizar a sua compra:",
+            "botao": "Comprar"
+        },
+        "itens": {
+            "titulo": "Livros da cesta"
+        }
+    },
+    "explorar": {
+        "topo": {
+            "titulo": "Explorar",
+            "legenda": "Confira as nossas obras em destaque"
+        },
+        "estante": {
+            "titulo": "Destaques"
+        }
+    }
+}

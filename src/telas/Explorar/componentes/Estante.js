@@ -2,16 +2,19 @@ import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import Texto from "../../../componentes/Texto";
 import Prateleira from "./Prateleira";
-import useExplorar from "../../../hooks/useExplorar";
+import { explorar } from '../../../../config/text.json';
+import useEstoque from "../../../hooks/useEstoque";
 
 export default function Estante({ topo: Topo }) {
 
-    const [subTitulo, lista] = useExplorar();
+    const { titulo } = explorar.estante;
+
+    const lista = useEstoque();
 
     const TopoLista = () => {
         return <>
             <Topo />
-            <Texto style={estilos.titulo}>{subTitulo}</Texto>
+            <Texto style={estilos.titulo}>{titulo}</Texto>
         </>
     }
 

@@ -9,8 +9,6 @@ import { useFonts,
          Montserrat_700Bold 
         } from '@expo-google-fonts/montserrat';
 
-import mock from './src/mocks/cesta';
-
 export default function App() {
 
   const [fonteCarregada] = useFonts({
@@ -25,9 +23,9 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar />
-      {/* <Cesta {...mock} /> */}
-      {/* <Explorar/> */}
-      <Produto />
+      {/* <Cesta /> */}
+      <Explorar/>
+      {/* <Produto /> */}
     </SafeAreaView>
   );
 }
