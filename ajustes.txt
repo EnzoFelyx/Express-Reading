@@ -1,3 +1,5 @@
 refatorar código otimizando estilos e componentes.
 
 usar useReduce para avaliar livros na tela de livro-info
+
+juntar as informações de cesta / explorar e produto sobre livros para ter um só mock e service
