@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Texto from "../../../componentes/Texto";
-import logo from "../../../../assets/explorarLogo.png"
+import React from "react";
 import { Image, StyleSheet, View } from "react-native";
+import logo from "../../../../assets/explorarLogo.png";
+import Texto from "../../../componentes/Texto";
 import useTopo from "../../../hooks/useTopo";
 
 

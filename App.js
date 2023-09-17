@@ -1,5 +1,6 @@
 import { View, StatusBar, SafeAreaView } from 'react-native';
 
+import Produto from './src/telas/Produto/Produto';
 import Cesta from './src/telas/Cesta/Cesta';
 import Explorar from './src/telas/Explorar/Explorar';
 
@@ -25,7 +26,8 @@ export default function App() {
     <SafeAreaView style={{flex: 1}}>
       <StatusBar />
       {/* <Cesta {...mock} /> */}
-      <Explorar/>
+      {/* <Explorar/> */}
+      <Produto />
     </SafeAreaView>
   );
 }

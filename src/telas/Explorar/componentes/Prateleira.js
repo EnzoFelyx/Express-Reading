@@ -1,7 +1,7 @@
 import React from "react";
-import Texto from "../../../componentes/Texto";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import Estrelas from "../../../componentes/Estrelas";
+import Texto from "../../../componentes/Texto";
 
 export default function Prateleira({ nome, autor, preco, avaliacao, imagem }) {
 

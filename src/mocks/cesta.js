@@ -42,14 +42,14 @@ const cesta = {
             nome: "O Pequeno Príncipe",
             autor: "Antoine de Saint-Exupéry",
             preco: "R$ 29,90",
-            imagem: MobyDick,
+            imagem: PequenoPrincipe,
           },
 
           {
             nome: "Moby Dick",
             autor: "Herman Melville",
             preco: "R$ 51,70",
-            imagem: PequenoPrincipe,
+            imagem: MobyDick,
           }
         ],
       },
