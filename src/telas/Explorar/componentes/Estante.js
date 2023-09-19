@@ -4,6 +4,7 @@ import Texto from "../../../componentes/Texto";
 import Prateleira from "./Prateleira";
 import { explorar } from '../../../../config/text.json';
 import useEstoque from "../../../hooks/useEstoque";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Estante({ topo: Topo }) {
 

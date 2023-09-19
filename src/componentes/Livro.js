@@ -1,15 +1,21 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import Estrelas from './Estrelas'
 import Texto from './Texto'
+import { useNavigation } from "@react-navigation/native";
 
 export default function Livro({ nome,
     autor,
     preco,
     avaliacao = false,
-    imagem
+    imagem,
+    rota
 }) {
-    return <View style={{ flexDirection: "row" }}>
+    const navigation = useNavigation() //hook para acesso do componente de navegação
+
+    const aoPressionar = () => { navigation.navigate(rota) }
+
+    return <TouchableOpacity style={{ flexDirection: "row" }} onPress={aoPressionar}>
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
             <View style={estilos.informacao}>
@@ -21,7 +27,7 @@ export default function Livro({ nome,
                 <Estrelas quant={avaliacao} />
             </View>) : <View />}
         </View>
-    </View>
+    </TouchableOpacity>
 }
 
 const estilos = StyleSheet.create({

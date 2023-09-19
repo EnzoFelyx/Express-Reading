@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Livro from '../../../componentes/Livro';
 
 export default function Prateleira({ nome, autor, preco, avaliacao, imagem }) {
 
-    return <TouchableOpacity style={estilos.prateleira}>
-        <Livro nome={nome} autor={autor} preco={preco} avaliacao={avaliacao} imagem={imagem} />
-    </TouchableOpacity>
+    return <View style={estilos.prateleira}>
+        <Livro nome={nome} autor={autor} preco={preco} avaliacao={avaliacao} imagem={imagem} rota={'Produto'} />
+    </View>
 
 }
 
