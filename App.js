@@ -4,6 +4,10 @@ import Produto from './src/telas/Produto/Produto';
 import Cesta from './src/telas/Cesta/Cesta';
 import Explorar from './src/telas/Explorar/Explorar';
 
+
+import mockTeste from "./src/mocks/detalhes"
+
+
 import { useFonts, 
          Montserrat_400Regular, 
          Montserrat_700Bold 
@@ -23,9 +27,9 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar />
-      <Cesta />
+      {/* <Cesta /> */}
       {/* <Explorar/> */}
-      {/* <Produto /> */}
+      <Produto {...mockTeste}/>
     </SafeAreaView>
   );
 }
