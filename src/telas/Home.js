@@ -1,7 +1,7 @@
 import React from "react";
-import Explorar from "./Explorar/Explorar";
+import Texto from "../componentes/Texto";
 
 export default function Home(){
     
-    return <Explorar/>
+    return <Texto>Home</Texto>
 }

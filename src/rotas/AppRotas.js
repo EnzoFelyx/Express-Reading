@@ -2,9 +2,9 @@ import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from "../telas/Home";
-import Cesta from '../telas/Cesta/Cesta';
 import LivroRotas from "./LivroRotas";
+import CestaRotas from "./CestaRotas";
+import DestaqueRotas from "./DestaqueRotas";
 
 export default function AppRotas() {
 
@@ -12,8 +12,9 @@ export default function AppRotas() {
 
     return <NavigationContainer>
         <Tab.Navigator>
-            <Tab.Screen name='Destaques' component={LivroRotas} />
-            <Tab.Screen name='Cesta' component={Cesta} />
+            <Tab.Screen name='Home' component={LivroRotas} />
+            <Tab.Screen name='Destaques' component={DestaqueRotas} />
+            <Tab.Screen name='Cesta' component={CestaRotas} />
         </Tab.Navigator>
     </NavigationContainer>
 }
