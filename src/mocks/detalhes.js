@@ -14,6 +14,7 @@ const estoque = {
             avaliacao: gerarNumeroAleatorio(1, 5),
             generos: ["Fantasia", "História", "Ficção"],
             imagem: Fahrenheit,
+            parcela: "6x de R$9,55",
         },
 }
 

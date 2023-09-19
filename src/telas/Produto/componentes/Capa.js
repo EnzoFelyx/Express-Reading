@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from "react-native";
 import Texto from "../../../componentes/Texto";
 import Estrelas from "../../../componentes/Estrelas";
 
-export default function Capa({ nome, autor, preco, avaliacao, generos, imagem }) {
+export default function Capa({ nome, autor, preco, avaliacao, generos, imagem, parcela }) {
 
     const quantParcela = 6;
 
@@ -14,16 +14,25 @@ export default function Capa({ nome, autor, preco, avaliacao, generos, imagem })
         <Texto style={estilos.titulo}>{nome}</Texto>
         <Texto style={estilos.autor}>{autor}</Texto>
         <Estrelas editavel={true} grande={true} />
-        <Texto style={estilos.estrela}>({avaliacao}.0☆)</Texto>
+
+
         <View style={estilos.generos}>
-            <Texto style={estilos.categoria}>{generos[0]}</Texto>
-            <Texto style={estilos.categoria}>{generos[1]}</Texto>
-            <Texto style={estilos.categoria}>{generos[2]}</Texto>
+            <View style={estilos.generos.caixa}>
+                <Texto style={estilos.generos.texto}>{generos[0]}</Texto>
+            </View>
+            <View style={estilos.generos.caixa}>
+                <Texto style={estilos.generos.texto}>{generos[1]}</Texto>
+            </View>
+            <View style={estilos.generos.caixa}>
+                <Texto style={estilos.generos.texto}>{generos[2]}</Texto>
+            </View>
         </View>
+
+
         <View style={estilos.pagamento}>
             <Texto style={estilos.preco}>{preco}</Texto>
-                <Texto>ou</Texto>
-                <Texto style={{ fontWeight: "bold" }}>6x de R$9,55</Texto>
+            <Texto style={{ marginTop: 16, marginHorizontal: 14 }}>ou</Texto>
+            <Texto style={{ fontWeight: "bold", marginTop: 16 }}>{parcela}</Texto>
         </View>
     </View>
 }
@@ -33,8 +42,8 @@ const estilos = StyleSheet.create({
     imagem: {
         marginTop: 32,
         borderRadius: 8,
-        width: 200,
-        height: 300,
+        width: 150,
+        height: 225,
 
     },
 
@@ -55,21 +64,28 @@ const estilos = StyleSheet.create({
     },
 
     generos: {
-        flexDirection: "row",
-        width: "60%",
-        justifyContent: "space-between",
-        marginVertical: 16,
-    },
 
-    categoria: {
-        backgroundColor: "#B5B8B9",
-        lineHeight: 24,
+        flexDirection:"row",
+        marginTop: 6,
+
+        caixa: {
+            lexDirection: "row",
+            marginHorizontal: 12,
+            marginVertical: 16,
+            padding: 3,
+            borderRadius: 6,
+            backgroundColor: "#B5B8B9",
+        },
+
+        texto: {
+            lineHeight: 24,
+            fontWeight: "bold",
+            
+        },
     },
 
     pagamento: {
         flexDirection: "row",
-        justifyContent: "space-between",
-        width: "60%",
     },
 
     preco: {
