@@ -1,22 +1,31 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, ScrollView, StyleSheet, View } from "react-native";
 import Texto from "../../../componentes/Texto";
 import Estrelas from "../../../componentes/Estrelas";
+import { useRoute } from "@react-navigation/native";
 
-export default function Capa({ nome, autor, preco, avaliacao, generos, imagem, parcela }) {
+export default function Capa({ topo: Topo }) {
+
+    const route = useRoute();
+
+    const { imagem, nome, autor, preco } = route.params
 
     const quantParcela = 6;
 
     const parcelas = preco / quantParcela;
 
-    return <View style={{ alignItems: "center" }}>
-        <Image source={imagem} style={estilos.imagem} />
-        <Texto style={estilos.titulo}>{nome}</Texto>
-        <Texto style={estilos.autor}>{autor}</Texto>
-        <Estrelas editavel={true} grande={true} />
+    const parcela = parcelas.toFixed(2)
+
+    return <ScrollView style={{flex:1}}>
+        <Topo />
+        <View style={{ alignItems: "center" }}>
+            <Image source={imagem} style={estilos.imagem} />
+            <Texto style={estilos.titulo}>{nome}</Texto>
+            <Texto style={estilos.autor}>{autor}</Texto>
+            <Estrelas editavel={true} grande={true} />
 
 
-        <View style={estilos.generos}>
+            {/*         <View style={estilos.generos}>
             <View style={estilos.generos.caixa}>
                 <Texto style={estilos.generos.texto}>{generos[0]}</Texto>
             </View>
@@ -26,24 +35,26 @@ export default function Capa({ nome, autor, preco, avaliacao, generos, imagem, p
             <View style={estilos.generos.caixa}>
                 <Texto style={estilos.generos.texto}>{generos[2]}</Texto>
             </View>
-        </View>
+        </View> */}
 
 
-        <View style={estilos.pagamento}>
-            <Texto style={estilos.preco}>{preco}</Texto>
-            <Texto style={{ marginTop: 16, marginHorizontal: 14 }}>ou</Texto>
-            <Texto style={{ fontWeight: "bold", marginTop: 16 }}>{parcela}</Texto>
+            <View style={estilos.pagamento}>
+                <Texto style={estilos.preco}>R${preco}</Texto>
+                <Texto style={{ marginTop: 16, marginHorizontal: 14 }}>ou</Texto>
+                <Texto style={{ fontWeight: "bold", marginTop: 16 }}>{quantParcela}x de R${parcela}</Texto>
+            </View>
         </View>
-    </View>
+    </ScrollView>
 }
+
 
 const estilos = StyleSheet.create({
 
     imagem: {
         marginTop: 32,
         borderRadius: 8,
-        width: 150,
-        height: 225,
+        width: 200,
+        height: 300,
 
     },
 
@@ -65,7 +76,7 @@ const estilos = StyleSheet.create({
 
     generos: {
 
-        flexDirection:"row",
+        flexDirection: "row",
         marginTop: 6,
 
         caixa: {
@@ -80,7 +91,7 @@ const estilos = StyleSheet.create({
         texto: {
             lineHeight: 24,
             fontWeight: "bold",
-            
+
         },
     },
 

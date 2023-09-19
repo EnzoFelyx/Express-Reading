@@ -9,11 +9,11 @@ export default function Livro({ nome,
     preco,
     avaliacao = false,
     imagem,
-    rota
+    rota,
+    feedBack
 }) {
     const navigation = useNavigation() //hook para acesso do componente de navegação
-
-    const aoPressionar = () => { navigation.navigate(rota) }
+    const aoPressionar = () => { navigation.navigate(rota, feedBack) }
 
     return <TouchableOpacity style={{ flexDirection: "row" }} onPress={aoPressionar}>
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />

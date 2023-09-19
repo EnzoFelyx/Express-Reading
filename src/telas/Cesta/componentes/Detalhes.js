@@ -34,7 +34,7 @@ export default function Detalhes({ topo: Topo }) {
 
     return <FlatList
         data={lista}
-        renderItem={({ item }) => <Livro {...item} avaliacao={false} rota={'Produto'} />}
+        renderItem={({ item }) => <Livro {...item} avaliacao={false} rota={'Produto'} feedBack={item} />}
         keyExtractor={({ nome }) => nome}
         ListHeaderComponent={TopoLista}
     />

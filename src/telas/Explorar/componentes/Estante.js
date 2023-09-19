@@ -1,10 +1,9 @@
 import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import Texto from "../../../componentes/Texto";
-import Prateleira from "./Prateleira";
+import { FlatList, StyleSheet, View } from "react-native";
 import { explorar } from '../../../../config/text.json';
+import Livro from "../../../componentes/Livro";
+import Texto from "../../../componentes/Texto";
 import useEstoque from "../../../hooks/useEstoque";
-import { useNavigation } from "@react-navigation/native";
 
 export default function Estante({ topo: Topo }) {
 
@@ -21,7 +20,10 @@ export default function Estante({ topo: Topo }) {
 
     return <FlatList
         data={lista}
-        renderItem={({ item }) => <Prateleira {...item} />}
+        renderItem={({ item }) => <View style={estilos.prateleira}>
+        <Livro {...item} rota={'Produto'} feedBack={item}/>
+        </View>
+        }
         keyExtractor={({ nome }) => nome}
         ListHeaderComponent={TopoLista}
     />
@@ -35,5 +37,13 @@ const estilos = StyleSheet.create({
         marginTop: 16,
         fontWeight: "bold",
         color: "#464646",
+    },
+
+    prateleira: {
+        backgroundColor: "#F6F6F6",
+        marginVertical: 8,
+        marginHorizontal: 16,
+        borderRadius: 6,
+        elevation: 3,
     },
 })

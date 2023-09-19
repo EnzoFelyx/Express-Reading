@@ -10,7 +10,7 @@ const estoque = {
         {
             nome: "Fahrenheit 451",
             autor: "Ray Bradbury",
-            preco: "R$ 27,79",
+            preco: 27.79,
             avaliacao: gerarNumeroAleatorio(1, 5),
             generos: ["Fantasia", "História", "Ficção"],
             imagem: Fahrenheit,

@@ -14,11 +14,11 @@
     },
     "explorar": {
         "topo": {
-            "titulo": "Explorar",
-            "legenda": "Confira as nossas obras em destaque"
+            "titulo": "Destaques",
+            "legenda": "Confira as obras que estão bombando"
         },
         "estante": {
-            "titulo": "Destaques"
+            "titulo": "Top 50"
         }
     }
 }
