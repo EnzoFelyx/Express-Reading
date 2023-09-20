@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 export default function LivroRotas({ComponentePrincipal = Home}){ //define home como default
 
-    return <Stack.Navigator>
+    return <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='HomeScreen' component={ComponentePrincipal} />
         <Stack.Screen name='Produto' component={Produto} />
     </Stack.Navigator>

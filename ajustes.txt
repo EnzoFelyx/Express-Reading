@@ -7,3 +7,5 @@ juntar as informações de cesta / explorar e produto sobre livros para ter um s
 componente categoria
 
 https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
+
+https://cursos.alura.com.br/extra/alura-mais/como-utilizar-icones-e-animacoes-em-apps-com-react-native-c1227 animações
