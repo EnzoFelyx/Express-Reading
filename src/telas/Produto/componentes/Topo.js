@@ -15,7 +15,7 @@ export default function Topo() {
 
 const estilos = StyleSheet.create({
     topo: {
-        backgroundColor: "#F6F6F6",
+        backgroundColor: "#FFFFF",
         padding: 8,
     },
     titulo: {
