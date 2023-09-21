@@ -19,8 +19,8 @@ export default function Icones({ icone, tipo, cor }) {
 
     const estiloIcone = tipoEstiloIcone(tipo);
 
-    return <TouchableOpacity onPress={{}} >
-        <Fontisto name={icone} style={estiloIcone.estilo} />
+    return <TouchableOpacity>
+        <Fontisto name={icone} style={estiloIcone.estilo} color={cor}/>
     </TouchableOpacity>
 }
 

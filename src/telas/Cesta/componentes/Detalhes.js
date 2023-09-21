@@ -1,11 +1,13 @@
 import React from "react";
-import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+import { FlatList, StyleSheet, TouchableOpacity, View, Animated, Text } from "react-native";
 import { cesta } from '../../../../config/text.json';
 
+import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
 import useEstoque from "../../../hooks/useEstoque";
 import useItens from "../../../hooks/useItens";
-import Livro from "../../../componentes/Livro";
+import { Swipeable } from "react-native-gesture-handler";
+import Testando from "../../../componentes/teste";
 
 export default function Detalhes({ topo: Topo }) {
 
@@ -16,6 +18,21 @@ export default function Detalhes({ topo: Topo }) {
     const Preco = useItens();
 
     const titulo = cesta.itens.titulo;
+
+    const RightActions = (progress, dragX) => {
+
+        const scale = dragX.interpolate({
+            inputRange: [-100, 0],
+            outputRange: [1, 0],
+            extrapolate: 'clamp',
+        })
+
+        return <View style={estilos.RightActions.view}>
+            <Animated.View style={{ transform: [{ scale: scale }] }} >
+                <Testando style={estilos.RightActions.icone}/>
+            </Animated.View>
+        </View >
+    }
 
     const TopoLista = () => {
         return <>
@@ -34,7 +51,10 @@ export default function Detalhes({ topo: Topo }) {
 
     return <FlatList
         data={lista}
-        renderItem={({ item }) => <Livro {...item} avaliacao={false} rota={'Produto'} feedBack={item} />}
+        renderItem={({ item }) => <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => alert('Livro removido da cesta com sucesso!')}>
+            <Livro {...item} avaliacao={false} rota={'Produto'} feedBack={item} />
+        </Swipeable>
+        }
         keyExtractor={({ nome }) => nome}
         ListHeaderComponent={TopoLista}
     />
@@ -89,6 +109,23 @@ const estilos = StyleSheet.create({
         marginBottom: 8,
         fontSize: 20,
         lineHeight: 32,
+    },
+
+    RightActions: {
+
+        view: {
+            backgroundColor: "#FF0000",
+            justifyContent: 'center',
+            flex: 1,
+            alignItems: 'flex-end'
+        },
+
+        icone: {
+            fontSize: 30,
+            padding: 20,
+            color: '#FFFF',
+        }
+
     },
 
 });

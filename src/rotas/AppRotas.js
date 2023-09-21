@@ -30,7 +30,7 @@ export default function AppRotas() {
             tabBarInactiveTintColor: '#C7C7C7',
             tabBarLabelStyle: {
                 fontSize: 14,
-            }
+            },
         })}>
             <Tab.Screen name='Home' component={LivroRotas} />
             <Tab.Screen name='Destaques' component={DestaqueRotas} />
