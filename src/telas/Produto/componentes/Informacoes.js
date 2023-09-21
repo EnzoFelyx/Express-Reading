@@ -1,8 +1,13 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Texto from "../../../componentes/Texto";
+import { useRoute } from "@react-navigation/native";
 
-export default function Informacoes({ preco }) {
+export default function Informacoes() {
+
+    const route = useRoute();
+
+    const { preco } = route.params
 
     const quantParcela = 6;
 
@@ -14,7 +19,7 @@ export default function Informacoes({ preco }) {
         <View style={estilos.informacoes}>
 
             <View style={estilos.descricao}>
-                <Texto style={estilos.subtitle}>Descrição: </Texto>
+                <Texto style={estilos.subtitle}>Descrição</Texto>
                 <Texto style={estilos.texto}>       aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Texto>
             </View>
             <TouchableOpacity style={estilos.botaoCaixa}>
@@ -35,6 +40,7 @@ const estilos = StyleSheet.create({
         backgroundColor: "#CBD3DA",
         borderTopEndRadius: 30,
         borderTopStartRadius: 30,
+        marginHorizontal: 12,
     },
 
     botaoCaixa: {

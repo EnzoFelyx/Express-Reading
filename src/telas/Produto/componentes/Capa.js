@@ -1,23 +1,27 @@
-import React from "react";
-import { Image, ScrollView, StyleSheet, View } from "react-native";
-import Texto from "../../../componentes/Texto";
-import Estrelas from "../../../componentes/Estrelas";
 import { useRoute } from "@react-navigation/native";
-import Informacoes from "./Informacoes";
+import React from "react";
+import { Image, StyleSheet, View } from "react-native";
+import Estrelas from "../../../componentes/Estrelas";
+import Texto from "../../../componentes/Texto";
+import Dados from "./Dados";
 
-export default function Capa({ topo: Topo }) {
+export default function Capa() {
 
     const route = useRoute();
 
-    const { imagem, nome, autor, preco, generos } = route.params
+    const { imagem, nome, autor, generos } = route.params
 
-    return <ScrollView style={{ flex: 1, }}>
-        <Topo />
+    return <>
+
         <View style={estilos.capa}>
-            <Image source={imagem} style={estilos.imagem} />
+            <View style={{flexDirection: "row"}}>
+                <Image source={imagem} style={estilos.imagem} />
+                <Dados/>
+            </View>
             <Texto style={estilos.titulo}>{nome}</Texto>
             <Texto style={estilos.autor}>{autor}</Texto>
         </View>
+
         <View style={{ alignItems: "center", }}>
             <View style={estilos.generos}>
                 <View style={estilos.generos.caixa}>
@@ -33,12 +37,13 @@ export default function Capa({ topo: Topo }) {
 
             <Estrelas editavel={true} grande={true} />
         </View>
-        <Informacoes preco={preco} />
-    </ScrollView>
+    </>
 }
 
 
 const estilos = StyleSheet.create({
+
+
 
     capa: {
         marginLeft: 30,

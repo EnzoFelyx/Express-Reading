@@ -15,13 +15,13 @@ export default function AppRotas() {
         <Tab.Navigator screenOptions={({ route }) => ({
             headerShown: false,
             tabBarIcon: ({ color }) => {
-                let Icon = <Icones icone={'home'} tipo={'tabBar'} />;
+                let Icon = <Icones familia={'Fontisto'} icone={'home'} tipo={'tabBar'} />;
 
                 if (route.name === 'Cesta') {
-                    Icon = <Icones icone={'shopping-basket'} tipo={'tabBar'} />
+                    Icon = <Icones familia={'Fontisto'} icone={'shopping-basket'} tipo={'tabBar'} />
                 }
                 else if (route.name === 'Destaques') {
-                    Icon = <Icones icone={'star'} tipo={'tabBar'} />
+                    Icon = <Icones familia={'Fontisto'} icone={'star'} tipo={'tabBar'} />
                 }
                 return Icon
 
