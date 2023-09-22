@@ -20,7 +20,6 @@ export default function AppRotas() {
 
                 if (route.name === 'Carrinho') {
                     Icon = <Icones familia={'Feather'} icone={'shopping-cart'} tipo={'tabBar'}/>
-                    console.log(color);
                 }
                 else if (route.name === 'Destaques') {
                     Icon = <Icones familia={'Feather'} icone={'star'} tipo={'tabBar'} />

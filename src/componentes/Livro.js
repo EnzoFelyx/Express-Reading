@@ -3,6 +3,7 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import Estrelas from './Estrelas'
 import Texto from './Texto'
 import { useNavigation } from "@react-navigation/native";
+import { universal } from '../../config/text.json';
 
 export default function Livro({ nome,
     autor,
@@ -14,15 +15,18 @@ export default function Livro({ nome,
     
 }) {
     const navigation = useNavigation() //hook para acesso do componente de navegação
+
     const aoPressionar = () => { navigation.navigate(rota, feedBack) }
 
-    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar}>
+    const realMoeda = universal.real;
+
+    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white', borderRadius: 15 }} onPress={aoPressionar}>
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
             <View style={estilos.informacao}>
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <Texto style={estilos.autor}>{autor}</Texto>
-                <Texto style={estilos.preco}>{preco}</Texto>
+                <Texto style={estilos.preco}>{realMoeda}{preco}</Texto>
             </View>
             {avaliacao ? (<View style={estilos.avaliacao}>
                 <Estrelas quant={avaliacao} />

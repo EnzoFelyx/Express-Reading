@@ -20,5 +20,8 @@
         "estante": {
             "titulo": "Top 50"
         }
+    },
+    "universal": {
+        "real": "R$ "
     }
 }

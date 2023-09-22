@@ -1,4 +1,4 @@
-import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Feather, Fontisto } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -26,6 +26,11 @@ export default function Icones({ familia, icone, tipo, cor }) {
                 return {
                     estilo: estilos.tabBar,
                 }
+
+            case "capa":
+                return {
+                    estilo: estilos.capa,
+                }
                 break;
 
             default:
@@ -36,7 +41,7 @@ export default function Icones({ familia, icone, tipo, cor }) {
     const estiloIcone = tipoEstiloIcone(tipo);
 
     return <TouchableOpacity>
-        <FamiliaIcone name={icone} style={estiloIcone.estilo} />
+        <FamiliaIcone name={icone} style={estiloIcone.estilo} color={cor} />
     </TouchableOpacity>
 }
 
@@ -45,6 +50,10 @@ const estilos = StyleSheet.create({
 
     tabBar: {
         fontSize: 20,
+    },
+
+    capa: {
+        fontSize: 26,
     },
 
 })
