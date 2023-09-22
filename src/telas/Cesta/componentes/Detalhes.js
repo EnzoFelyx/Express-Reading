@@ -117,7 +117,7 @@ const estilos = StyleSheet.create({
             backgroundColor: "#FF0000",
             justifyContent: 'center',
             flex: 1,
-            alignItems: 'flex-end'
+            alignItems: 'flex-end',
         },
 
         icone: {

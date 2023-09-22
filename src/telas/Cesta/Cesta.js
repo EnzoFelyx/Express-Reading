@@ -6,6 +6,6 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function Cesta() {
     return <GestureHandlerRootView>
-    <Detalhes topo = {Topo} />
+        <Detalhes topo = {Topo} />
     </GestureHandlerRootView>
 }

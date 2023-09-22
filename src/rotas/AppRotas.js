@@ -10,21 +10,20 @@ import Icones from "../componentes/Icones";
 export default function AppRotas() {
 
     const Tab = createBottomTabNavigator();
-
     return <NavigationContainer>
         <Tab.Navigator screenOptions={({ route }) => ({
             headerShown: false,
-            tabBarIcon: ({ color }) => {
+            tabBarIcon: ({ color, focused }) => {
 
-                let Icon = <Icones familia={'Feather'} icone={'home'} tipo={'tabBar'} />;
+                let Icon = <Icones familia={'Feather'} icone={'home'} tipo={'tabBar'} cor={focused ? "#2a9f08" : "#C7C7C7"} />;
 
                 if (route.name === 'Carrinho') {
-                    Icon = <Icones familia={'Feather'} icone={'shopping-cart'} tipo={'tabBar'}/>
+                    Icon = <Icones familia={'Feather'} icone={'shopping-cart'} tipo={'tabBar'} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
                 else if (route.name === 'Destaques') {
-                    Icon = <Icones familia={'Feather'} icone={'star'} tipo={'tabBar'} />
+                    Icon = <Icones familia={'Feather'} icone={'star'} tipo={'tabBar'} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
-                return Icon 
+                return Icon
 
             },
             tabBarActiveTintColor: '#2a9f08',
