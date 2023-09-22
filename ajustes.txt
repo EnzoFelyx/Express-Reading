@@ -11,3 +11,5 @@ https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
 https://cursos.alura.com.br/extra/alura-mais/como-utilizar-icones-e-animacoes-em-apps-com-react-native-c1227 animações
 
 Aprender a colocar tabBarActiveTintColor nos icones de nav bar
+
+status bar transparence or backgroundcolor
