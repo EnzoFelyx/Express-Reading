@@ -2,7 +2,7 @@ import { MaterialCommunityIcons, Feather, Fontisto } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function Icones({ familia, icone, tipo, cor }) {
+export default function Icones({ familia, icone, tipo, cor, interagivel=true }) {
 
     const ObterFamiliaIcone = (familia) => {
         switch (familia) {
@@ -40,7 +40,7 @@ export default function Icones({ familia, icone, tipo, cor }) {
 
     const estiloIcone = tipoEstiloIcone(tipo);
 
-    return <TouchableOpacity>
+    return <TouchableOpacity disabled={!interagivel}>
         <FamiliaIcone name={icone} style={estiloIcone.estilo} color={cor} />
     </TouchableOpacity>
 }
@@ -53,7 +53,7 @@ const estilos = StyleSheet.create({
     },
 
     capa: {
-        fontSize: 26,
+        fontSize: 20,
     },
 
 })

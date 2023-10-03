@@ -27,7 +27,7 @@ export default function Informacoes() {
                 <Texto style={estilos.preco}>R$ {preco}</Texto>
                 <View style={estilos.comprar}>
                     <View style={{ alignSelf: "center", marginRight: 10 }}>
-                        <Icones icone={'shopping-basket-add'} familia={'Fontisto'} tipo={'capa'} cor={'#FFFF'} />
+                        <Icones icone={'shopping-basket-add'} familia={'Fontisto'} tipo={'capa'} cor={'#FFFF'} interagivel={false}/>
                     </View>
                 </View>
             </TouchableOpacity>
@@ -51,8 +51,8 @@ const estilos = StyleSheet.create({
     botaoCaixa: {
         marginTop: 24,
         backgroundColor: "#ffff",
-        paddingVertical: 12,
-        width: "75%",
+        paddingVertical: 8,
+        width: "60%",
         alignSelf: "flex-end",
         borderRadius: 20,
     },
@@ -60,7 +60,7 @@ const estilos = StyleSheet.create({
     comprar: {
         backgroundColor: "#2A9F85",
         padding: 14,
-        width: "55%",
+        width: "45%",
         alignSelf: "flex-end",
         borderRadius: 20,
         position: "absolute"
