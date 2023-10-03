@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, }}>
-       <StatusBar />
+       <StatusBar backgroundColor="#112236" barStyle='light-content'/>
       <AppRotas/>
     </View>
   );

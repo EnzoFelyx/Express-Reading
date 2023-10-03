@@ -2,7 +2,7 @@ import { MaterialCommunityIcons, Feather, Fontisto } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function Icones({ familia, icone, tipo, cor, interagivel=true }) {
+export default function Icones({ familia, icone, tipo, cor, interagivel = true }) {
 
     const ObterFamiliaIcone = (familia) => {
         switch (familia) {
@@ -33,6 +33,12 @@ export default function Icones({ familia, icone, tipo, cor, interagivel=true }) 
                 }
                 break;
 
+            case "explorar":
+                return {
+                    estilo: estilos.explorar,
+                }
+                break;
+
             default:
                 break;
         }
@@ -55,5 +61,10 @@ const estilos = StyleSheet.create({
     capa: {
         fontSize: 20,
     },
+
+    explorar: {
+        backgroundColor: "yellow",
+        fontSize: 40,
+    }
 
 })

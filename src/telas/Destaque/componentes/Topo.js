@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { explorar } from '../../../../config/text.json';
+import { destaque } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 
 export default function Topo() {
 
-    const { titulo, legenda } = explorar.topo;
+    const { titulo, legenda} = destaque.topo;
 
     return <View style={estilos.topo}>
         <Texto style={estilos.titulo}>{titulo}</Texto>

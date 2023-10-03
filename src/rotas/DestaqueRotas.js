@@ -1,8 +1,8 @@
 import React from "react";
 import LivroRotas from './LivroRotas';
-import Explorar from '../telas/Explorar/Explorar'
+import Destaque from '../telas/Destaque/Destaque'
 
 export default function DestaqueRotas(){
 
-    return <LivroRotas ComponentePrincipal={Explorar} />
+    return <LivroRotas ComponentePrincipal={Destaque} />
 }

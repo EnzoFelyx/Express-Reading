@@ -5,7 +5,7 @@ import MobyDick from "../../assets/livros/MobyDick.png";
 import PequenoPrincipe from "../../assets/livros/PequenoPrincipe.png";
 
 const gerarNumeroAleatorio = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min ); 
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const estoque = {
@@ -16,7 +16,7 @@ const estoque = {
             autor: "Ray Bradbury",
             preco: 27.79,
             generos: ["Fantasia", "História", "Ficção"],
-            capa: 'Flexível', 
+            capa: 'Flexível',
             paginas: 216,
             avaliacao: gerarNumeroAleatorio(1, 5),
             lingua: 'PT-BR',
@@ -28,7 +28,7 @@ const estoque = {
             autor: "Franz Kafka",
             preco: 23.99,
             generos: ["Fantasia", "História", "Ficção"],
-            capa: 'Dura', 
+            capa: 'Dura',
             paginas: 112,
             avaliacao: gerarNumeroAleatorio(1, 5),
             lingua: 'PT-BR',
@@ -40,7 +40,7 @@ const estoque = {
             autor: "Stephen King",
             preco: 32.99,
             generos: ["Fantasia", "História", "Ficção"],
-            capa: 'Dura', 
+            capa: 'Dura',
             paginas: 328,
             avaliacao: gerarNumeroAleatorio(1, 5),
             lingua: 'PT-BR',
@@ -52,7 +52,7 @@ const estoque = {
             autor: "Antoine de Saint",
             preco: 29.90,
             generos: ["Fantasia", "História", "Ficção"],
-            capa: 'Flexível', 
+            capa: 'Flexível',
             paginas: 96,
             avaliacao: gerarNumeroAleatorio(1, 5),
             lingua: 'PT-BR',
@@ -64,14 +64,14 @@ const estoque = {
             autor: "Herman Melville",
             preco: 51.70,
             generos: ["Fantasia", "História", "Ficção"],
-            capa: 'Dura', 
+            capa: 'Dura',
             paginas: 202,
             avaliacao: gerarNumeroAleatorio(1, 5),
             lingua: 'PT-BR',
             descricao: "    O capitão Ahab embarca em uma jornada perigosa com um único objetivo: caçar Moby Dick, a baleia que arrancou sua perna. Com sede de vingança, ele arrisca a sua vida e a de sua tripulação para encontrar e matar o animal, custe o que custar.",
             imagem: MobyDick,
         },
-    ]
+    ],
 }
 
 export default estoque;

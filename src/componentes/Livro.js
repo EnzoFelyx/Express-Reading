@@ -5,14 +5,15 @@ import Texto from './Texto'
 import { useNavigation } from "@react-navigation/native";
 import { universal } from '../../config/text.json';
 
-export default function Livro({ nome,
+export default function Livro({ 
+    nome,
     autor,
     preco,
     avaliacao = false,
     imagem,
     rota,
     feedBack,
-    
+
 }) {
     const navigation = useNavigation() //hook para acesso do componente de navegação
 

@@ -12,13 +12,19 @@
             "titulo": "Livros da cesta"
         }
     },
-    "explorar": {
+    "destaque": {
         "topo": {
             "titulo": "Destaques",
             "legenda": "Confira as obras que estão bombando"
         },
         "estante": {
             "titulo": "Top 50"
+        }
+    },
+    "explorar": {
+        "topo": {
+            "titulo": "Explore",
+            "legenda": "Confira os nossos gêneros"
         }
     },
     "universal": {

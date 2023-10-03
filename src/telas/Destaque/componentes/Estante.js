@@ -1,13 +1,13 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import { explorar } from '../../../../config/text.json';
+import { destaque } from '../../../../config/text.json';
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
 import useEstoque from "../../../hooks/useEstoque";
 
 export default function Estante({ topo: Topo }) {
 
-    const { titulo } = explorar.estante;
+    const { titulo } = destaque.estante;
 
     const lista = useEstoque();
 
@@ -21,7 +21,7 @@ export default function Estante({ topo: Topo }) {
     return <FlatList
         data={lista}
         renderItem={({ item }) => <View style={estilos.prateleira}>
-        <Livro {...item} rota={'Produto'} feedBack={item}/>
+            <Livro {...item} rota={'Produto'} feedBack={item} />
         </View>
         }
         keyExtractor={({ nome }) => nome}
