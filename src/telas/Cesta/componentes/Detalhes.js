@@ -8,8 +8,11 @@ import useEstoque from "../../../hooks/useEstoque";
 import useItens from "../../../hooks/useItens";
 import { Swipeable } from "react-native-gesture-handler";
 import Testando from "../../../componentes/teste";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Detalhes({ topo: Topo }) {
+
+    const navigation = useNavigation();
 
     const { nome, descricao, botao } = cesta.detalhes;
 
@@ -41,7 +44,7 @@ export default function Detalhes({ topo: Topo }) {
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <Texto style={estilos.descricao}>{descricao}</Texto>
                 <Texto style={estilos.preco}>{Preco}</Texto>
-                <TouchableOpacity style={estilos.botaoCaixa}>
+                <TouchableOpacity style={estilos.botaoCaixa} onPress={() => navigation.navigate('Vazia')}>
                     <Texto style={estilos.botaoTexto}>{botao}</Texto>
                 </TouchableOpacity>
                 <Texto style={estilos.itenTitulo}>{titulo}</Texto>

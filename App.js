@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, }}>
-       <StatusBar animated={true} translucent={true} />
+       <StatusBar />
       <AppRotas/>
     </View>
   );
