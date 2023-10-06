@@ -1,6 +1,6 @@
 const cesta = {
 
-  preco: "R$ 166,37",
+  preco: 166.37
 
 }
 

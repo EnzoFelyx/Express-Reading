@@ -18,15 +18,15 @@ export default function Livro({
 
     const aoPressionar = () => { navigation.navigate('Produto', feedBack) }
 
-    const realMoeda = universal.real;
-
-    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white'}} onPress={aoPressionar}>
+    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar}>
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
             <View style={estilos.informacao}>
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <Texto style={estilos.autor}>{autor}</Texto>
-                <Texto style={estilos.preco}>{realMoeda}{preco}</Texto>
+                <Texto style={estilos.preco}>{Intl.NumberFormat('pt-BR', {
+                    style: 'currency', currency: 'BRL'
+                }).format(preco)}</Texto>
             </View>
             {avaliacao ? (<View style={estilos.avaliacao}>
                 <Estrelas quant={avaliacao} />

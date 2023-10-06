@@ -19,9 +19,7 @@ export default function Item({
 
     const aoPressionar = () => { navigation.navigate('Produto', feedBack) }
 
-    const realMoeda = universal.real;
-
-    const [quant, setQuant] =  useState(1);
+    const [quant, setQuant] = useState(1);
 
     return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar} >
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
@@ -29,12 +27,17 @@ export default function Item({
             <View style={[estilos.informacao, { width: "100%", }]}>
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <Texto style={estilos.autor}>{autor}</Texto>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <Texto style={{color: "#A3A3A3",}}>Quantidade : </Texto>
-                        <Input valor={quant} acao={setQuant}/>
+                        <Texto style={{ color: "#A3A3A3", }}>Quantidade : </Texto>
+                        <Input valor={quant} acao={setQuant} />
                     </View>
-                    <Texto style={estilos.preco}>{realMoeda}{preco}</Texto>
+                    <Texto style={estilos.preco}>
+                        {Intl.NumberFormat('pt-BR', {
+                            style: 'currency', currency: 'BRL'
+                        }).format(preco)
+                        }
+                    </Texto>
                 </View>
             </View>
         </View>

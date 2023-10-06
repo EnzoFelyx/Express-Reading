@@ -1,5 +1,7 @@
 import { View, StatusBar, SafeAreaView } from 'react-native';
 import AppRotas from './src/rotas/AppRotas';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
 
 import {
   useFonts,

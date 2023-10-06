@@ -44,7 +44,11 @@ export default function Detalhes({ topo: Topo }) {
             <View style={estilos.cesta}>
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <Texto style={estilos.descricao}>{descricao}</Texto>
-                <Texto style={estilos.preco}>{Preco}</Texto>
+                <Texto style={estilos.preco}>
+                    {Intl.NumberFormat('pt-BR', {
+                        style: 'currency', currency: 'BRL'
+                    }).format(Preco)}
+                </Texto>
                 <TouchableOpacity
                     style={estilos.botaoCaixa}
                     onPress={() => navigation.navigate('Home')}>

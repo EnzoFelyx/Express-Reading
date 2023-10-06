@@ -24,7 +24,9 @@ export default function Informacoes() {
                 <Texto style={estilos.texto}>{descricao}</Texto>
             </View>
             <TouchableOpacity style={estilos.botaoCaixa}>
-                <Texto style={estilos.preco}>R$ {preco}</Texto>
+                <Texto style={estilos.preco}>{Intl.NumberFormat('pt-BR', {
+                        style: 'currency', currency: 'BRL'
+                    }).format(preco)}</Texto>
                 <View style={estilos.comprar}>
                     <View style={{ alignSelf: "center", marginRight: 10 }}>
                         <Icones icone={'shopping-basket-add'} familia={'Fontisto'} tipo={'capa'} cor={'#FFFF'} interagivel={false}/>
