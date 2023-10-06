@@ -21,7 +21,7 @@ export default function Estante({ topo: Topo }) {
     return <FlatList
         data={lista}
         renderItem={({ item }) => <View style={estilos.prateleira}>
-            <Livro {...item} rota={'Produto'} feedBack={item} />
+            <Livro {...item} feedBack={item} />
         </View>
         }
         keyExtractor={({ nome }) => nome}

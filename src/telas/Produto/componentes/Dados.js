@@ -1,9 +1,8 @@
+import { useRoute } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import Estrela from "../../../componentes/Estrela";
+import Icones from '../../../componentes/Icones';
 import Texto from "../../../componentes/Texto";
-import Icones from '../../../componentes/Icones'
-import { useRoute } from "@react-navigation/native";
 
 export default function Dados() {
 

@@ -1,24 +1,23 @@
 import React from "react";
-import { FlatList, StyleSheet, TouchableOpacity, View, Animated, Text } from "react-native";
+import { Animated, FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { cesta } from '../../../../config/text.json';
-
+import { useNavigation } from "@react-navigation/native";
+import { Swipeable } from "react-native-gesture-handler";
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
+import Testando from "../../../componentes/teste";
 import useEstoque from "../../../hooks/useEstoque";
 import useItens from "../../../hooks/useItens";
-import { Swipeable } from "react-native-gesture-handler";
-import Testando from "../../../componentes/teste";
-import { useNavigation } from "@react-navigation/native";
 
 export default function Detalhes({ topo: Topo }) {
 
     const navigation = useNavigation();
 
-    const { nome, descricao, botao } = cesta.detalhes;
-
     const lista = useEstoque();
 
-    const Preco = useItens();
+    const { Preco, comprado } = useItens();
+
+    const { nome, descricao, botao } = cesta.detalhes;
 
     const titulo = cesta.itens.titulo;
 
@@ -32,7 +31,7 @@ export default function Detalhes({ topo: Topo }) {
 
         return <View style={estilos.RightActions.view}>
             <Animated.View style={{ transform: [{ scale: scale }] }} >
-                <Testando style={estilos.RightActions.icone}/>
+                <Testando style={estilos.RightActions.icone} />
             </Animated.View>
         </View >
     }
@@ -44,7 +43,9 @@ export default function Detalhes({ topo: Topo }) {
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <Texto style={estilos.descricao}>{descricao}</Texto>
                 <Texto style={estilos.preco}>{Preco}</Texto>
-                <TouchableOpacity style={estilos.botaoCaixa} onPress={() => navigation.navigate('Vazia')}>
+                <TouchableOpacity
+                    style={estilos.botaoCaixa}
+                    onPress={() => navigation.navigate('Home', comprado)}>
                     <Texto style={estilos.botaoTexto}>{botao}</Texto>
                 </TouchableOpacity>
                 <Texto style={estilos.itenTitulo}>{titulo}</Texto>

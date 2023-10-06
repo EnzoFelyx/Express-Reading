@@ -5,23 +5,22 @@ import Texto from './Texto'
 import { useNavigation } from "@react-navigation/native";
 import { universal } from '../../config/text.json';
 
-export default function Livro({ 
+export default function Livro({
     nome,
     autor,
     preco,
     avaliacao = false,
     imagem,
-    rota,
     feedBack,
 
 }) {
     const navigation = useNavigation() //hook para acesso do componente de navegação
 
-    const aoPressionar = () => { navigation.navigate(rota, feedBack) }
+    const aoPressionar = () => { navigation.navigate('Produto', feedBack) }
 
     const realMoeda = universal.real;
 
-    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white', borderRadius: 15 }} onPress={aoPressionar}>
+    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white'}} onPress={aoPressionar}>
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
             <View style={estilos.informacao}>

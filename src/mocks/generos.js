@@ -4,7 +4,6 @@ const generos = {
     categorias: [
         {
             id: 1,
-            cor: "",
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "run-fast",
@@ -14,7 +13,6 @@ const generos = {
 
         {
             id: 2,
-            cor: "",
             icon: {
                 familia: "Fontisto",
                 nome: "ship",
@@ -24,7 +22,33 @@ const generos = {
 
         {
             id: 3,
-            cor: "",
+            icon: {
+                familia: "MaterialCommunityIcons",
+                nome: "typewriter",
+            },
+            genero: "Biografia"
+        },
+
+        {
+            id: 4,
+            icon: {
+                familia: "MaterialCommunityIcons",
+                nome: "hat-fedora",
+            },
+            genero: "Comédia"
+        },
+
+        {
+            id: 5,
+            icon: {
+                familia: "MaterialCommunityIcons",
+                nome: "drama-masks",
+            },
+            genero: "Drama"
+        },
+
+        {
+            id: 6,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "wizard-hat",
@@ -33,8 +57,7 @@ const generos = {
         },
 
         {
-            id: 4,
-            cor: "",
+            id: 7,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "alien-outline",
@@ -43,8 +66,7 @@ const generos = {
         },
 
         {
-            id: 5,
-            cor: "",
+            id: 8,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "ghost-outline",
@@ -53,8 +75,16 @@ const generos = {
         },
 
         {
-            id: 6,
-            cor: "",
+            id: 9,
+            icon: {
+                familia: "MaterialCommunityIcons",
+                nome: "account-child-outline",
+            },
+            genero: "Infantil"
+        },
+
+        {
+            id: 10,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "sword",
@@ -63,8 +93,7 @@ const generos = {
         },
 
         {
-            id: 7,
-            cor: "",
+            id: 11,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "progress-question",
@@ -73,8 +102,7 @@ const generos = {
         },
 
         {
-            id: 8,
-            cor: "",
+            id: 12,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "car-wireless",
@@ -83,8 +111,7 @@ const generos = {
         },
 
         {
-            id: 9,
-            cor: "",
+            id: 13,
             icon: {
                 familia: "MaterialCommunityIcons",
                 nome: "calendar-heart",
@@ -93,14 +120,14 @@ const generos = {
         },
 
         {
-            id: 10,
-            cor: "",
+            id: 14,
             icon: {
                 familia: "Fontisto",
                 nome: "surgical-knife",
             },
             genero: "Suspense"
-        }
+        },
+
     ]
 }
 

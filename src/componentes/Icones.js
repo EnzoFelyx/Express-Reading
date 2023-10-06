@@ -63,8 +63,9 @@ const estilos = StyleSheet.create({
     },
 
     explorar: {
-        backgroundColor: "yellow",
-        fontSize: 40,
+        fontSize: 25,
+        marginLeft: 12,
+        position: 'absolute',
     }
 
 })

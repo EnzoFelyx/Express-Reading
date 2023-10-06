@@ -6,20 +6,23 @@ import useGenero from "../../../hooks/useGenero";
 
 const width = Dimensions.get('screen').width;
 
-export default function Genero({ 
-    id,
-    cor,
+export default function Genero({
     icon,
     genero
-                                        
- }) {
 
-    let {familia, icone} = {...icon}
+}) {
+
+    let { familia, nome } = { ...icon }
 
     return <>
 
         <TouchableOpacity style={estilos.genero}>
-            <Icones icone={icone} familia={familia} interagivel={false} tipo={'explorar'}/>
+            <Icones
+                icone={nome}
+                familia={familia}
+                interagivel={false}
+                tipo={'explorar'}
+            />
             <Texto style={estilos.legenda}>{genero}</Texto>
         </TouchableOpacity>
 
@@ -29,16 +32,18 @@ export default function Genero({
 const estilos = StyleSheet.create({
 
     genero: {
-        backgroundColor: "red",
+        borderWidth: 1,
         width: 0.45 * width,
         paddingVertical: 14,
-        alignItems: "center",
         borderRadius: 8,
+        flexDirection: "row",
     },
     legenda: {
         fontSize: 14,
         lineHeight: 21,
         fontWeight: "bold",
+        textAlign: "center",
+        width: "100%",
     },
 })
 

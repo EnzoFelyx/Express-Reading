@@ -17,6 +17,7 @@ const estilos = StyleSheet.create({
     topo: {
         backgroundColor: "#112236",
         padding: 16,
+        marginBottom: 12,
     },
     titulo: {
         color: "#DE9E69",

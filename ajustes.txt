@@ -2,12 +2,13 @@ refatorar código otimizando estilos e componentes.
 
 usar useReduce para avaliar livros na tela de livro-info
 
-componente categoria
-
 https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
 
 https://cursos.alura.com.br/extra/alura-mais/como-utilizar-icones-e-animacoes-em-apps-com-react-native-c1227 animações
 
-Aprender a colocar tabBarActiveTintColor nos icones de nav bar
 
-status bar transparence or backgroundcolor
+AO clickar em algum genero abrir uma lista de livro de 3 colunas
+
+confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Destaques"])
+
+fazer tela Home
