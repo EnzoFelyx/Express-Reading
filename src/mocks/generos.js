@@ -127,7 +127,6 @@ const generos = {
             },
             genero: "Suspense"
         },
-
     ]
 }
 

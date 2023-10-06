@@ -35,6 +35,7 @@ export default function AppRotas() {
             tabBarLabelStyle: {
                 fontSize: 14,
             },
+            tabBarHideOnKeyboard: true,
         })}>
             <Tab.Screen name='Home' component={LivroRotas} />
             <Tab.Screen name='Explorar' component={ExplorarRotas} />

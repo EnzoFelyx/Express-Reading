@@ -8,6 +8,7 @@ import Texto from "../../../componentes/Texto";
 import Testando from "../../../componentes/teste";
 import useEstoque from "../../../hooks/useEstoque";
 import useItens from "../../../hooks/useItens";
+import Item from "./Item";
 
 export default function Detalhes({ topo: Topo }) {
 
@@ -15,7 +16,7 @@ export default function Detalhes({ topo: Topo }) {
 
     const lista = useEstoque();
 
-    const { Preco, comprado } = useItens();
+    const Preco = useItens();
 
     const { nome, descricao, botao } = cesta.detalhes;
 
@@ -37,6 +38,7 @@ export default function Detalhes({ topo: Topo }) {
     }
 
     const TopoLista = () => {
+
         return <>
             <Topo />
             <View style={estilos.cesta}>
@@ -45,7 +47,7 @@ export default function Detalhes({ topo: Topo }) {
                 <Texto style={estilos.preco}>{Preco}</Texto>
                 <TouchableOpacity
                     style={estilos.botaoCaixa}
-                    onPress={() => navigation.navigate('Home', comprado)}>
+                    onPress={() => navigation.navigate('Home')}>
                     <Texto style={estilos.botaoTexto}>{botao}</Texto>
                 </TouchableOpacity>
                 <Texto style={estilos.itenTitulo}>{titulo}</Texto>
@@ -56,11 +58,12 @@ export default function Detalhes({ topo: Topo }) {
     return <FlatList
         data={lista}
         renderItem={({ item }) => <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => alert('Livro removido da cesta com sucesso!')}>
-            <Livro {...item} avaliacao={false} rota={'Produto'} feedBack={item} />
+            <Item {...item} feedBack={item} />
         </Swipeable>
         }
         keyExtractor={({ nome }) => nome}
         ListHeaderComponent={TopoLista}
+        removeClippedSubviews={false}
     />
 }
 

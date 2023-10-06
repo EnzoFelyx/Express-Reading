@@ -19,7 +19,7 @@ export default function Categorias({ topo: Topo }) {
                         <Genero {...item} />
                     </View>
                 )}
-                keyExtractor={({ id }) => id}
+                keyExtractor={({ id }) => String(id)}
                 numColumns={2}
             />
         );

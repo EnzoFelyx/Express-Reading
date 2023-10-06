@@ -12,3 +12,6 @@ AO clickar em algum genero abrir uma lista de livro de 3 colunas
 confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Destaques"])
 
 fazer tela Home
+
+mudar splash screen e icone no app.json
+    

@@ -7,10 +7,6 @@ import {
   Montserrat_700Bold
 } from '@expo-google-fonts/montserrat';
 
-
-import mockTeste from "./src/mocks/detalhes"
-
-
 export default function App() {
 
   const [fonteCarregada] = useFonts({
@@ -23,9 +19,9 @@ export default function App() {
   }
 
   return (
-    <View style={{ flex: 1, }}>
-       <StatusBar backgroundColor="#112236" barStyle='light-content'/>
-      <AppRotas/>
-    </View>
+    <SafeAreaView style={{ flex: 1, }}>
+      <StatusBar backgroundColor="#112236" barStyle='light-content' />
+      <AppRotas />
+    </SafeAreaView>
   );
 }
