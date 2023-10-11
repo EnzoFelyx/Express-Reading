@@ -1,14 +1,37 @@
-import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import React, { useState } from "react";
+import { Alert, StyleSheet, TouchableOpacity, View } from "react-native";
 import Texto from "../../../componentes/Texto";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import Icones from "../../../componentes/Icones";
+import { salvarCesta } from "../../../services/requests/carrinho";
 
 export default function Informacoes() {
 
+    const navigation = useNavigation();
+
     const route = useRoute();
+    
+    const [idCarrinho, setIdCarrinho] = useState(route.params.idCarrinho);
 
     const { preco, descricao } = route.params
+
+    async function salvar() {
+
+        setIdCarrinho(1);
+        const resultado = await salvarCesta(
+            route.params.id,
+            idCarrinho
+        )
+
+        if (resultado === 'sucesso') {
+            Alert.alert("Livro adicionado na cesta");
+            navigation.goBack();
+            console.log(idCarrinho);
+        }
+        else {
+            Alert.alert("Erro ao adicionar livro a cesta");
+        }
+    }
 
     const quantParcela = 6;
 
@@ -23,13 +46,13 @@ export default function Informacoes() {
                 <Texto style={estilos.subtitle}>Descrição</Texto>
                 <Texto style={estilos.texto}>{descricao}</Texto>
             </View>
-            <TouchableOpacity style={estilos.botaoCaixa}>
+            <TouchableOpacity style={estilos.botaoCaixa} onPress={salvar}>
                 <Texto style={estilos.preco}>{Intl.NumberFormat('pt-BR', {
-                        style: 'currency', currency: 'BRL'
-                    }).format(preco)}</Texto>
+                    style: 'currency', currency: 'BRL'
+                }).format(preco)}</Texto>
                 <View style={estilos.comprar}>
                     <View style={{ alignSelf: "center", marginRight: 10 }}>
-                        <Icones icone={'shopping-basket-add'} familia={'Fontisto'} tipo={'capa'} cor={'#FFFF'} interagivel={false}/>
+                        <Icones icone={'shopping-basket-add'} familia={'Fontisto'} tipo={'capa'} cor={'#FFFF'} interagivel={false} />
                     </View>
                 </View>
             </TouchableOpacity>

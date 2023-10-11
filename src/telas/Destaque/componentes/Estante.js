@@ -3,14 +3,13 @@ import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { destaque } from '../../../../config/text.json';
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
-import useEstoque from "../../../hooks/useEstoque";
-import api from "../../../services/api";
+import useDestaque from "../../../hooks/useDestasque";
 
 export default function Estante({ topo: Topo }) {
 
     const { titulo } = destaque.estante;
 
-    const lista = useEstoque();
+    const lista = useDestaque();
 
     const TopoLista = () => {
         return <>

@@ -16,3 +16,5 @@ fazer tela Home
 mudar splash screen e icone no app.json
 
 fazer o Preço total mudar
+
+animation discord

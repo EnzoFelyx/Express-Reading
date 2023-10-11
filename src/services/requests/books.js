@@ -11,3 +11,14 @@ export async function buscaLivro(nomeLivro) {
         return {}
     }
 }
+
+export async function listaLivros() {
+    try {
+        const resultado = await api.get(`/livros`);
+        return resultado.data;
+    }
+    catch (error) {
+        console.log(error)
+        return []
+    }
+}
