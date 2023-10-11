@@ -2,7 +2,7 @@ import api from "../api";
 
 export async function listaCesta() {
     try {
-        const resultado = await api.get(`/cesta?idCarrinho=1`);
+        const resultado = await api.get(`/livros?idCarrinho=1`);
         return resultado.data;
     }
     catch (error) {
