@@ -1,9 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Animated, FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
-import { cesta } from '../../../../config/text.json';
-import { useNavigation } from "@react-navigation/native";
 import { Swipeable } from "react-native-gesture-handler";
-import Livro from "../../../componentes/Livro";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { cesta } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 import Testando from "../../../componentes/teste";
 import useEstoque from "../../../hooks/useEstoque";
@@ -39,7 +39,7 @@ export default function Detalhes({ topo: Topo }) {
 
     const TopoLista = () => {
 
-        return <>
+        return <SafeAreaView>
             <Topo />
             <View style={estilos.cesta}>
                 <Texto style={estilos.nome}>{nome}</Texto>
@@ -56,7 +56,7 @@ export default function Detalhes({ topo: Topo }) {
                 </TouchableOpacity>
                 <Texto style={estilos.itenTitulo}>{titulo}</Texto>
             </View>
-        </>
+        </SafeAreaView>
     }
 
     return <FlatList

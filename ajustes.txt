@@ -14,4 +14,5 @@ confirmar compra ir para uma tela e aparecer dois botões (Home, continuar compr
 fazer tela Home
 
 mudar splash screen e icone no app.json
-    
+
+fazer o Preço total mudar

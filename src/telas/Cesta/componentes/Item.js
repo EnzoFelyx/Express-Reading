@@ -1,11 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
-import { universal } from '../../../../config/text.json';
 import Input from "../../../componentes/Input";
 import Texto from '../../../componentes/Texto';
 import estilos from "../../../estilos";
-import { TextInput } from "react-native-gesture-handler";
 
 export default function Item({
     nome,
@@ -21,6 +19,17 @@ export default function Item({
 
     const [quant, setQuant] = useState(1);
 
+    const [total, setTotal] = useState(preco);
+
+    const atualizaQuantTotal = (novaQuant) => {
+        setQuant(novaQuant);
+        calculaTotal(novaQuant)
+    }
+    
+    const calculaTotal = (novaQuant) => {
+        setTotal(novaQuant * preco);
+    } 
+
     return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar} >
         <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
@@ -30,12 +39,12 @@ export default function Item({
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Texto style={{ color: "#A3A3A3", }}>Quantidade : </Texto>
-                        <Input valor={quant} acao={setQuant} />
+                        <Input valor={quant} acao={atualizaQuantTotal} />
                     </View>
                     <Texto style={estilos.preco}>
                         {Intl.NumberFormat('pt-BR', {
                             style: 'currency', currency: 'BRL'
-                        }).format(preco)
+                        }).format(total)
                         }
                     </Texto>
                 </View>

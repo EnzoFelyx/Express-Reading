@@ -1,9 +1,10 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { destaque } from '../../../../config/text.json';
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
 import useEstoque from "../../../hooks/useEstoque";
+import api from "../../../services/api";
 
 export default function Estante({ topo: Topo }) {
 
