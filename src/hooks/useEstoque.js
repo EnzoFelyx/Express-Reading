@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
-import { carregaEstoque } from "../services/carregaDados";
+import { listaCesta } from "../services/requests/carrinho";
 
 export default function useEstoque() {
+    const [lista, setLista] = useState([]);
 
-    const [lista, setLista] = useState(''); //declarar sempre no começo
+    const fetchData = async () => {
+        try {
+            const retorno = await listaCesta();
+            setLista(retorno);
+        } catch (error) {
+            console.error("Erro ao buscar a lista de cesta:", error);
+        }
+    };
 
     useEffect(() => {
-        const retorno = carregaEstoque();
-        setLista(retorno.livros);
-    }, []);
+        fetchData();
+    }, []); // Certifique-se de que o array de dependências esteja vazio para executar apenas uma vez
 
     return lista;
 }

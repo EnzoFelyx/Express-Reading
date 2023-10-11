@@ -19,7 +19,7 @@ export default function Livro({
     const aoPressionar = () => { navigation.navigate('Produto', feedBack) }
 
     return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar}>
-        <Image source={imagem} accessibilityLabel={nome} style={estilos.imagemLivro} />
+        <Image source={{ uri: imagem }} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
             <View style={estilos.informacao}>
                 <Texto style={estilos.nome}>{nome}</Texto>

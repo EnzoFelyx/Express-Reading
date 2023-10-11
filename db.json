@@ -41,7 +41,7 @@
             "preco": 32.99,
             "generos": [
                 "Fantasia",
-                "História", 
+                "História",
                 "Ficção"
             ],
             "capa": "Dura",
@@ -83,6 +83,48 @@
             "avaliacao": 1,
             "lingua": "PT-BR",
             "descricao": "O capitão Ahab embarca em uma jornada perigosa com um único objetivo: caçar Moby Dick, a baleia que arrancou sua perna. Com sede de vingança, ele arrisca a sua vida e a de sua tripulação para encontrar e matar o animal, custe o que custar.",
+            "imagem": "https://m.media-amazon.com/images/I/71K4OH9CqOL._SY466_.jpg"
+        }
+    ],
+    "cesta": [
+        {
+            "id": 1,
+            "idCarrinho": 1,
+            "nome": "Fahrenheit 451",
+            "autor": "Ray Bradbury",
+            "preco": 27.79,
+            "imagem": "https://m.media-amazon.com/images/I/418ybM-7R1L._SY445_SX342_.jpg"
+        },
+        {
+            "id": 2,
+            "idCarrinho": 1,
+            "nome": "A metamorfose",
+            "autor": "Franz Kafka",
+            "preco": 23.99,
+            "imagem": "https://m.media-amazon.com/images/I/91RPx0GmtFL._SY466_.jpg"
+        },
+        {
+            "id": 3,
+            "idCarrinho": 1,
+            "nome": "Misery",
+            "autor": "Stephen King",
+            "preco": 32.99,
+            "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCcRfvkkrG_MoDONJzI3gJzWhGoXw0Tfyfspe1ndMtzRMGM8nnm1ofmX7IE8vuGL5YuGc&usqp=CAU"
+        },
+        {
+            "id": 4,
+            "idCarrinho": 1,
+            "nome": "O Pequeno Príncipe",
+            "autor": "Antoine de Saint",
+            "preco": 29.90,
+            "imagem": "https://m.media-amazon.com/images/I/41afCn3PQUL._SY445_SX342_.jpg"
+        },
+        {
+            "id": 5,
+            "idCarrinho": 1,
+            "nome": "Moby Dick",
+            "autor": "Herman Melville",
+            "preco": 51.70,
             "imagem": "https://m.media-amazon.com/images/I/71K4OH9CqOL._SY466_.jpg"
         }
     ]
