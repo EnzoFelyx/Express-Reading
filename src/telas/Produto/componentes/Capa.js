@@ -14,9 +14,9 @@ export default function Capa() {
     return <>
 
         <View style={estilos.capa}>
-            <View style={{flexDirection: "row"}}>
-                <Image source={imagem} style={estilos.imagem} />
-                <Dados/>
+            <View style={{ flexDirection: "row" }}>
+                <Image source={{ uri: imagem }} style={estilos.imagem} />
+                <Dados />
             </View>
             <Texto style={estilos.titulo}>{nome}</Texto>
             <Texto style={estilos.autor}>{autor}</Texto>
