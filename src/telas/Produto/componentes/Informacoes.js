@@ -10,23 +10,18 @@ export default function Informacoes() {
     const navigation = useNavigation();
 
     const route = useRoute();
-    
-    const [idCarrinho, setIdCarrinho] = useState(route.params.idCarrinho);
 
     const { preco, descricao } = route.params
 
     async function salvar() {
 
-        setIdCarrinho(1);
         const resultado = await salvarCesta(
             route.params.id,
-            idCarrinho
         )
 
         if (resultado === 'sucesso') {
             Alert.alert("Livro adicionado na cesta");
             navigation.goBack();
-            console.log(idCarrinho);
         }
         else {
             Alert.alert("Erro ao adicionar livro a cesta");

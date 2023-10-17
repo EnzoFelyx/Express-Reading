@@ -3,12 +3,12 @@ import api from "../api";
 export async function listaCesta() {
     try {
         const resultadoLivros = await api.get(`/livros`);
-        const resultadoCesta = await api.get(`/cesta?idCarrinho=1`);
+        const resultadoCesta = await api.get(`/cesta`);
         const livros = resultadoLivros.data;
         const cesta = resultadoCesta.data;
 
         const livrosNaCesta = livros.filter(livro => {
-            return cesta.some(item => item.id === livro.id);
+            return cesta.some(item => item.idLivro === livro.id);
         });
 
         return livrosNaCesta;
@@ -19,13 +19,28 @@ export async function listaCesta() {
 }
 
 
-export async function salvarCesta(id, idCarrinho) {
+export async function salvarCesta(idLivro) {
 
     try {
-        await api.put(`/cesta/${id}`, {
-            id: id,
-            idCarrinho: idCarrinho,
+        await api.post(`/cesta/`, {
+            idLivro: idLivro
         });
+        return 'sucesso'
+    }
+    catch (error) {
+        console.log(error)
+        return 'erro'
+    }
+}
+
+export async function deletarLivroCesta(idLivro) {
+
+    const resultadoCesta = await api.get(`/cesta`);
+    const cesta = resultadoCesta.data;
+    const itemParaDeletar = cesta.find(item => item.idLivro === idLivro);
+
+    try {
+        await api.delete(`/cesta/${itemParaDeletar.id}`);
         return 'sucesso'
     }
     catch (error) {

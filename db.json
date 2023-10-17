@@ -36,7 +36,6 @@
     },
     {
       "id": 3,
-      "idCarrinho": 0,
       "nome": "Misery",
       "autor": "Stephen King",
       "preco": 32.99,
@@ -89,12 +88,12 @@
   ],
   "cesta": [
     {
-      "id": 1,
-      "idCarrinho": 1
+      "idLivro": 1,
+      "id": 1
     },
     {
-      "id": 2,
-      "idCarrinho": 1
+      "idLivro": 2,
+      "id": 2
     }
   ]
 }

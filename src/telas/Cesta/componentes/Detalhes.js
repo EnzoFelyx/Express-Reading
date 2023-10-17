@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Animated, FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Alert, Animated, FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { cesta } from '../../../../config/text.json';
@@ -8,6 +8,7 @@ import Texto from "../../../componentes/Texto";
 import Testando from "../../../componentes/teste";
 import useEstoque from "../../../hooks/useEstoque";
 import useItens from "../../../hooks/useItens";
+import { deletarLivroCesta } from "../../../services/requests/carrinho";
 import Item from "./Item";
 
 export default function Detalhes({ topo: Topo }) {
@@ -59,9 +60,20 @@ export default function Detalhes({ topo: Topo }) {
         </SafeAreaView>
     }
 
+    async function deletar(id) {
+        const resultado = await deletarLivroCesta(id)
+
+        if (resultado === 'sucesso') {
+            Alert.alert("Livro retirado na cesta");
+        }
+        else {
+            Alert.alert("Erro ao retirar livro a cesta");
+        }
+    }
+
     return <FlatList
         data={lista}
-        renderItem={({ item }) => <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => alert('Livro removido da cesta com sucesso!')}>
+        renderItem={({ item }) => <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => deletar(item.id)}>
             <Item {...item} feedBack={item} />
         </Swipeable>
         }
