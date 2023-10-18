@@ -22,3 +22,7 @@ animation discord
 ao apagar refrash na lista
 
 antes de adicionar verificar se o item está na lista, se estiver aparecer a opção de tirar invés de adicionar.
+
+preview na busca 
+
+fazer tela de home
