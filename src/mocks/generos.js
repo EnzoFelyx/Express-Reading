@@ -126,7 +126,7 @@ const generos = {
                 nome: "surgical-knife",
             },
             genero: "Suspense"
-        },
+        }
     ]
 }
 
