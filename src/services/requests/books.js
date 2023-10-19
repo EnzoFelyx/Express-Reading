@@ -23,3 +23,16 @@ export async function listaLivros() {
     }
 }
 
+export async function buscaGenero(genero) {
+
+    console.log(genero)
+
+    try {
+        const resultado = await api.get(`/livros?generos_like=${genero}`);
+        return resultado.data;
+    }
+    catch (error) {
+        console.log(error);
+        return [];
+    }
+}

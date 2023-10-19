@@ -1,29 +1,32 @@
 import React from "react";
-import { Dimensions, StyleSheet, View, TouchableOpacity } from "react-native";
-import Texto from "../../../componentes/Texto";
+import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import Icones from "../../../componentes/Icones";
-import useGenero from "../../../hooks/useGenero";
+import Texto from "../../../componentes/Texto";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get('screen').width;
 
 export default function Genero({
     icon,
-    genero
-
+    nomeGenero,
 }) {
+
+    const navigation = useNavigation();
+
+    const aoPressionar = () => { navigation.navigate('ExibirGenero', { nomeGenero }) }
 
     let { familia, nome } = { ...icon }
 
     return <>
 
-        <TouchableOpacity style={estilos.genero}>
+        <TouchableOpacity style={estilos.genero} onPress={aoPressionar}>
             <Icones
                 icone={nome}
                 familia={familia}
                 interagivel={false}
                 tipo={'explorar'}
             />
-            <Texto style={estilos.legenda}>{genero}</Texto>
+            <Texto style={estilos.legenda}>{nomeGenero}</Texto>
         </TouchableOpacity>
 
     </>

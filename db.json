@@ -106,7 +106,7 @@
       "id": 7,
       "nome": "O diário de Anne Frank",
       "autor": "Anne Frank",
-      "preco": 29.90,
+      "preco": 29.9,
       "generos": [
         "Biografia",
         "Romance",
@@ -390,7 +390,7 @@
       "id": 24,
       "nome": "The Shining",
       "autor": "Stephen King",
-      "preco": 43.80,
+      "preco": 43.8,
       "generos": [
         "Horror",
         "Suspense",
@@ -407,7 +407,7 @@
       "id": 25,
       "nome": "A distância até a cerejeira",
       "autor": "Paola Peretti",
-      "preco": 16.20,
+      "preco": 16.2,
       "generos": [
         "Infantil",
         "Aventura",
@@ -608,7 +608,7 @@
       "id": 37,
       "nome": "Eleanor & Park",
       "autor": "Rainbow Rowell",
-      "preco": 19.00,
+      "preco": 19,
       "generos": [
         "Romance",
         "Drama",
@@ -657,7 +657,7 @@
       "id": 40,
       "nome": "Bird Box",
       "autor": "Josh Malerman",
-      "preco": 29.70,
+      "preco": 29.7,
       "generos": [
         "Suspense",
         "Drama"
@@ -673,7 +673,7 @@
       "id": 41,
       "nome": "Misery",
       "autor": "Stephen King",
-      "preco": 29.70,
+      "preco": 29.7,
       "generos": [
         "Suspense",
         "Horror"
@@ -707,6 +707,14 @@
     {
       "idLivro": 3,
       "id": 3
+    },
+    {
+      "idLivro": 5,
+      "id": 4
+    },
+    {
+      "idLivro": 6,
+      "id": 5
     }
   ]
 }

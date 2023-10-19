@@ -21,8 +21,8 @@ export default function AppRotas() {
                 if (route.name === 'Carrinho') {
                     Icon = <Icones familia={'Feather'} icone={'shopping-cart'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
-                else if (route.name === 'Destaques') {
-                    Icon = <Icones familia={'Feather'} icone={'star'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
+                else if (route.name === 'Biblioteca') {
+                    Icon = <Icones familia={'MaterialCommunityIcons'} icone={'bookshelf'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
                 else if (route.name === 'Explorar') {
                     Icon = <Icones familia={'Fontisto'} icone={'compass-alt'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
@@ -38,8 +38,8 @@ export default function AppRotas() {
             tabBarHideOnKeyboard: true,
         })}>
             <Tab.Screen name='Home' component={LivroRotas} />
+            <Tab.Screen name='Biblioteca' component={DestaqueRotas} />
             <Tab.Screen name='Explorar' component={ExplorarRotas} />
-            <Tab.Screen name='Destaques' component={DestaqueRotas} />
             <Tab.Screen name='Carrinho' component={CestaRotas} />
         </Tab.Navigator>
     </NavigationContainer>

@@ -8,7 +8,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "run-fast",
             },
-            genero: "Ação",
+            nomeGenero: "Ação",
         },
 
         {
@@ -17,7 +17,7 @@ const generos = {
                 familia: "Fontisto",
                 nome: "ship",
             },
-            genero: "Aventura"
+            nomeGenero: "Aventura"
         },
 
         {
@@ -26,7 +26,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "typewriter",
             },
-            genero: "Biografia"
+            nomeGenero: "Biografia"
         },
 
         {
@@ -35,7 +35,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "hat-fedora",
             },
-            genero: "Comédia"
+            nomeGenero: "Comédia"
         },
 
         {
@@ -44,7 +44,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "drama-masks",
             },
-            genero: "Drama"
+            nomeGenero: "Drama"
         },
 
         {
@@ -53,7 +53,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "wizard-hat",
             },
-            genero: "Fantasia"
+            nomeGenero: "Fantasia"
         },
 
         {
@@ -62,7 +62,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "alien-outline",
             },
-            genero: "Ficção"
+            nomeGenero: "Ficção"
         },
 
         {
@@ -71,7 +71,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "ghost-outline",
             },
-            genero: "Horror"
+            nomeGenero: "Horror"
         },
 
         {
@@ -80,7 +80,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "account-child-outline",
             },
-            genero: "Infantil"
+            nomeGenero: "Infantil"
         },
 
         {
@@ -89,7 +89,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "sword",
             },
-            genero: "Mangás"
+            nomeGenero: "Mangás"
         },
 
         {
@@ -98,7 +98,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "progress-question",
             },
-            genero: "Mistério"
+            nomeGenero: "Mistério"
         },
 
         {
@@ -107,7 +107,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "car-wireless",
             },
-            genero: "Policial"
+            nomeGenero: "Policial"
         },
 
         {
@@ -116,7 +116,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "calendar-heart",
             },
-            genero: "Romance"
+            nomeGenero: "Romance"
         },
 
         {
@@ -125,7 +125,7 @@ const generos = {
                 familia: "Fontisto",
                 nome: "surgical-knife",
             },
-            genero: "Suspense"
+            nomeGenero: "Suspense"
         }
     ]
 }
