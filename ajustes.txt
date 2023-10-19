@@ -28,3 +28,5 @@ fazer tela de home
 fazer correspondecia de livro por categoria em explorar
 
 mudar método de excluir
+
+arrumar estante, quando nome muito grande desconfira estrelas (solução: colocar em pilhas em vez de row)

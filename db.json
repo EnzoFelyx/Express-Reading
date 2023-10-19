@@ -152,22 +152,6 @@
       "imagem": "https://m.media-amazon.com/images/I/9164WeAYFsL._SY466_.jpg"
     },
     {
-      "id": 9,
-      "nome": "Malala",
-      "autor": "Adriana Carranca",
-      "preco": 41.24,
-      "generos": [
-        "Biografia",
-        "Drama"
-      ],
-      "capa": "Flexível",
-      "paginas": 93,
-      "avaliacao": 2,
-      "lingua": "PT-BR",
-      "descricao": "Malala Yousafzai quase perdeu a vida por querer ir para a escola. Ela nasceu no vale do Swat, no Paquistão, uma região de extraordinária beleza, cobiçada no passado por conquistadores como Gengis Khan e Alexandre, o Grande, e protegida pelos bravos guerreiros pashtuns – os povos das montanhas.",
-      "imagem": "https://m.media-amazon.com/images/I/9164WeAYFsL._SY466_.jpg"
-    },
-    {
       "id": 10,
       "nome": "Auto da Compadecida",
       "autor": "Ariano Suassuna",
@@ -235,7 +219,7 @@
     },
     {
       "id": 14,
-      "nome": "O menino que descobriu o vento",
+      "nome": "O menino do Pijama Listado",
       "autor": "John Boyne",
       "preco": 32.99,
       "generos": [
