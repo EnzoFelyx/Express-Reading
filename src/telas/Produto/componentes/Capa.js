@@ -1,6 +1,6 @@
 import { useRoute } from "@react-navigation/native";
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import Estrelas from "../../../componentes/Estrelas";
 import Texto from "../../../componentes/Texto";
 import Dados from "./Dados";
@@ -24,15 +24,11 @@ export default function Capa() {
 
         <View style={{ alignItems: "center", }}>
             <View style={estilos.generos}>
-                <View style={estilos.generos.caixa}>
-                    <Texto style={estilos.generos.texto}>{generos[0]}</Texto>
-                </View>
-                <View style={estilos.generos.caixa}>
-                    <Texto style={estilos.generos.texto}>{generos[1]}</Texto>
-                </View>
-                <View style={estilos.generos.caixa}>
-                    <Texto style={estilos.generos.texto}>{generos[2]}</Texto>
-                </View>
+                {generos.map((genero, index) => (
+                    <TouchableOpacity style={estilos.generos.caixa} key={index}>
+                        <Texto style={estilos.generos.texto}>{genero}</Texto>
+                    </TouchableOpacity>
+                ))}
             </View>
 
             <Estrelas editavel={true} grande={true} />
