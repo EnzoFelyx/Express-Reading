@@ -8,7 +8,7 @@ export default function Livro({
     nome,
     autor,
     preco,
-    avaliacao = false,
+    avaliacao,
     imagem,
     feedBack,
 
@@ -17,24 +17,29 @@ export default function Livro({
 
     const aoPressionar = () => { navigation.navigate('Produto', feedBack) }
 
-    return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar}>
+    return <TouchableOpacity style={estilos.container} onPress={aoPressionar}>
         <Image source={{ uri: imagem }} accessibilityLabel={nome} style={estilos.imagemLivro} />
         <View style={estilos.conteudo}>
-            <View style={estilos.informacao}>
-                <Texto style={estilos.nome}>{nome}</Texto>
-                <Texto style={estilos.autor}>{autor}</Texto>
+            <Texto style={estilos.nome}>{nome}</Texto>
+            <Texto style={estilos.autor}>{autor}</Texto>
+            <View style={estilos.baixo}>
                 <Texto style={estilos.preco}>{Intl.NumberFormat('pt-BR', {
                     style: 'currency', currency: 'BRL'
                 }).format(preco)}</Texto>
-            </View>
-            {avaliacao ? (<View style={estilos.avaliacao}>
                 <Estrelas quant={avaliacao} />
-            </View>) : <View />}
+            </View>
         </View>
     </TouchableOpacity>
 }
 
 const estilos = StyleSheet.create({
+
+    container: {
+        flex: 1,
+        flexDirection: "row",
+        backgroundColor: 'white',
+        borderRadius: 15
+    },
 
     imagemLivro: {
         width: 60,
@@ -46,16 +51,10 @@ const estilos = StyleSheet.create({
 
     conteudo: {
         flex: 1,
-        flexDirection: "row",
         justifyContent: "space-between",
-        marginLeft: 8,
+        marginLeft: 16,
         marginVertical: 16,
         marginRight: 16,
-    },
-
-    informacao: {
-        justifyContent: "space-between",
-        marginVertical: 6,
     },
 
     nome: {
@@ -75,7 +74,8 @@ const estilos = StyleSheet.create({
         fontWeight: "bold",
         color: "#2A9F85",
     },
-    avaliacao: {
-        justifyContent: "flex-end",
-    },
+    baixo: {
+        flexDirection: 'row',
+        justifyContent: "space-between"
+    }
 })

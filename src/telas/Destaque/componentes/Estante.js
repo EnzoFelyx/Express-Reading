@@ -1,31 +1,30 @@
 import React from "react";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { destaque } from '../../../../config/text.json';
-import Livro from "../../../componentes/Livro";
+import Esboco from "../../../componentes/Esboco";
 import Texto from "../../../componentes/Texto";
 import useDestaque from "../../../hooks/useDestasque";
 
 export default function Estante({ topo: Topo }) {
-
-    const { titulo } = destaque.estante;
 
     const lista = useDestaque();
 
     const TopoLista = () => {
         return <>
             <Topo />
-            <Texto style={estilos.titulo}>{titulo}</Texto>
         </>
     }
 
     return <FlatList
         data={lista}
         renderItem={({ item }) => <View style={estilos.prateleira}>
-            <Livro {...item} feedBack={item} />
+            <Esboco {...item} feedBack={item} />
         </View>
         }
-        keyExtractor={({ nome }) => nome}
         ListHeaderComponent={TopoLista}
+        keyExtractor={({ nome }) => String(nome)}
+        numColumns={3}
+
     />
 }
 
@@ -37,13 +36,5 @@ const estilos = StyleSheet.create({
         marginTop: 16,
         fontWeight: "bold",
         color: "#464646",
-    },
-
-    prateleira: {
-        backgroundColor: "#F6F6F6",
-        marginVertical: 8,
-        marginHorizontal: 16,
-        borderRadius: 6,
-        elevation: 3,
     },
 })

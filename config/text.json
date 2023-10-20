@@ -14,11 +14,8 @@
     },
     "destaque": {
         "topo": {
-            "titulo": "Destaques",
-            "legenda": "Confira as obras que estão bombando"
-        },
-        "estante": {
-            "titulo": "Top 50"
+            "titulo": "Biblioteca",
+            "legenda": "Confira todas as nossas obras a venda"
         }
     },
     "explorar": {
