@@ -3,6 +3,7 @@ import Detalhes from "./componentes/Detalhes";
 import Topo from "./componentes/Topo";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Vazia from "./componentes/Vazia";
+import Total from "./componentes/Total";
 
 
 export default function Cesta() {
@@ -15,7 +16,7 @@ export default function Cesta() {
 
     else {
         return <GestureHandlerRootView>
-            <Detalhes topo={Topo} />
+            <Detalhes topo={Topo} total={Total}/>
         </GestureHandlerRootView>
     }
 }

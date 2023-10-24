@@ -6,25 +6,30 @@ https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
 
 https://cursos.alura.com.br/extra/alura-mais/como-utilizar-icones-e-animacoes-em-apps-com-react-native-c1227 animações
 
-
-AO clickar em algum genero abrir uma lista de livro de 3 colunas
-
-confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Destaques"])
-
-fazer tela Home
-
 mudar splash screen e icone no app.json
-
-fazer o Preço total mudar
 
 animation discord
 
-ao apagar refrash na lista
+feedback animado quando adicionar a cesta
 
-antes de adicionar verificar se o item está na lista, se estiver aparecer a opção de tirar invés de adicionar.
+fazer api via git
 
-fazer tela de home
+
+
+
 
 mudar método de excluir
 
+ao apagar refrash na lista de cestas
+
+confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Biblioteca"])
+
+criar tela vazia
+
+antes de adicionar verificar se o item está na lista, se estiver aparecer a opção de tirar invés de adicionar.
+
 https://www.npmjs.com/package/react-native-skeleton-content
+
+imagem com legenda para iten nao encotrado (figma curso)
+
+fazer tela Home

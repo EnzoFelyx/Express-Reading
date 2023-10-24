@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 import Input from "../../../componentes/Input";
 import Texto from '../../../componentes/Texto';
@@ -11,24 +11,30 @@ export default function Item({
     preco,
     imagem,
     feedBack,
-
+    updateTotalPrice,
+    itemTotals,
+    setItemTotals,
 }) {
     const navigation = useNavigation()
 
-    const aoPressionar = () => { navigation.navigate('Produto', feedBack) }
+    const aoPressionar = () => {
+        navigation.navigate('Produto', feedBack)
+    }
 
     const [quant, setQuant] = useState(1);
-
     const [total, setTotal] = useState(preco);
+
+    useEffect(() => {
+        const newTotal = quant * preco;
+        setTotal(newTotal);
+        itemTotals[nome] = newTotal;
+        setItemTotals({ ...itemTotals });
+        updateTotalPrice();
+    }, [quant]);
 
     const atualizaQuantTotal = (novaQuant) => {
         setQuant(novaQuant);
-        calculaTotal(novaQuant)
     }
-    
-    const calculaTotal = (novaQuant) => {
-        setTotal(novaQuant * preco);
-    } 
 
     return <TouchableOpacity style={{ flexDirection: "row", backgroundColor: 'white' }} onPress={aoPressionar} >
         <Image source={{ uri: imagem }} accessibilityLabel={nome} style={estilos.imagemLivro} />

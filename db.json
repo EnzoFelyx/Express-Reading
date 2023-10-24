@@ -705,16 +705,8 @@
   ],
   "cesta": [
     {
-      "idLivro": 3,
-      "id": 3
-    },
-    {
-      "idLivro": 5,
-      "id": 4
-    },
-    {
       "idLivro": 6,
-      "id": 5
+      "id": 4
     }
   ]
 }
