@@ -6,8 +6,6 @@ import { cesta } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 
 export default function Total({totalPrice}) {
-
-    console.log(totalPrice)
     
     const navigation = useNavigation();
 
