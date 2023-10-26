@@ -9,22 +9,22 @@ import Item from "./Item";
 
 export default function Detalhes({ topo: Topo, total: Total }) {
     const lista = useEstoque();
-    
+
     const [totalPrice, setTotalPrice] = useState(0);
     const [itemTotals, setItemTotals] = useState({});
     const [livros, setLivros] = useState([]);
-    
+
     useEffect(() => {
         if (lista.length > 0) {
             setLivros(lista);
             updateTotalPrice();
         }
     }, [lista]);
-    
+
     useEffect(() => {
         updateTotalPrice();
     }, [lista, itemTotals]);
-    
+
     async function handleDelete(id, price) {
         const resultado = await deletarLivroCesta(id);
         if (resultado === "sucesso") {
@@ -37,12 +37,12 @@ export default function Detalhes({ topo: Topo, total: Total }) {
             Alert.alert("Erro ao retirar livro da cesta");
         }
     }
-    
+
     const updateTotalPrice = () => {
         const total = Object.values(itemTotals).reduce((acc, curr) => acc + curr, 0);
         setTotalPrice(total);
     }
-    
+
     const TopoLista = () => {
         return (
             <SafeAreaView>
@@ -51,7 +51,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
             </SafeAreaView>
         )
     }
-    
+
     const RightActions = (progress, dragX) => {
         const scale = dragX.interpolate({
             inputRange: [-100, 0],
@@ -64,7 +64,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
             </Animated.View>
         </View >
     }
-    
+
     return (
         <FlatList
             data={livros}
@@ -79,7 +79,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
                     />
                 </Swipeable>
             )}
-            keyExtractor={({ nome }) => nome}   
+            keyExtractor={({ nome }) => nome}
             ListHeaderComponent={TopoLista}
             removeClippedSubviews={false}
         />

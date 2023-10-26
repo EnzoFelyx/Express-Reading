@@ -48,3 +48,18 @@ export async function deletarLivroCesta(idLivro) {
         return 'erro'
     }
 }
+
+export async function buscaCesta(idLivro) {
+
+    const resultadoCesta = await api.get(`/cesta`);
+    const cesta = resultadoCesta.data;
+    const itemBuscado = cesta.find(item => item.idLivro === idLivro);
+
+    if (itemBuscado) {
+        return 'encontrado'
+    }
+    else {
+        return false
+    }
+}
+

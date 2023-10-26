@@ -1,39 +1,49 @@
-refatorar código otimizando estilos e componentes.
 
-usar useReduce para avaliar livros na tela de livro-info
+Version 1.0:
 
-https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
+    fazer tela Home
 
-https://cursos.alura.com.br/extra/alura-mais/como-utilizar-icones-e-animacoes-em-apps-com-react-native-c1227 animações
+    criar tela vazia
 
-mudar splash screen e icone no app.json
+    confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Biblioteca"])
 
-animation discord
+    https://www.npmjs.com/package/react-native-skeleton-content
 
-feedback animado quando adicionar a cesta
-
-fazer api via git
-
-fazer versonização para english
-
-testar em tamanhos de telas diferentes / iOS
-
-Upar no vercel
+    antes de adicionar verificar se o item está na lista, se estiver aparecer a opção de tirar invés de adicionar.
 
 
+    Version 1.5:
 
-subtrair preço com base na quantidade do livro excluido
+        fazer versonização para english
 
-colocar total de livros na cesta do lado de titulo 'Livros da cesta'
+        mudar splash screen e icone no app.json
 
-antes de adicionar verificar se o item está na lista, se estiver aparecer a opção de tirar invés de adicionar.
+        refatorar código otimizando estilos e componentes.
 
-https://www.npmjs.com/package/react-native-skeleton-content
+        fazer api via git
 
-imagem com legenda para iten nao encotrado (figma curso)
+        Upar no vercel
+        
 
-confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Biblioteca"])
+------------------------------------------------------------------------------------------------------------------------------------------------
 
-criar tela vazia
 
-fazer tela Home
+Version 2.0:
+
+    imagem com legenda para iten nao encotrado (figma curso)
+
+    colocar total de livros na cesta do lado de titulo 'Livros da cesta'
+
+    subtrair preço com base na quantidade do livro excluido (colocar quantidade de volta)
+
+    testar em tamanhos de telas diferentes / iOS
+
+    feedback animado quando adicionar a cesta
+
+    animation discord
+
+    https://cursos.alura.com.br/extra/alura-mais/como-utilizar-icones-e-animacoes-em-apps-com-react-native-c1227 animações
+
+    https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
+
+    usar useReduce para avaliar livros na tela de livro-info

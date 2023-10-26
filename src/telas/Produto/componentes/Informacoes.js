@@ -1,38 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert, StyleSheet, TouchableOpacity, View } from "react-native";
 import Texto from "../../../componentes/Texto";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Icones from "../../../componentes/Icones";
-import { salvarCesta } from "../../../services/requests/carrinho";
+import { buscaCesta } from "../../../services/requests/carrinho";
+import Adicionar from "./Adicionar";
 
 export default function Informacoes() {
 
-    const navigation = useNavigation();
+    const [verificaResultado, setVerificaResultado] = useState();
 
     const route = useRoute();
 
     const { preco, descricao } = route.params
-
-    async function salvar() {
-
-        const resultado = await salvarCesta(
-            route.params.id,
-        )
-
-        if (resultado === 'sucesso') {
-            Alert.alert("Livro adicionado na cesta");
-            navigation.goBack();
-        }
-        else {
-            Alert.alert("Erro ao adicionar livro a cesta");
-        }
-    }
 
     const quantParcela = 6;
 
     const parcelas = preco / quantParcela;
 
     const parcela = parcelas.toFixed(2)
+
+    async function verifica() {
+        const resultado = await buscaCesta(route.params.id);
+        if (resultado === 'encontrado') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    useEffect(() => {
+        async function fetchData() {
+            const resultado = await verifica();
+            setVerificaResultado(resultado);
+        }
+        fetchData();
+    }, );
 
     return <>
         <View style={estilos.informacoes}>
@@ -41,16 +44,15 @@ export default function Informacoes() {
                 <Texto style={estilos.subtitle}>Descrição</Texto>
                 <Texto style={estilos.texto}>{descricao}</Texto>
             </View>
-            <TouchableOpacity style={estilos.botaoCaixa} onPress={salvar}>
+            <View style={estilos.botaoCaixa}>
+
                 <Texto style={estilos.preco}>{Intl.NumberFormat('pt-BR', {
                     style: 'currency', currency: 'BRL'
                 }).format(preco)}</Texto>
-                <View style={estilos.comprar}>
-                    <View style={{ alignSelf: "center", marginRight: 10 }}>
-                        <Icones icone={'shopping-basket-add'} familia={'Fontisto'} tipo={'capa'} cor={'#FFFF'} interagivel={false} />
-                    </View>
-                </View>
-            </TouchableOpacity>
+
+                <Adicionar parametro={verificaResultado} id={route.params.id} />
+
+            </View>
         </View>
     </>
 }
