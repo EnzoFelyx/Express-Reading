@@ -1,13 +1,35 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { cesta } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
+import { resetarCesta } from "../../../services/requests/carrinho";
 
-export default function Total({totalPrice}) {
-    
+export default function Total({ totalPrice }) {
+
     const navigation = useNavigation();
+
+    const aoPressionar = () => {
+        Alert.alert('Finalizar Compra', 'Tem certeza que deseja finalizar sua compra?', [
+            {
+                text: 'Cancelar',
+
+            },
+            {
+                text: 'OK',
+                onPress: async () => {
+                    const resultado = await resetarCesta();
+                    if (resultado === "sucesso") {
+                        navigation.navigate('FeedBack')
+                    } else {
+                        Alert.alert("Erro ao retirar livro da cesta");
+                    }
+
+                }
+            }
+        ])
+    }
 
     const { nome, descricao, botao } = cesta.detalhes;
 
@@ -24,7 +46,7 @@ export default function Total({totalPrice}) {
             </Texto>
             <TouchableOpacity
                 style={estilos.botaoCaixa}
-                onPress={() => navigation.navigate('Home')}>
+                onPress={aoPressionar}>
                 <Texto style={estilos.botaoTexto}>{botao}</Texto>
             </TouchableOpacity>
             <Texto style={estilos.itenTitulo}>{titulo}</Texto>

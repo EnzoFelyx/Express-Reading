@@ -63,3 +63,14 @@ export async function buscaCesta(idLivro) {
     }
 }
 
+export async function resetarCesta() {
+    try {
+        await api.delete('/cesta', {data});
+        return 'sucesso'
+    }
+    catch (error) {
+        console.log(error)
+        return 'erro'
+    }
+}
+

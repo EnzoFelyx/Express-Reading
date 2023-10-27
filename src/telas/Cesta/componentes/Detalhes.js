@@ -69,7 +69,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
         <FlatList
             data={livros}
             renderItem={({ item }) => (
-                <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => handleDelete(item.id, item.preco)}>
+                <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => handleDelete(item.id, itemTotals[item.nome])}>
                     <Item
                         {...item}
                         feedBack={item}

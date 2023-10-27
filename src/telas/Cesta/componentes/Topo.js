@@ -1,6 +1,5 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet } from "react-native";
-
 import { cesta } from '../../../../config/text.json';
 import topo from "../../../../assets/topo.png";
 import Texto from "../../../componentes/Texto";

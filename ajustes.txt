@@ -5,16 +5,13 @@ Version 1.0:
 
     criar tela vazia
 
-    confirmar compra ir para uma tela e aparecer dois botões (Home, continuar comprando [ir para "Biblioteca"])
+    apagar tudo quando finalizar a compra
 
     https://www.npmjs.com/package/react-native-skeleton-content
 
-    antes de adicionar verificar se o item está na lista, se estiver aparecer a opção de tirar invés de adicionar.
-
-
     Version 1.5:
 
-        fazer versonização para english
+        fazer versonização para english i8n
 
         mudar splash screen e icone no app.json
 
@@ -34,8 +31,6 @@ Version 2.0:
 
     colocar total de livros na cesta do lado de titulo 'Livros da cesta'
 
-    subtrair preço com base na quantidade do livro excluido (colocar quantidade de volta)
-
     testar em tamanhos de telas diferentes / iOS
 
     feedback animado quando adicionar a cesta
@@ -47,3 +42,5 @@ Version 2.0:
     https://www.youtube.com/watch?v=QNYgJiYmJhc icone de voltar para topo da lista
 
     usar useReduce para avaliar livros na tela de livro-info
+
+    duas exclusão com quantidade ta voltando o preço antigo
