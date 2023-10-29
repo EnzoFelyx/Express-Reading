@@ -7,22 +7,29 @@ import useEstoque from "../../../hooks/useEstoque";
 import { deletarLivroCesta } from "../../../services/requests/carrinho";
 import Item from "./Item";
 
-export default function Detalhes({ topo: Topo, total: Total }) {
+export default function Detalhes({ topo: Topo, total: Total, vazia: Vazia }) {
     const lista = useEstoque();
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [itemTotals, setItemTotals] = useState({});
     const [livros, setLivros] = useState([]);
+    
 
     useEffect(() => {
         if (lista.length > 0) {
             setLivros(lista);
             updateTotalPrice();
         }
+        else {
+            setLivros(lista)
+            setTotalPrice(0)
+        }
     }, [lista]);
 
     useEffect(() => {
-        updateTotalPrice();
+        if (lista.length > 0) {
+            updateTotalPrice();
+        }
     }, [lista, itemTotals]);
 
     async function handleDelete(id, price) {
@@ -65,25 +72,30 @@ export default function Detalhes({ topo: Topo, total: Total }) {
         </View >
     }
 
-    return (
-        <FlatList
-            data={livros}
-            renderItem={({ item }) => (
-                <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => handleDelete(item.id, itemTotals[item.nome])}>
-                    <Item
-                        {...item}
-                        feedBack={item}
-                        updateTotalPrice={updateTotalPrice}
-                        itemTotals={itemTotals}
-                        setItemTotals={setItemTotals}
-                    />
-                </Swipeable>
-            )}
-            keyExtractor={({ nome }) => nome}
-            ListHeaderComponent={TopoLista}
-            removeClippedSubviews={false}
-        />
-    )
+    if (livros.length === 0) {
+        return <Vazia />
+    }
+    else {
+        return (
+            <FlatList
+                data={livros}
+                renderItem={({ item }) => (
+                    <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => handleDelete(item.id, itemTotals[item.nome])}>
+                        <Item
+                            {...item}
+                            feedBack={item}
+                            updateTotalPrice={updateTotalPrice}
+                            itemTotals={itemTotals}
+                            setItemTotals={setItemTotals}
+                        />
+                    </Swipeable>
+                )}
+                keyExtractor={({ nome }) => nome}
+                ListHeaderComponent={TopoLista}
+                removeClippedSubviews={false}
+            />
+        )
+    }
 }
 
 const estilos = StyleSheet.create({

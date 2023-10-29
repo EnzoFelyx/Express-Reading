@@ -16,7 +16,7 @@ export default function Cesta() {
 
     else {
         return <GestureHandlerRootView>
-            <Detalhes topo={Topo} total={Total}/>
+            <Detalhes topo={Topo} total={Total} vazia={Vazia}/>
         </GestureHandlerRootView>
     }
 }

@@ -5,13 +5,13 @@ Version 1.0:
 
     criar tela vazia
 
-    apagar tudo quando finalizar a compra
-
     https://www.npmjs.com/package/react-native-skeleton-content
 
     Version 1.5:
 
         fazer versonização para english i8n
+
+        fazer monitoramento de perfomace
 
         mudar splash screen e icone no app.json
 
@@ -19,8 +19,9 @@ Version 1.0:
 
         fazer api via git
 
-        Upar no vercel
-        
+        Upar no vercel       
+
+        Baixar no celular 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -31,7 +32,7 @@ Version 2.0:
 
     colocar total de livros na cesta do lado de titulo 'Livros da cesta'
 
-    testar em tamanhos de telas diferentes / iOS
+    portabilidade de telas e de plataformas
 
     feedback animado quando adicionar a cesta
 
