@@ -17,10 +17,7 @@ export default function Estante({ topo: Topo }) {
 
     return <FlatList
         data={lista}
-        renderItem={({ item }) => <View style={estilos.prateleira}>
-            <Esboco {...item} feedBack={item} />
-        </View>
-        }
+        renderItem={({ item }) => <Esboco {...item} feedBack={item} />}
         ListHeaderComponent={TopoLista}
         keyExtractor={({ nome }) => String(nome)}
         numColumns={3}
