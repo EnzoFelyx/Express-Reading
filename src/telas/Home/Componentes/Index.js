@@ -12,12 +12,14 @@ export default function Trends({ topo: Topo, trends: Trends }) {
 
     const pista = useDestaque();
 
-    return <View style={{flex:1}}>
+    return <ScrollView>
         <Topo />
-        <Trends titulo={'Aclamados pelos jovens e crianças'} lista={lista} />
-        <Trends titulo={'ola'} lista={quista} />
-        <Trends titulo={'boa'} lista={pista} />
-    </View>
+        <View style={{flex: 1, marginTop: 16}}>
+        <Trends titulo={'Os nossos melhores'} lista={lista} />
+        <Trends titulo={'Promoção'} lista={quista} />
+        <Trends titulo={'Os mais lidos entre os jovens'} lista={pista} />
+        </View>
+    </ScrollView>
 
 }
 

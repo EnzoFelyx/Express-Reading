@@ -8,10 +8,11 @@ export default function Trends({ titulo, lista }) {
     return <View>
         <Texto style={estilos.titulo}>{titulo}</Texto>
         <FlatList
+            nestedScrollEnabled={true}
             data={lista}
             renderItem={({ item }) => <Vitrine {...item} feedBack={item} />}
             keyExtractor={({ nome }) => String(nome)}
-            horizontal={true}
+            horizontal
             style={{ marginRight: 10, }}
         />
     </View>
