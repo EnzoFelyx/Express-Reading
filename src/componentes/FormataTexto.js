@@ -7,7 +7,6 @@ export default function FormataTexto({ texto, maxLinhas, estilos }) {
 
     if (linhas.length > maxLinhas) {
         const formata = linhas.slice(0, maxLinhas).join(' ') + '...';
-        console.log(formata)
         return <Texto style={estilos}>{formata}</Texto>;
     }
     return <Texto style={estilos}>{texto}</Texto>;

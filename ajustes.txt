@@ -1,8 +1,6 @@
 
 Version 1.0:
 
-    fazer tela Home
-
     criar tela vazia
 
     https://www.npmjs.com/package/react-native-skeleton-content
@@ -11,7 +9,7 @@ Version 1.0:
 
         fazer versonização para english i8n
 
-        fazer monitoramento de perfomace
+        fazer monitoramento de perfomace (monitorar os useEffect)
 
         mudar splash screen e icone no app.json
 

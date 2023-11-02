@@ -21,3 +21,4 @@ export default function useEstoque() {
 
     return lista;
 }
+

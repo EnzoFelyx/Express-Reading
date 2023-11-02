@@ -1,26 +1,36 @@
 import React from "react";
 import { FlatList, ScrollView, StyleSheet, View } from "react-native";
-import Vitrine from "./Vitrine";
-import Texto from "../../../componentes/Texto";
-import useDestaque from "../../../hooks/useDestasque";
+import { useBarato, useJovens, useMelhores } from "../../../hooks/useHome";
 
-export default function Trends({ topo: Topo, trends: Trends }) {
+export default function Index({ topo: Topo, trends: Trends }) {
 
-    const lista = useDestaque();
+    const melhores = useMelhores();
 
-    const quista = useDestaque();
+    const barato = useBarato();
 
-    const pista = useDestaque();
+    const jovens = useJovens();
 
-    return <ScrollView>
-        <Topo />
-        <View style={{flex: 1, marginTop: 16}}>
-        <Trends titulo={'Os nossos melhores'} lista={lista} />
-        <Trends titulo={'Promoção'} lista={quista} />
-        <Trends titulo={'Os mais lidos entre os jovens'} lista={pista} />
-        </View>
-    </ScrollView>
-
+    return (
+        <FlatList
+            data={[melhores, barato, jovens]}
+            keyExtractor={(item, index) => index.toString()}
+            ListHeaderComponent={() => <Topo />}
+            renderItem={({ item, index }) => (
+                <View style={{ flex: 1, marginTop: index === 0 ? 16 : 0 }}>
+                    <Trends
+                        titulo={
+                            index === 0
+                                ? 'Os nossos melhores (5☆)'
+                                : index === 1
+                                    ? 'Promoção (até R$29,99)'
+                                    : 'HQs mais vendidas'
+                        }
+                        lista={item}
+                    />
+                </View>
+            )}
+        />
+    );
 }
 
 const estilos = StyleSheet.create({
