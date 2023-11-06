@@ -8,10 +8,14 @@ export default function useLoading() {
         async function fetchDataFromAPI() {
             try {
                 await api();
-                setLoading(false);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 2000); // 2 segundos para mostrar o skeleton
             } catch (error) {
                 console.error("Erro ao buscar dados da API:", error);
-                setLoading(false);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 2000);
             }
         }
 

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Dimensions, ScrollView, StyleSheet, View, Animated } from "react-native";
+import { Animated, Dimensions, ScrollView, StyleSheet, View } from "react-native";
 import Texto from "../componentes/Texto";
 const width = Dimensions.get('screen').width;
 
-export default function FakeHome({ visible, children }) {
+export default function FakeBiblioteca({ visible, children }) {
 
     const AnimatedValue = new Animated.Value(0);
 
@@ -83,23 +83,24 @@ export default function FakeHome({ visible, children }) {
                             }}>
                         </Animated.View>
                     </View>
+                    <View style={estilos.sobre}>
+                        <Animated.View
+                            style={{
+                                width: '30%',
+                                height: '100%',
+                                opacity: 0.4,
+                                backgroundColor: "#FFF",
+                                transform: [{ translateX: translateX2 }],
+                            }}>
+                        </Animated.View>
+                    </View>
                 </View>
             </View>
         </View>
     </>
 
     const SkeletonPrateleira = () => <>
-        <View style={estilos.subtitulo}>
-            <Animated.View
-                style={{
-                    width: '30%',
-                    height: '100%',
-                    opacity: 0.4,
-                    backgroundColor: "#FFF",
-                    transform: [{ translateX: translateX3 }],
-                }}>
-            </Animated.View>
-        </View>
+
         <View style={{ flexDirection: "row" }}>
             <SkeletonLivro />
             <SkeletonLivro />
@@ -108,10 +109,11 @@ export default function FakeHome({ visible, children }) {
     </>
 
     if (visible) {
+
         return <ScrollView>
 
             <View style={estilos.topo}>
-                <Texto style={estilos.titulo}>Home</Texto>
+                <Texto style={estilos.titulo}>Biblioteca</Texto>
                 <View style={estilos.legenda}>
                     <Animated.View
                         style={{
@@ -123,29 +125,6 @@ export default function FakeHome({ visible, children }) {
                         }}>
                     </Animated.View>
                 </View>
-                <View style={estilos.sublegenda}>
-                    <Animated.View
-                        style={{
-                            width: '30%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX2 }],
-                        }}>
-                    </Animated.View>
-                </View>
-            </View>
-
-            <View style={estilos.busca}>
-                <Animated.View
-                    style={{
-                        width: '30%',
-                        height: '100%',
-                        opacity: 0.4,
-                        backgroundColor: "#FFF",
-                        transform: [{ translateX: translateX3 }],
-                    }}>
-                </Animated.View>
             </View>
 
             <SkeletonPrateleira />
@@ -157,12 +136,9 @@ export default function FakeHome({ visible, children }) {
 
         </ScrollView>
     }
-
-    return (
-        <>
-            {children}
-        </>
-    );
+    return <>
+        {children}
+    </>
 
 }
 
@@ -181,22 +157,6 @@ const estilos = StyleSheet.create({
         overflow: "hidden",
     },
 
-    busca: {
-        backgroundColor: "#C2C2C2",
-        height: 50,
-        borderRadius: 8,
-        margin: 12,
-        overflow: "hidden",
-    },
-
-    subtitulo: {
-        backgroundColor: "#C2C2C2",
-        height: 30,
-        borderRadius: 5,
-        margin: 12,
-        width: width/1.5,
-        overflow: "hidden",
-    },
     legenda: {
         backgroundColor: "#C2C2C2",
         height: 22,
@@ -205,20 +165,11 @@ const estilos = StyleSheet.create({
         marginTop: 8
     },
 
-    sublegenda: {
-        backgroundColor: "#C2C2C2",
-        height: 22,
-        borderRadius: 5,
-        marginTop: 8,
-        overflow: "hidden",
-        width: width / 2
-    },
-
     sobre: {
         height: 15,
         backgroundColor: "#C2C2C2",
         borderRadius: 5,
-        marginBottom: 5,
+        marginTop: 10,
         marginHorizontal: 5,
         overflow: "hidden",
     },
@@ -233,7 +184,8 @@ const estilos = StyleSheet.create({
         borderRadius: 8,
         marginLeft: 0.025 * width,
         marginBottom: 10,
-        overflow: "hidden"
+        overflow: "hidden",
+        paddingBottom: 10
     },
 
     imagemLivro: {
@@ -244,5 +196,6 @@ const estilos = StyleSheet.create({
         marginVertical: 8,
         alignSelf: "center",
         backgroundColor: "#C2C2C2",
+
     },
 })

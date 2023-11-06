@@ -89,7 +89,7 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "sword",
             },
-            nomeGenero: "Mangás"
+            nomeGenero: "Mangá"
         },
 
         {

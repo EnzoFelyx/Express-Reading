@@ -12,8 +12,6 @@ export default function ExibirGeneros() {
 
     const { nomeGenero } = route.params;
 
-    console.log(nomeGenero)
-
     const lista = useCategoria(nomeGenero);
 
     const TopoLista = () => {
