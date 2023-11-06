@@ -4,19 +4,19 @@ import Topo from "./componentes/Topo";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Vazia from "./componentes/Vazia";
 import Total from "./componentes/Total";
+import FakeCesta from "../../skeleton/FakeCesta";
+import useLoading from "../../hooks/useLoading";
 
 
 export default function Cesta() {
 
-    const MinhaCesta = 1;
+    const loading = useLoading();
 
-    if (MinhaCesta === 0) {
-        return <Vazia />
-    }
-
-    else {
-        return <GestureHandlerRootView>
-            <Detalhes topo={Topo} total={Total} vazia={Vazia}/>
-        </GestureHandlerRootView>
-    }
+    return <>
+        <FakeCesta visible={loading}>
+            <GestureHandlerRootView>
+                <Detalhes topo={Topo} total={Total} />
+            </GestureHandlerRootView>
+        </FakeCesta>
+    </>
 }

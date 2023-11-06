@@ -7,13 +7,13 @@ import useEstoque from "../../../hooks/useEstoque";
 import { deletarLivroCesta } from "../../../services/requests/carrinho";
 import Item from "./Item";
 
-export default function Detalhes({ topo: Topo, total: Total, vazia: Vazia }) {
+export default function Detalhes({ topo: Topo, total: Total }) {
     const lista = useEstoque();
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [itemTotals, setItemTotals] = useState({});
     const [livros, setLivros] = useState([]);
-    
+
 
     useEffect(() => {
         if (lista.length > 0) {
@@ -72,30 +72,26 @@ export default function Detalhes({ topo: Topo, total: Total, vazia: Vazia }) {
         </View >
     }
 
-    if (livros.length === 0) {
-        return <Vazia />
-    }
-    else {
-        return (
-            <FlatList
-                data={livros}
-                renderItem={({ item }) => (
-                    <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => handleDelete(item.id, itemTotals[item.nome])}>
-                        <Item
-                            {...item}
-                            feedBack={item}
-                            updateTotalPrice={updateTotalPrice}
-                            itemTotals={itemTotals}
-                            setItemTotals={setItemTotals}
-                        />
-                    </Swipeable>
-                )}
-                keyExtractor={({ nome }) => nome}
-                ListHeaderComponent={TopoLista}
-                removeClippedSubviews={false}
-            />
-        )
-    }
+
+    return (
+        <FlatList
+            data={livros}
+            renderItem={({ item }) => (
+                <Swipeable renderRightActions={RightActions} onSwipeableOpen={() => handleDelete(item.id, itemTotals[item.nome])}>
+                    <Item
+                        {...item}
+                        feedBack={item}
+                        updateTotalPrice={updateTotalPrice}
+                        itemTotals={itemTotals}
+                        setItemTotals={setItemTotals}
+                    />
+                </Swipeable>
+            )}
+            keyExtractor={({ nome }) => nome}
+            ListHeaderComponent={TopoLista}
+            removeClippedSubviews={false}
+        />
+    )
 }
 
 const estilos = StyleSheet.create({
