@@ -3,21 +3,19 @@ Version 1.0:
 
     criar tela vazia
 
-    Version 1.5:
+    fazer versonização para english i8n
 
-        fazer versonização para english i8n
+    refatorar código otimizando estilos e componentes.
 
-        fazer monitoramento de perfomace (monitorar os useEffect)
+    fazer monitoramento de perfomace (monitorar os useEffect)
 
-        mudar splash screen e icone no app.json
+    fazer api via git
 
-        refatorar código otimizando estilos e componentes.
+    mudar splash screen e icone no app.json
 
-        fazer api via git
+    Upar no vercel       
 
-        Upar no vercel       
-
-        Baixar no celular 
+    Baixar no celular 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,5 +39,7 @@ Version 2.0:
     usar useReduce para avaliar livros na tela de livro-info
 
     duas exclusão com quantidade ta voltando o preço antigo
+
+    optimizar tela de cesta
 
     layoutanimation
