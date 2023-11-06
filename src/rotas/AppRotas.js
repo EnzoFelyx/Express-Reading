@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import LivroRotas from "./LivroRotas";
 import CestaRotas from "./CestaRotas";
-import DestaqueRotas from "./DestaqueRotas";
+import BibliotecaRotas from "./BibliotecaRotas";
 import Icones from "../componentes/Icones";
 import ExplorarRotas from "./ExplorarRotas";
 
@@ -38,7 +38,7 @@ export default function AppRotas() {
             tabBarHideOnKeyboard: true,
         })}>
             <Tab.Screen name='Home' component={LivroRotas} />
-            <Tab.Screen name='Biblioteca' component={DestaqueRotas} />
+            <Tab.Screen name='Biblioteca' component={BibliotecaRotas} />
             <Tab.Screen name='Explorar' component={ExplorarRotas} />
             <Tab.Screen name='Carrinho' component={CestaRotas} />
         </Tab.Navigator>

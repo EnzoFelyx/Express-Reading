@@ -1,0 +1,17 @@
+tecnologia usadas: react-native react
+
+flatlist
+useEffect
+useStates
+skeleton
+android studio
+axios
+vs code
+insomia
+animated
+gesture handler 
+hooks
+navegator (tab, stack)
+github
+
+

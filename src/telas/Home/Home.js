@@ -4,21 +4,17 @@ import Topo from './Componentes/Topo'
 import Trends from './Componentes/Trends'
 import Index from './Componentes/Index'
 import FakeHome from "../../skeleton/FakeHome";
+import useLoading from "../../hooks/useLoading";
 
 export default function Home() {
 
-    const [loading, setLoading] = useState(true);
+    const loading = useLoading();
 
-    useEffect(() => {
-        let timer = setInterval(() => {
-            setLoading(false)
-        }, 3000)
-    }, [])
-
-
-    return <>
-        <FakeHome visible={loading}>
-            <Index topo={Topo} trends={Trends} />
-        </FakeHome>
-    </>
+    return (
+        <>
+            <FakeHome visible={loading}>
+                <Index topo={Topo} trends={Trends} />
+            </FakeHome>
+        </>
+    );
 }

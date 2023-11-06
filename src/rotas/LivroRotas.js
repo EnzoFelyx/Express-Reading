@@ -1,6 +1,5 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import Produto from '../telas/Produto/Produto'
 import Home from "../telas/Home/Home";
 import ExibirGeneros from "../telas/Explorar/componentes/ExibirGenero";
