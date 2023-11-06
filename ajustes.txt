@@ -3,8 +3,6 @@ Version 1.0:
 
     criar tela vazia
 
-    https://www.npmjs.com/package/react-native-skeleton-content
-
     Version 1.5:
 
         fazer versonização para english i8n
@@ -43,3 +41,5 @@ Version 2.0:
     usar useReduce para avaliar livros na tela de livro-info
 
     duas exclusão com quantidade ta voltando o preço antigo
+
+    layoutanimation
