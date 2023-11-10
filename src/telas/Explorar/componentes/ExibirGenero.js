@@ -3,26 +3,25 @@ import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
-import Voltar from "../../../componentes/Voltar";
 import useCategoria from "../../../hooks/useCategoria";
+import Voltar from "../../../componentes/Voltar";
 
 export default function ExibirGeneros() {
 
     const route = useRoute();
 
-    const { nomeGenero } = route.params;
+    const { nomeGeneroBr } = route.params;
 
-    const lista = useCategoria(nomeGenero);
+    const lista = useCategoria(nomeGeneroBr);
 
     const TopoLista = () => {
         return <>
             <View style={estilos.topo}>
-                <Texto style={estilos.titulo}>{nomeGenero}</Texto>
+                <Texto style={estilos.titulo}>{nomeGeneroBr}</Texto>
             </View>
             <Voltar />
         </>
     }
-
 
     return <FlatList
         data={lista}

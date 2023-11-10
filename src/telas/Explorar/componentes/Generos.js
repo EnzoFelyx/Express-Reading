@@ -14,7 +14,7 @@ export default function Genero({
 
     const navigation = useNavigation();
 
-    const aoPressionar = () => { navigation.navigate('ExibirGenero', { nomeGenero }) }
+    const aoPressionar = () => { navigation.navigate('ExibirGenero', { nomeGeneroBr }) }
 
     let { familia, nome } = { ...icon }
 
