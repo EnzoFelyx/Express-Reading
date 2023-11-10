@@ -8,7 +8,6 @@ import Dados from "./Dados";
 export default function Capa() {
 
     const route = useRoute();
-
     const { imagem, nome, autor, generos } = route.params
 
     return <>
@@ -21,7 +20,6 @@ export default function Capa() {
             <Texto style={estilos.titulo}>{nome}</Texto>
             <Texto style={estilos.autor}>{autor}</Texto>
         </View>
-
         <View style={{ alignItems: "center", }}>
             <View style={estilos.generos}>
                 {generos.map((genero, index) => (
@@ -30,7 +28,6 @@ export default function Capa() {
                     </TouchableOpacity>
                 ))}
             </View>
-
             <Estrelas editavel={true} grande={true} />
         </View>
     </>
@@ -38,8 +35,6 @@ export default function Capa() {
 
 
 const estilos = StyleSheet.create({
-
-
 
     capa: {
         marginLeft: 30,
@@ -67,10 +62,8 @@ const estilos = StyleSheet.create({
     },
 
     generos: {
-
         flexDirection: "row",
         marginVertical: 8,
-
         caixa: {
             lexDirection: "row",
             marginHorizontal: 12,
@@ -80,12 +73,10 @@ const estilos = StyleSheet.create({
             backgroundColor: "#FFFF",
             elevation: 3,
         },
-
         texto: {
             lineHeight: 24,
             fontWeight: "bold",
             color: "#919A9A",
-
         },
     },
 
@@ -94,5 +85,4 @@ const estilos = StyleSheet.create({
         marginTop: 6,
 
     },
-
 })

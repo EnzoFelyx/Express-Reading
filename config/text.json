@@ -4,15 +4,31 @@
             "titulo": "Detalhes da Cesta"
         },
         "detalhes": {
-            "nome": "Cesta de livros",
-            "descricao": "Confira abaixo seus livros selecionados abaixo antes de finalizar a sua compra:",
-            "botao": "Comprar"
+            "title": "Cesta de livros",
+            "description": "Confira abaixo seus livros selecionados abaixo antes de finalizar a sua compra:",
+            "buy": "Comprar",
+            "subtitle": "Livros da cesta"
         },
-        "itens": {
-            "titulo": "Livros da cesta"
+        "botao": {
+            "title": "Finalizar Compra",
+            "legenda": "Tem certeza que deseja finalizar sua compra?"
+        },
+        "warning": {
+            "warn": "Finalizar Compra",
+            "ask": "Tem certeza que deseja finalizar sua compra?",
+            "confirm": "OK",
+            "goback": "CANCELAR",
+            "wrong": "Erro ao retirar livro da cesta"
+        },
+        "feedBack":{
+            "title": "Pedido finalizado!",
+            "subtitle": "Parabéns!",
+            "thanku": "Agradecemos a sua preferência em escolher a nossa loja. Volte sempre!",
+            "biblioteca": "Continuar Comprando",
+            "home": "Voltar para Home"
         }
     },
-    "destaque": {
+    "biblioteca": {
         "topo": {
             "titulo": "Biblioteca",
             "legenda": "Confira todas as nossas obras a venda"
@@ -35,5 +51,21 @@
             "trend2": "Promoção (até R$29,99)",
             "trend3": "HQs mais vendidas"
         }
+    },
+    "produto": {
+        "title": "Detalhes do Livro",
+        "dados": {
+            "star": "Nota",
+            "pag": "Páginas",
+            "type": "Capa",
+            "language": "Idioma"
+        },
+        "warnings": {
+            "removed": "Livro retirado na cesta",
+            "removeError": "Erro ao retirar livro da cesta",
+            "add": "Livro adicionado na cesta",
+            "addError": "Erro ao adicionar livro a cesta"
+        },
+        "description": "Descrição"
     }
 }

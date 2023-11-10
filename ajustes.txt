@@ -5,8 +5,6 @@ Version 1.0:
 
     fazer versonização para english i8n
 
-    refatorar código otimizando estilos e componentes.
-
     fazer monitoramento de perfomace (monitorar os useEffect)
 
     fazer api via git
@@ -43,3 +41,5 @@ Version 2.0:
     optimizar tela de cesta
 
     layoutanimation
+
+    puxar pra cima atualiza a cesta

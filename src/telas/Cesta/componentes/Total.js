@@ -10,20 +10,24 @@ export default function Total({ totalPrice }) {
 
     const navigation = useNavigation();
 
+    const { title, description, buy, subtitle } = cesta.detalhes;
+
+    const {warn, ask, confirm, goback, wrong} = cesta.warning
+
     const aoPressionar = () => {
-        Alert.alert('Finalizar Compra', 'Tem certeza que deseja finalizar sua compra?', [
+        Alert.alert(warn, ask, [
             {
-                text: 'Cancelar',
+                text: goback,
 
             },
             {
-                text: 'OK',
+                text: confirm,
                 onPress: async () => {
                     const resultado = await resetarCesta();
                     if (resultado === "sucesso") {
                         navigation.navigate('FeedBack')
                     } else {
-                        Alert.alert("Erro ao retirar livro da cesta");
+                        Alert.alert(wrong);
                     }
 
                 }
@@ -31,14 +35,10 @@ export default function Total({ totalPrice }) {
         ])
     }
 
-    const { nome, descricao, botao } = cesta.detalhes;
-
-    const titulo = cesta.itens.titulo;
-
     return <SafeAreaView>
         <View style={estilos.cesta}>
-            <Texto style={estilos.nome}>{nome}</Texto>
-            <Texto style={estilos.descricao}>{descricao}</Texto>
+            <Texto style={estilos.nome}>{title}</Texto>
+            <Texto style={estilos.descricao}>{description}</Texto>
             <Texto style={estilos.preco}>
                 {Intl.NumberFormat('pt-BR', {
                     style: 'currency', currency: 'BRL'
@@ -47,13 +47,12 @@ export default function Total({ totalPrice }) {
             <TouchableOpacity
                 style={estilos.botaoCaixa}
                 onPress={aoPressionar}>
-                <Texto style={estilos.botaoTexto}>{botao}</Texto>
+                <Texto style={estilos.botaoTexto}>{buy}</Texto>
             </TouchableOpacity>
-            <Texto style={estilos.itenTitulo}>{titulo}</Texto>
+            <Texto style={estilos.itenTitulo}>{subtitle}</Texto>
         </View>
     </SafeAreaView>
 }
-
 
 const estilos = StyleSheet.create({
 
@@ -105,22 +104,4 @@ const estilos = StyleSheet.create({
         fontSize: 20,
         lineHeight: 32,
     },
-
-    RightActions: {
-
-        view: {
-            backgroundColor: "#FF0000",
-            justifyContent: 'center',
-            flex: 1,
-            alignItems: 'flex-end',
-        },
-
-        icone: {
-            fontSize: 30,
-            padding: 20,
-            color: '#FFFF',
-        }
-
-    },
-
 });

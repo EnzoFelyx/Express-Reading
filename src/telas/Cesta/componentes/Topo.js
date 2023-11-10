@@ -19,18 +19,18 @@ export default function Topo() {
 const estilos = StyleSheet.create({
 
     topo: {
-        height: (421 / 583) * width, // não pode ser tamanho fixo
+        height: (421 / 583) * width, 
         width: "100%",
     },
 
     titulo: {
-        color: "white", // cor da fonte
+        color: "white", 
         fontWeight: "bold",
-        fontSize: 16, // altura da font (conteúdo)
-        lineHeight: 26, // altura da linha (container)
+        fontSize: 16, 
+        lineHeight: 26, 
         padding: 16,
-        position: "absolute", // mantem posição absoluta para sobrepor a imagem
-        textAlign: "center", // deixa o conteúdo centralizado depenpendendo do "width"
-        width: "100%", // tamanho da linha na tela
+        position: "absolute", 
+        textAlign: "center",
+        width: "100%",
     },
 })

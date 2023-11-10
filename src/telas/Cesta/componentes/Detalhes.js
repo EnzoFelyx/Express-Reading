@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 import { Alert, Animated, FlatList, StyleSheet, View } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { produto } from '../../../../config/text.json';
 import Testando from "../../../componentes/teste";
 import useEstoque from "../../../hooks/useEstoque";
 import { deletarLivroCesta } from "../../../services/requests/carrinho";
 import Item from "./Item";
 
 export default function Detalhes({ topo: Topo, total: Total }) {
+
+    const { removed, removeError } = produto.warnings
+
     const lista = useEstoque();
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [itemTotals, setItemTotals] = useState({});
     const [livros, setLivros] = useState([]);
-
 
     useEffect(() => {
         if (lista.length > 0) {
@@ -35,13 +38,13 @@ export default function Detalhes({ topo: Topo, total: Total }) {
     async function handleDelete(id, price) {
         const resultado = await deletarLivroCesta(id);
         if (resultado === "sucesso") {
-            Alert.alert("Livro retirado na cesta");
+            Alert.alert(removed);
             const novaLista = livros.filter((livro) => livro.id !== id);
             setLivros(novaLista);
 
             setTotalPrice(totalPrice - price);
         } else {
-            Alert.alert("Erro ao retirar livro da cesta");
+            Alert.alert(removeError);
         }
     }
 

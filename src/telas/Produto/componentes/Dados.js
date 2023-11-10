@@ -1,50 +1,31 @@
 import { useRoute } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { produto } from '../../../../config/text.json';
 import Icones from '../../../componentes/Icones';
 import Texto from "../../../componentes/Texto";
 
 export default function Dados() {
 
-
     const route = useRoute();
+    
+    const { avaliacao, paginas, capa, lingua } = route.params;
+    const { star, pag, type, language } = produto.dados
 
-    const { avaliacao, paginas, capa, lingua} = route.params
+    const Infomation = ({ icone, cor, val, legend, family = null, }) => <View>
+        <View style={{ flexDirection: "row" }}>
+            <Icones familia={family} icone={icone} tipo={'capa'} cor={cor} />
+            <Texto style={estilos.titulo}>{val}</Texto>
+        </View>
+        <Texto style={estilos.subtitulo}>{legend}</Texto>
+    </View>
+
 
     return <View style={estilos.dados}>
-
-        <View>
-            <View style={{ flexDirection: "row" }}>
-                <Icones icone={'star'} tipo={'capa'} cor={"#FEB555"} />
-                <Texto style={estilos.titulo}>{avaliacao}</Texto>
-            </View>
-            <Texto style={estilos.subtitulo}>Nota</Texto>
-        </View>
-
-        <View>
-            <View style={{ flexDirection: "row" }}>
-                <Icones icone={'book-open-page-variant-outline'} tipo={'capa'} cor={"#D672CF"} />
-                <Texto style={estilos.titulo}>{paginas}</Texto>
-            </View>
-            <Texto style={estilos.subtitulo}>Páginas</Texto>
-        </View>
-
-        <View>
-            <View style={{ flexDirection: "row" }}>
-                <Icones icone={'book-outline'} tipo={'capa'} cor={"#EC7A7A"} />
-                <Texto style={estilos.titulo}>{capa}</Texto>
-            </View>
-            <Texto style={estilos.subtitulo}>Capa</Texto>
-        </View>
-
-        <View>
-            <View style={{ flexDirection: "row" }}>
-                <Icones familia={'Fontisto'} icone={'world-o'} tipo={'capa'} cor={"#2590C8"} />
-                <Texto style={estilos.titulo}>{lingua}</Texto>
-            </View>
-            <Texto style={estilos.subtitulo}>Idioma</Texto>
-        </View>
-
+        <Infomation icone={'star'} cor={"#FEB555"} val={avaliacao} legend={star} />
+        <Infomation icone={'book-open-page-variant-outline'} cor={"#D672CF"} val={paginas} legend={pag} />
+        <Infomation icone={'book-outline'} cor={"#EC7A7A"} val={capa} legend={type} />
+        <Infomation icone={'world-o'} cor={"#2590C8"} val={lingua} legend={language} family={'Fontisto'} />
     </View>
 }
 
