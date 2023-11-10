@@ -38,6 +38,11 @@ export default function Icones({ familia, icone, tipo, cor, interagivel = true }
                     estilo: estilos.explorar,
                 }
                 break;
+            case "cesta":
+                return {
+                    estilo: estilos.cesta,
+                }
+                break;
 
             default:
                 break;
@@ -66,6 +71,11 @@ const estilos = StyleSheet.create({
         fontSize: 25,
         marginLeft: 12,
         position: 'absolute',
+    },
+    cesta: {
+        fontSize: 30,
+        padding: 20,
+        color: '#FFFF',
     }
 
 })

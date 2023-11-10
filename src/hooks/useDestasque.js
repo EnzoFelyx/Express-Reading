@@ -15,7 +15,7 @@ export default function useDestaque() {
 
     useEffect(() => {
         fetchData();
-    }, []); // Certifique-se de que o array de dependências esteja vazio para executar apenas uma vez
+    }, []);
 
     return lista;
 }

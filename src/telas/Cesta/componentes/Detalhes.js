@@ -3,7 +3,7 @@ import { Alert, Animated, FlatList, StyleSheet, View } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { produto } from '../../../../config/text.json';
-import Testando from "../../../componentes/teste";
+import Icones from "../../../componentes/Icones";
 import useEstoque from "../../../hooks/useEstoque";
 import { deletarLivroCesta } from "../../../services/requests/carrinho";
 import Item from "./Item";
@@ -68,9 +68,9 @@ export default function Detalhes({ topo: Topo, total: Total }) {
             outputRange: [1, 0],
             extrapolate: 'clamp',
         })
-        return <View style={estilos.RightActions.view}>
+        return <View style={estilos.RightActions}>
             <Animated.View style={{ transform: [{ scale: scale }] }} >
-                <Testando style={estilos.RightActions.icone} />
+                <Icones icone={'delete-outline'} cor={'white'} interagivel={false} tipo={'cesta'}/>
             </Animated.View>
         </View >
     }
@@ -99,16 +99,9 @@ export default function Detalhes({ topo: Topo, total: Total }) {
 
 const estilos = StyleSheet.create({
     RightActions: {
-        view: {
-            backgroundColor: "#FF0000",
-            justifyContent: 'center',
-            flex: 1,
-            alignItems: 'flex-end',
-        },
-        icone: {
-            fontSize: 30,
-            padding: 20,
-            color: '#FFFF',
-        }
+        backgroundColor: "#FF0000",
+        justifyContent: 'center',
+        flex: 1,
+        alignItems: 'flex-end',
     },
 });

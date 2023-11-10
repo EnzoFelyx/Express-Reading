@@ -8,7 +8,7 @@ import Topo from "./componentes/Topo";
 
 export default function Produto() {
 
-    const loading = true
+    const loading = useLoading();
 
     return <FakeProduto visible={loading}>
             <ScrollView style={{ flex: 1 }}>
