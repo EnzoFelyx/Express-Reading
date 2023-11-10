@@ -8,7 +8,8 @@ const width = Dimensions.get('screen').width;
 
 export default function Genero({
     icon,
-    nomeGenero,
+    nomeGeneroBr,
+    nomeGeneroEn,
 }) {
 
     const navigation = useNavigation();
@@ -26,7 +27,7 @@ export default function Genero({
                 interagivel={false}
                 tipo={'explorar'}
             />
-            <Texto style={estilos.legenda}>{nomeGenero}</Texto>
+            <Texto style={estilos.legenda}>{nomeGeneroBr}</Texto>
         </TouchableOpacity>
 
     </>

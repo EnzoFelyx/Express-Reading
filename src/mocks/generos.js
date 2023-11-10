@@ -8,7 +8,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "run-fast",
             },
-            nomeGenero: "Ação",
+            nomeGeneroBr: "Ação",
+            nomeGeneroEn: "",
         },
 
         {
@@ -17,7 +18,8 @@ const generos = {
                 familia: "Fontisto",
                 nome: "ship",
             },
-            nomeGenero: "Aventura"
+            nomeGeneroBr: "Aventura",
+            nomeGeneroEn: ""
         },
 
         {
@@ -26,7 +28,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "typewriter",
             },
-            nomeGenero: "Biografia"
+            nomeGeneroBr: "Biografia",
+            nomeGeneroEn: ""
         },
 
         {
@@ -35,7 +38,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "hat-fedora",
             },
-            nomeGenero: "Comédia"
+            nomeGeneroBr: "Comédia",
+            nomeGeneroEn: ""
         },
 
         {
@@ -44,7 +48,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "drama-masks",
             },
-            nomeGenero: "Drama"
+            nomeGeneroBr: "Drama",
+            nomeGeneroEn: ""
         },
 
         {
@@ -53,7 +58,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "wizard-hat",
             },
-            nomeGenero: "Fantasia"
+            nomeGeneroBr: "Fantasia",
+            nomeGeneroEn: ""
         },
 
         {
@@ -62,7 +68,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "alien-outline",
             },
-            nomeGenero: "Ficção"
+            nomeGeneroBr: "Ficção",
+            nomeGeneroEn: ""
         },
 
         {
@@ -71,7 +78,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "ghost-outline",
             },
-            nomeGenero: "Horror"
+            nomeGeneroBr: "Horror",
+            nomeGeneroEn: ""
         },
 
         {
@@ -80,7 +88,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "account-child-outline",
             },
-            nomeGenero: "Infantil"
+            nomeGeneroBr: "Infantil",
+            nomeGeneroEn: ""
         },
 
         {
@@ -89,7 +98,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "sword",
             },
-            nomeGenero: "Mangá"
+            nomeGeneroBr: "Mangá",
+            nomeGeneroEn: ""
         },
 
         {
@@ -98,7 +108,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "progress-question",
             },
-            nomeGenero: "Mistério"
+            nomeGeneroBr: "Mistério",
+            nomeGeneroEn: ""
         },
 
         {
@@ -107,7 +118,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "car-wireless",
             },
-            nomeGenero: "Policial"
+            nomeGeneroBr: "Policial",
+            nomeGeneroEn: ""
         },
 
         {
@@ -116,7 +128,8 @@ const generos = {
                 familia: "MaterialCommunityIcons",
                 nome: "calendar-heart",
             },
-            nomeGenero: "Romance"
+            nomeGeneroBr: "Romance",
+            nomeGeneroEn: ""
         },
 
         {
@@ -125,7 +138,8 @@ const generos = {
                 familia: "Fontisto",
                 nome: "surgical-knife",
             },
-            nomeGenero: "Suspense"
+            nomeGeneroBr: "Suspense",
+            nomeGeneroEn: ""
         }
     ]
 }
