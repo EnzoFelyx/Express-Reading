@@ -11,9 +11,13 @@ Version 1.0:
 
     mudar splash screen e icone no app.json
 
-    Upar no vercel       
+    Arrumar portabilidade para Moto g22
+
+    Descobrir como tirar lag (armazenamento interno resolveria?)
 
     Baixar no celular 
+
+    Upar no vercel       
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
