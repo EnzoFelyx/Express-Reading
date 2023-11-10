@@ -1,87 +1,23 @@
-import React, { useEffect } from "react";
-import { Dimensions, ScrollView, StyleSheet, View, Animated } from "react-native";
+import React from "react";
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import AnimetedView from "../componentes/AnimatedView";
 import Texto from "../componentes/Texto";
 const width = Dimensions.get('screen').width;
 
 export default function FakeHome({ visible, children }) {
 
-    const AnimatedValue = new Animated.Value(0);
-
-    useEffect(() => {
-        circleAnimated();
-
-        return () => circleAnimated();
-    }, []);
-
-    const circleAnimated = () => {
-        AnimatedValue.setValue(0)
-        Animated.timing(
-            AnimatedValue,
-            {
-                toValue: 1,
-                duration: 500,
-                useNativeDriver: false,
-            }
-        ).start(() => {
-            setTimeout(() => {
-                circleAnimated()
-            }, 1000);
-        })
-    }
-
-    const translateX = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 100]
-    });
-
-    const translateX2 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 200]
-    });
-
-
-    const translateX3 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 400]
-    });
-
-
     const SkeletonLivro = () => <>
-        <View style={estilos.container}>
+        <View style={{ flexDirection: "row" }}>
             <View style={estilos.prateleira}>
                 <View style={estilos.imagemLivro}>
-                    <Animated.View
-                        style={{
-                            width: '60%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'60%'} length={100} />
                 </View>
                 <View style={estilos.informacao}>
                     <View style={estilos.sobre}>
-                        <Animated.View
-                            style={{
-                                width: '30%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'30%'} length={200} />
                     </View>
                     <View style={estilos.sobre}>
-                        <Animated.View
-                            style={{
-                                width: '30%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'30%'} length={200} />
                     </View>
                 </View>
             </View>
@@ -90,15 +26,7 @@ export default function FakeHome({ visible, children }) {
 
     const SkeletonPrateleira = () => <>
         <View style={estilos.subtitulo}>
-            <Animated.View
-                style={{
-                    width: '30%',
-                    height: '100%',
-                    opacity: 0.4,
-                    backgroundColor: "#FFF",
-                    transform: [{ translateX: translateX3 }],
-                }}>
-            </Animated.View>
+            <AnimetedView width={'30%'} length={400} />
         </View>
         <View style={{ flexDirection: "row" }}>
             <SkeletonLivro />
@@ -109,52 +37,21 @@ export default function FakeHome({ visible, children }) {
 
     if (visible) {
         return <ScrollView>
-
             <View style={estilos.topo}>
                 <Texto style={estilos.titulo}>Home</Texto>
                 <View style={estilos.legenda}>
-                    <Animated.View
-                        style={{
-                            width: '30%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'30%'} length={400} />
                 </View>
                 <View style={estilos.sublegenda}>
-                    <Animated.View
-                        style={{
-                            width: '30%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX2 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'30%'} length={200} />
                 </View>
             </View>
-
             <View style={estilos.busca}>
-                <Animated.View
-                    style={{
-                        width: '30%',
-                        height: '100%',
-                        opacity: 0.4,
-                        backgroundColor: "#FFF",
-                        transform: [{ translateX: translateX3 }],
-                    }}>
-                </Animated.View>
+                <AnimetedView width={'30%'} length={400} />
             </View>
-
             <SkeletonPrateleira />
-
             <SkeletonPrateleira />
-
             <SkeletonPrateleira />
-
-
         </ScrollView>
     }
 
@@ -194,7 +91,7 @@ const estilos = StyleSheet.create({
         height: 30,
         borderRadius: 5,
         margin: 12,
-        width: width/1.5,
+        width: width / 1.5,
         overflow: "hidden",
     },
     legenda: {
@@ -221,10 +118,6 @@ const estilos = StyleSheet.create({
         marginBottom: 5,
         marginHorizontal: 5,
         overflow: "hidden",
-    },
-
-    container: {
-        flexDirection: "row",
     },
 
     prateleira: {

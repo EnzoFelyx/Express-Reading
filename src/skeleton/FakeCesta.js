@@ -1,184 +1,57 @@
-import React, { useEffect } from "react";
-import { Animated, Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import React from "react";
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import AnimetedView from "../componentes/AnimatedView";
 import Topo from "../telas/Cesta/componentes/Topo";
 
 const width = Dimensions.get('screen').width;
 
 export default function FakeCesta({ visible, children }) {
 
-    const AnimatedValue = new Animated.Value(0);
-
-    useEffect(() => {
-        circleAnimated();
-
-        return () => circleAnimated();
-    }, []);
-
-    const circleAnimated = () => {
-        AnimatedValue.setValue(0)
-        Animated.timing(
-            AnimatedValue,
-            {
-                toValue: 1,
-                duration: 500,
-                useNativeDriver: false,
-            }
-        ).start(() => {
-            setTimeout(() => {
-                circleAnimated()
-            }, 1000);
-        })
-    }
-
-    const translateX = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 100]
-    });
-
-    const translateX2 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 200]
-    });
-
-
-    const translateX3 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 400]
-    });
-
     if (visible) {
         return <ScrollView>
             <Topo />
             <View style={estilos.cesta}>
                 <View style={estilos.nome}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={400} />
                 </View>
                 <View style={estilos.descricao}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={400} />
                 </View>
 
                 <View style={estilos.descricao}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={400} />
                 </View>
                 <View style={estilos.preco}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX2 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={200} />
                 </View>
                 <View style={estilos.botaoCaixa}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={400} />
                 </View>
                 <View style={estilos.itenTitulo}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX2 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={200} />
                 </View>
             </View>
 
             <View style={{ flexDirection: "row", backgroundColor: 'white' }}>
                 <View style={estilos.imagemLivro}>
-                    <Animated.View
-                        style={{
-                            width: '60%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'60%'} length={100} />
                 </View>
                 <View style={estilos.conteudo}>
                     <View style={[estilos.informacao, { width: "100%", }]}>
                         <View style={estilos.nomelivro}>
-                            <Animated.View
-                                style={{
-                                    width: '40%',
-                                    height: '100%',
-                                    opacity: 0.4,
-                                    backgroundColor: "#FFF",
-                                    transform: [{ translateX: translateX2 }],
-                                }}>
-                            </Animated.View>
+                            <AnimetedView width={'40%'} length={200} />
                         </View>
                         <View style={estilos.autor}>
-                            <Animated.View
-                                style={{
-                                    width: '40%',
-                                    height: '100%',
-                                    opacity: 0.4,
-                                    backgroundColor: "#FFF",
-                                    transform: [{ translateX: translateX2 }],
-                                }}>
-                            </Animated.View>
+                            <AnimetedView width={'40%'} length={200} />
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                             <View style={{ flexDirection: "row", alignItems: "center" }}>
                                 <View style={estilos.quantidade}>
-                                    <Animated.View
-                                        style={{
-                                            width: '40%',
-                                            height: '100%',
-                                            opacity: 0.4,
-                                            backgroundColor: "#FFF",
-                                            transform: [{ translateX: translateX }],
-                                        }}>
-                                    </Animated.View>
+                                    <AnimetedView width={'40%'} length={100} />
                                 </View>
                             </View>
                             <View style={estilos.precolivro}>
-                                <Animated.View
-                                    style={{
-                                        width: '40%',
-                                        height: '100%',
-                                        opacity: 0.4,
-                                        backgroundColor: "#FFF",
-                                        transform: [{ translateX: translateX }],
-                                    }}>
-                                </Animated.View>
+                                <AnimetedView width={'40%'} length={100} />
                             </View>
                         </View>
                     </View>
@@ -304,8 +177,5 @@ const estilos = StyleSheet.create({
         marginHorizontal: 5,
         overflow: "hidden",
         width: width / 5
-    },
-    avaliacao: {
-        justifyContent: "flex-end",
     },
 });

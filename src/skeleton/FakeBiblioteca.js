@@ -1,129 +1,49 @@
-import React, { useEffect } from "react";
-import { Animated, Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import React from "react";
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import { biblioteca } from '../../config/text.json';
+import AnimetedView from "../componentes/AnimatedView";
 import Texto from "../componentes/Texto";
 const width = Dimensions.get('screen').width;
 
 export default function FakeBiblioteca({ visible, children }) {
 
-    const AnimatedValue = new Animated.Value(0);
-
-    useEffect(() => {
-        circleAnimated();
-
-        return () => circleAnimated();
-    }, []);
-
-    const circleAnimated = () => {
-        AnimatedValue.setValue(0)
-        Animated.timing(
-            AnimatedValue,
-            {
-                toValue: 1,
-                duration: 500,
-                useNativeDriver: false,
-            }
-        ).start(() => {
-            setTimeout(() => {
-                circleAnimated()
-            }, 1000);
-        })
-    }
-
-    const translateX = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 100]
-    });
-
-    const translateX2 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 200]
-    });
-
-
-    const translateX3 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 400]
-    });
-
+    const titulo = biblioteca.topo.titulo;
 
     const SkeletonLivro = () => <>
         <View style={estilos.container}>
             <View style={estilos.prateleira}>
                 <View style={estilos.imagemLivro}>
-                    <Animated.View
-                        style={{
-                            width: '60%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'60%'} length={100} />
                 </View>
                 <View style={estilos.informacao}>
                     <View style={estilos.sobre}>
-                        <Animated.View
-                            style={{
-                                width: '30%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'30%'} length={200} />
                     </View>
                     <View style={estilos.sobre}>
-                        <Animated.View
-                            style={{
-                                width: '30%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'30%'} length={200} />
                     </View>
                     <View style={estilos.sobre}>
-                        <Animated.View
-                            style={{
-                                width: '30%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'30%'} length={200} />
                     </View>
                 </View>
             </View>
         </View>
     </>
 
-    const SkeletonPrateleira = () => <>
-
-        <View style={{ flexDirection: "row" }}>
-            <SkeletonLivro />
-            <SkeletonLivro />
-            <SkeletonLivro />
-        </View>
-    </>
+    const SkeletonPrateleira = () => <View style={{ flexDirection: "row" }}>
+        <SkeletonLivro />
+        <SkeletonLivro />
+        <SkeletonLivro />
+    </View>
 
     if (visible) {
 
         return <ScrollView>
 
             <View style={estilos.topo}>
-                <Texto style={estilos.titulo}>Biblioteca</Texto>
+                <Texto style={estilos.titulo}>{titulo}</Texto>
                 <View style={estilos.legenda}>
-                    <Animated.View
-                        style={{
-                            width: '30%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'30%'} length={400} />
                 </View>
             </View>
 

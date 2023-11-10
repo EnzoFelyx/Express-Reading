@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { Animated, Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import React from "react";
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import AnimetedView from "../componentes/AnimatedView";
 import Estrelas from "../componentes/Estrelas";
 import Icones from "../componentes/Icones";
 import Texto from "../componentes/Texto";
@@ -8,79 +9,16 @@ const width = Dimensions.get('screen').width;
 
 export default function FakeProduto({ visible, children }) {
 
-    const AnimatedValue = new Animated.Value(0);
-
-    useEffect(() => {
-        circleAnimated();
-
-        return () => circleAnimated();
-    }, []);
-
-    const circleAnimated = () => {
-        AnimatedValue.setValue(0)
-        Animated.timing(
-            AnimatedValue,
-            {
-                toValue: 1,
-                duration: 500,
-                useNativeDriver: false,
-            }
-        ).start(() => {
-            setTimeout(() => {
-                circleAnimated()
-            }, 1000);
-        })
-    }
-
-    const translateX = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 100]
-    });
-
-    const translateX2 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 200]
-    });
-
-
-    const translateX3 = AnimatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-10, 400]
-    });
-
-
     const SkeletonTexto = () => <View style={estilos.texto}>
-        <Animated.View
-            style={{
-                width: '40%',
-                height: '100%',
-                opacity: 0.4,
-                backgroundColor: "#FFF",
-                transform: [{ translateX: translateX3 }],
-            }}>
-        </Animated.View>
+        <AnimetedView width={'40%'} length={400} />
     </View>
 
     const SkeletonIcon = () => <View style={estilos.tituloIcon}>
-        <Animated.View
-            style={{
-                width: '40%',
-                height: '100%',
-                opacity: 0.4,
-                backgroundColor: "#FFF",
-                transform: [{ translateX: translateX }],
-            }}></Animated.View>
+        <AnimetedView width={'40%'} length={100} />
     </View>
 
     const SkeletonGenero = () => <View style={estilos.generos.caixa}>
-        <Animated.View
-            style={{
-                width: '40%',
-                height: '100%',
-                opacity: 0.4,
-                backgroundColor: "#FFF",
-                transform: [{ translateX: translateX }],
-            }}></Animated.View>
+        <AnimetedView width={'40%'} length={100} />
     </View>
 
     if (visible) {
@@ -91,15 +29,7 @@ export default function FakeProduto({ visible, children }) {
             <View style={estilos.capa}>
                 <View style={{ flexDirection: "row" }}>
                     <View style={estilos.imagem}>
-                        <Animated.View
-                            style={{
-                                width: '40%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX3 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'40%'} length={400} />
                     </View>
                     <View style={estilos.dados}>
                         <View>
@@ -137,26 +67,10 @@ export default function FakeProduto({ visible, children }) {
                     </View>
                 </View>
                 <View style={estilos.titulo}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX3 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={400} />
                 </View>
                 <View style={estilos.autor}>
-                    <Animated.View
-                        style={{
-                            width: '40%',
-                            height: '100%',
-                            opacity: 0.4,
-                            backgroundColor: "#FFF",
-                            transform: [{ translateX: translateX2 }],
-                        }}>
-                    </Animated.View>
+                    <AnimetedView width={'40%'} length={200} />
                 </View>
             </View>
 
@@ -174,15 +88,8 @@ export default function FakeProduto({ visible, children }) {
 
                 <View style={{ padding: 14 }}>
                     <View style={estilos.subtitle}>
-                        <Animated.View
-                            style={{
-                                width: '40%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#FFF",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'40%'} length={200} />
+
                     </View>
                     <SkeletonTexto />
                     <SkeletonTexto />
@@ -190,15 +97,7 @@ export default function FakeProduto({ visible, children }) {
                 </View>
                 <View style={estilos.botaoCaixa}>
                     <View style={estilos.preco}>
-                        <Animated.View
-                            style={{
-                                width: '40%',
-                                height: '100%',
-                                opacity: 0.4,
-                                backgroundColor: "#C2C2C2",
-                                transform: [{ translateX: translateX2 }],
-                            }}>
-                        </Animated.View>
+                        <AnimetedView width={'40%'} length={200} color={'#C2C2C2'} />
                     </View>
                     <View style={estilos.adicionar}>
                         <View style={{ alignSelf: "center", marginRight: 10 }}>
@@ -217,8 +116,6 @@ export default function FakeProduto({ visible, children }) {
 
 
 const estilos = StyleSheet.create({
-
-
 
     capa: {
         marginLeft: 30,
