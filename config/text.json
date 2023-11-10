@@ -23,5 +23,17 @@
             "titulo": "Explore",
             "legenda": "Confira os nossos gêneros"
         }
+    },
+    "home": {
+        "topo": {
+            "title": "Home",
+            "welcome": "Bem-Vindo, confira as novas tendências do mundo literário!",
+            "search": "Busque por um livro"
+        },
+        "corpo": {
+            "trend1": "Os nossos melhores (5☆)",
+            "trend2": "Promoção (até R$29,99)",
+            "trend3": "HQs mais vendidas"
+        }
     }
 }

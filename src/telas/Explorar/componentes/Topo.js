@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { explorar } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
+import estilos from "../../../estilos";
 
 export default function Topo() {
 
@@ -12,23 +13,4 @@ export default function Topo() {
         <Texto style={estilos.legenda}>{legenda}</Texto>
     </View>
 }
-
-const estilos = StyleSheet.create({
-    topo: {
-        backgroundColor: "#112236",
-        padding: 16,
-        marginBottom: 15,
-    },
-    titulo: {
-        color: "#DE9E69",
-        fontSize: 26,
-        lineHeight: 42,
-        fontWeight: "bold",
-    },
-    legenda: {
-        fontSize: 16,
-        lineHeight: 26,
-        color: "#DE9E69",
-    }
-})
 

@@ -1,15 +1,19 @@
+import { useIsFocused } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, TextInput, View } from "react-native";
+import { home } from '../../../../config/text.json';
 import Livro from "../../../componentes/Livro";
-import useBusca from "../../../hooks/useBusca";
-import { useIsFocused } from "@react-navigation/native";
 import Texto from "../../../componentes/Texto";
+import estilos from "../../../estilos";
+import useBusca from "../../../hooks/useBusca";
 
 export default function Home() {
 
     const [nomeLivro, setnomeLivro] = useState('');
     const lista = useBusca(nomeLivro);
     const isFocused = useIsFocused();
+
+    const {title, welcome, search} = home.topo;
 
     useEffect(() => {
         if (!isFocused) {
@@ -20,20 +24,20 @@ export default function Home() {
     return <View>
 
         <View style={estilos.topo}>
-            <Texto style={estilos.titulo}>Home</Texto>
-            <Texto style={estilos.legenda}>Bem-Vindo, confira as novas tendências do mundo literário!</Texto>
+            <Texto style={estilos.titulo}>{title}</Texto>
+            <Texto style={estilos.legenda}>{welcome}</Texto>
         </View>
 
         <TextInput
-            placeholder="Busque por um livro"
+            placeholder={search}
             value={nomeLivro}
             onChangeText={setnomeLivro}
-            style={estilos.entrada}
+            style={myEstilos.entrada}
         />
 
         <FlatList
             data={lista}
-            renderItem={({ item }) => <View style={estilos.prateleira}>
+            renderItem={({ item }) => <View style={myEstilos.prateleira}>
                 <Livro {...item} feedBack={item} />
             </View>
             }
@@ -43,7 +47,7 @@ export default function Home() {
     </View>
 }
 
-const estilos = StyleSheet.create({
+const myEstilos = StyleSheet.create({
     entrada: {
         borderWidth: 2,
         borderColor: '#DDDD',
@@ -62,20 +66,4 @@ const estilos = StyleSheet.create({
         borderRadius: 6,
         elevation: 3,
     },
-    topo: {
-        backgroundColor: "#112236",
-        padding: 16,
-        marginBottom: 15,
-    },
-    titulo: {
-        color: "#DE9E69",
-        fontSize: 26,
-        lineHeight: 42,
-        fontWeight: "bold",
-    },
-    legenda: {
-        fontSize: 16,
-        lineHeight: 26,
-        color: "#DE9E69",
-    }
 })

@@ -1,16 +1,17 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import Genero from "./Generos";
 import useGenero from "../../../hooks/useGenero";
+import Genero from "./Generos";
 
 export default function Categorias({ topo: Topo }) {
+
     const lista = useGenero();
 
     const TopoLista = () => {
         return <Topo />;
     }
 
-    const RenderizarParesGenero = ({ data }) => {
+    const GenerosPares = ({ data }) => {
         return (
             <FlatList
                 data={data}
@@ -28,7 +29,7 @@ export default function Categorias({ topo: Topo }) {
     return (
         <>
             <TopoLista />
-            <RenderizarParesGenero data={lista} />
+            <GenerosPares data={lista} />
         </>
     );
 }

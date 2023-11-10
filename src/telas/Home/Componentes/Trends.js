@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import Vitrine from "./Vitrine";
 import Texto from "../../../componentes/Texto";
+import Vitrine from "./Vitrine";
 
 export default function Trends({ titulo, lista }) {
 

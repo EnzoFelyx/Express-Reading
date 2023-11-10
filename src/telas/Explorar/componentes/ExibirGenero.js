@@ -3,8 +3,8 @@ import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
-import useCategoria from "../../../hooks/useCategoria";
 import Voltar from "../../../componentes/Voltar";
+import useCategoria from "../../../hooks/useCategoria";
 
 export default function ExibirGeneros() {
 

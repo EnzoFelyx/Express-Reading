@@ -1,14 +1,15 @@
 import React from "react";
-import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { FlatList, View } from "react-native";
+import { home } from '../../../../config/text.json';
 import { useBarato, useJovens, useMelhores } from "../../../hooks/useHome";
 
 export default function Index({ topo: Topo, trends: Trends }) {
 
     const melhores = useMelhores();
-
     const barato = useBarato();
-
     const jovens = useJovens();
+
+    const { trend1, trend2, trend3 } = home.corpo;
 
     return (
         <FlatList
@@ -20,10 +21,10 @@ export default function Index({ topo: Topo, trends: Trends }) {
                     <Trends
                         titulo={
                             index === 0
-                                ? 'Os nossos melhores (5☆)'
+                                ? trend1
                                 : index === 1
-                                    ? 'Promoção (até R$29,99)'
-                                    : 'HQs mais vendidas'
+                                    ? trend2
+                                    : trend3
                         }
                         lista={item}
                     />
@@ -32,7 +33,3 @@ export default function Index({ topo: Topo, trends: Trends }) {
         />
     );
 }
-
-const estilos = StyleSheet.create({
-
-})

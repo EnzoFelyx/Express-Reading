@@ -44,4 +44,20 @@ export default StyleSheet.create({
     avaliacao: {
         justifyContent: "flex-end",
     },
+    topo: {
+        backgroundColor: "#112236",
+        padding: 16,
+        marginBottom: 15,
+    },
+    titulo: {
+        color: "#DE9E69",
+        fontSize: 26,
+        lineHeight: 42,
+        fontWeight: "bold",
+    },
+    legenda: {
+        fontSize: 16,
+        lineHeight: 26,
+        color: "#DE9E69",
+    }
 })

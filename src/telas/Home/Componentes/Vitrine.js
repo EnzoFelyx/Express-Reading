@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import Texto from "../../../componentes/Texto";
 import FormataTexto from "../../../componentes/FormataTexto";
 
 const width = Dimensions.get('screen').width;
