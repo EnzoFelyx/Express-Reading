@@ -1,6 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
-import { produto } from '../../config/text.json';
 import AnimetedView from "../componentes/AnimatedView";
 import Estrelas from "../componentes/Estrelas";
 import Icones from "../componentes/Icones";
@@ -10,7 +10,7 @@ const width = Dimensions.get('screen').width;
 
 export default function FakeProduto({ visible, children }) {
 
-    const { star, pag, type, language } = produto.dados
+    const { t, i18n } = useTranslation();
 
     const SkeletonTexto = () => <View style={estilos.texto}>
         <AnimetedView width={'40%'} length={400} />
@@ -40,7 +40,7 @@ export default function FakeProduto({ visible, children }) {
                                 <Icones icone={'star'} tipo={'capa'} cor={"#FEB555"} />
                                 <SkeletonIcon />
                             </View>
-                            <Texto style={estilos.subtitulo}>{star}</Texto>
+                            <Texto style={estilos.subtitulo}>{t('produto.dados.star')}</Texto>
                         </View>
 
                         <View>
@@ -48,7 +48,7 @@ export default function FakeProduto({ visible, children }) {
                                 <Icones icone={'book-open-page-variant-outline'} tipo={'capa'} cor={"#D672CF"} />
                                 <SkeletonIcon />
                             </View>
-                            <Texto style={estilos.subtitulo}>{pag}</Texto>
+                            <Texto style={estilos.subtitulo}>{t('produto.dados.pag')}</Texto>
                         </View>
 
                         <View>
@@ -56,7 +56,7 @@ export default function FakeProduto({ visible, children }) {
                                 <Icones icone={'book-outline'} tipo={'capa'} cor={"#EC7A7A"} />
                                 <SkeletonIcon />
                             </View>
-                            <Texto style={estilos.subtitulo}>{type}</Texto>
+                            <Texto style={estilos.subtitulo}>{t('produto.dados.type')}</Texto>
                         </View>
 
                         <View>
@@ -64,7 +64,7 @@ export default function FakeProduto({ visible, children }) {
                                 <Icones familia={'Fontisto'} icone={'world-o'} tipo={'capa'} cor={"#2590C8"} />
                                 <SkeletonIcon />
                             </View>
-                            <Texto style={estilos.subtitulo}>{language}</Texto>
+                            <Texto style={estilos.subtitulo}>{t('produto.dados.language')}</Texto>
                         </View>
 
                     </View>

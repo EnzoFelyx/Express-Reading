@@ -3,11 +3,12 @@ import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
 import { biblioteca } from '../../config/text.json';
 import AnimetedView from "../componentes/AnimatedView";
 import Texto from "../componentes/Texto";
+import { useTranslation } from "react-i18next";
 const width = Dimensions.get('screen').width;
 
 export default function FakeBiblioteca({ visible, children }) {
 
-    const titulo = biblioteca.topo.titulo;
+    const { t, i18n } = useTranslation();
 
     const SkeletonLivro = () => <>
         <View style={estilos.container}>
@@ -41,7 +42,7 @@ export default function FakeBiblioteca({ visible, children }) {
         return <ScrollView>
 
             <View style={estilos.topo}>
-                <Texto style={estilos.titulo}>{titulo}</Texto>
+                <Texto style={estilos.titulo}>{t('biblioteca.topo.titulo')}</Texto>
                 <View style={estilos.legenda}>
                     <AnimetedView width={'30%'} length={400} />
                 </View>
