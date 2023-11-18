@@ -1,0 +1,84 @@
+{
+    "translation": {
+        "tabBar": {
+            "myHome": "Home",
+            "Biblioteca": "Library",
+            "Explorar": "Explore",
+            "Carrinho": "Basket"
+        },
+        "cesta": {
+            "topo": {
+                "titulo": "Your Basket Itens"
+            },
+            "detalhes": {
+                "title": "Basket of books",
+                "description": "Check out your selected books below before finalizing your purchase:",
+                "buy": "Buy",
+                "subtitle": "Basket of books"
+            },
+            "botao": {
+                "title": "Finish Order",
+                "legenda": "Are you sure you want to complete your purchase?"
+            },
+            "warning": {
+                "warn": "Finish Order",
+                "ask": "Are you sure you want to complete your purchase?",
+                "confirm": "OK",
+                "goback": "CANCEL",
+                "wrong": "Error on removing book"
+            },
+            "feedBack": {
+                "title": "Order completed!",
+                "subtitle": "Congratulations!",
+                "thanku": "Thank you for choosing our store. We hope to see you again!",
+                "biblioteca": "Continue",
+                "home": "Home"
+            },
+            "vazio": {
+                "title": "Opss!",
+                "carrinho": "Looks like your cart is empty. \n :(",
+                "acessar": "Check out our Library and take some of our books!"
+            }
+        },
+        "biblioteca": {
+            "topo": {
+                "titulo": "Library",
+                "legenda": "Check out all our books for sale"
+            }
+        },
+        "explorar": {
+            "topo": {
+                "titulo": "Explore",
+                "legenda": "Check out our genres"
+            }
+        },
+        "home": {
+            "topo": {
+                "title": "Home",
+                "welcome": "Welcome, check out the new trends in the literary world!",
+                "search": "Search for a book"
+            },
+            "corpo": {
+                "trend1": "Our best books (5☆)",
+                "trend2": "On sale (Bellow R$29,99)",
+                "trend3": "HQs best-sellers"
+            }
+        },
+        "produto": {
+            "title": "Book Details",
+            "dados": {
+                "star": "Rate",
+                "pag": "Pages",
+                "type": "Cover",
+                "language": "Language"
+            },
+            "warnings": {
+                "removed": "Book removed from basket!",
+                "removeError": "Error on removing book from basket",
+                "add": "Book added to basket",
+                "addError": "Error on adding book to basket"
+            },
+            "description": "Description"
+        }
+    }
+}

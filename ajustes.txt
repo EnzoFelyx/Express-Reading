@@ -1,9 +1,9 @@
 
 Version 1.0:
 
-    criar tela vazia
-
     fazer versonização para english i8n
+
+    resetar totalprice após compra
 
     fazer monitoramento de perfomace (monitorar os useEffect)
 
@@ -23,6 +23,8 @@ Version 1.0:
 
 
 Version 2.0:
+
+    refatorar toda lógica de preços em cesta
 
     imagem com legenda para iten nao encotrado (figma curso)
 

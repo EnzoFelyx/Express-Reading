@@ -198,7 +198,6 @@ const estilos = StyleSheet.create({
         borderTopEndRadius: 30,
         borderTopStartRadius: 30,
         marginHorizontal: 12,
-        marginBottom: 40
     },
 
     botaoCaixa: {

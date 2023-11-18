@@ -1,71 +1,82 @@
 {
+    "tabBar": {
+        "myHome": "Home",
+        "Biblioteca": "Library",
+        "Explorar": "Explore",
+        "Carrinho": "Basket"
+    },
     "cesta": {
         "topo": {
-            "titulo": "Detalhes da Cesta"
+            "titulo": "Your Basket Itens"
         },
         "detalhes": {
-            "title": "Cesta de livros",
-            "description": "Confira abaixo seus livros selecionados abaixo antes de finalizar a sua compra:",
-            "buy": "Comprar",
-            "subtitle": "Livros da cesta"
+            "title": "Basket of books",
+            "description": "Check out your selected books below before finalizing your purchase:",
+            "buy": "Buy",
+            "subtitle": "Basket of books"
         },
         "botao": {
-            "title": "Finalizar Compra",
-            "legenda": "Tem certeza que deseja finalizar sua compra?"
+            "title": "Finish Order",
+            "legenda": "Are you sure you want to complete your purchase?"
         },
         "warning": {
-            "warn": "Finalizar Compra",
-            "ask": "Tem certeza que deseja finalizar sua compra?",
+            "warn": "Finish Order",
+            "ask": "Are you sure you want to complete your purchase?",
             "confirm": "OK",
-            "goback": "CANCELAR",
-            "wrong": "Erro ao retirar livro da cesta"
+            "goback": "CANCEL",
+            "wrong": "Error on removing book"
         },
-        "feedBack":{
-            "title": "Pedido finalizado!",
-            "subtitle": "Parabéns!",
-            "thanku": "Agradecemos a sua preferência em escolher a nossa loja. Volte sempre!",
-            "biblioteca": "Continuar Comprando",
-            "home": "Voltar para Home"
+        "feedBack": {
+            "title": "Order completed!",
+            "subtitle": "Congratulations!",
+            "thanku": "Thank you for choosing our store. We hope to see you again!",
+            "biblioteca": "Continue",
+            "home": "Home"
+        },
+        "vazio": {
+            "title": "Opss!",
+            "carrinho": "Looks like your cart is empty. \n :(",
+            "acessar": "Check out our Library and take some of our books!"
         }
     },
     "biblioteca": {
         "topo": {
-            "titulo": "Biblioteca",
-            "legenda": "Confira todas as nossas obras a venda"
+            "titulo": "Library",
+            "legenda": "Check out all our books for sale"
         }
     },
     "explorar": {
         "topo": {
             "titulo": "Explore",
-            "legenda": "Confira os nossos gêneros"
+            "legenda": "Check out our genres"
         }
     },
     "home": {
         "topo": {
             "title": "Home",
-            "welcome": "Bem-Vindo, confira as novas tendências do mundo literário!",
-            "search": "Busque por um livro"
+            "welcome": "Welcome, check out the new trends in the literary world!",
+            "search": "Search for a book"
         },
         "corpo": {
-            "trend1": "Os nossos melhores (5☆)",
-            "trend2": "Promoção (até R$29,99)",
-            "trend3": "HQs mais vendidas"
+            "trend1": "Our best books (5☆)",
+            "trend2": "On sale (Bellow R$29,99)",
+            "trend3": "HQs best-sellers"
         }
     },
     "produto": {
-        "title": "Detalhes do Livro",
+        "title": "Book Details",
         "dados": {
-            "star": "Nota",
-            "pag": "Páginas",
-            "type": "Capa",
-            "language": "Idioma"
+            "star": "Rate",
+            "pag": "Pages",
+            "type": "Cover",
+            "language": "Language"
         },
         "warnings": {
-            "removed": "Livro retirado na cesta",
-            "removeError": "Erro ao retirar livro da cesta",
-            "add": "Livro adicionado na cesta",
-            "addError": "Erro ao adicionar livro a cesta"
+            "removed": "Book removed from basket!",
+            "removeError": "Error on removing book from basket",
+            "add": "Book added to basket",
+            "addError": "Error on adding book to basket"
         },
-        "description": "Descrição"
+        "description": "Description"
     }
 }

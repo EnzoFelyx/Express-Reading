@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { cesta } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 import { resetarCesta } from "../../../services/requests/carrinho";
+import Vazia from './Vazia';
 
 export default function Total({ totalPrice }) {
 
@@ -12,7 +13,7 @@ export default function Total({ totalPrice }) {
 
     const { title, description, buy, subtitle } = cesta.detalhes;
 
-    const {warn, ask, confirm, goback, wrong} = cesta.warning
+    const { warn, ask, confirm, goback, wrong } = cesta.warning
 
     const aoPressionar = () => {
         Alert.alert(warn, ask, [
@@ -36,22 +37,26 @@ export default function Total({ totalPrice }) {
     }
 
     return <SafeAreaView>
-        <View style={estilos.cesta}>
-            <Texto style={estilos.nome}>{title}</Texto>
-            <Texto style={estilos.descricao}>{description}</Texto>
-            <Texto style={estilos.preco}>
-                {Intl.NumberFormat('pt-BR', {
-                    style: 'currency', currency: 'BRL'
-                }).format(totalPrice)}
-            </Texto>
-            <TouchableOpacity
-                style={estilos.botaoCaixa}
-                onPress={aoPressionar}>
-                <Texto style={estilos.botaoTexto}>{buy}</Texto>
-            </TouchableOpacity>
-            <Texto style={estilos.itenTitulo}>{subtitle}</Texto>
-        </View>
-    </SafeAreaView>
+        {totalPrice > 0 ? (
+            <View style={estilos.cesta}>
+                <Texto style={estilos.nome}>{title}</Texto>
+                <Texto style={estilos.descricao}>{description}</Texto>
+                <Texto style={estilos.preco}>
+                    {Intl.NumberFormat('pt-BR', {
+                        style: 'currency', currency: 'BRL'
+                    }).format(totalPrice)}
+                </Texto>
+                <TouchableOpacity
+                    style={estilos.botaoCaixa}
+                    onPress={aoPressionar}
+                >
+                    <Texto style={estilos.botaoTexto}>{buy}</Texto>
+                </TouchableOpacity>
+                <Texto style={estilos.itenTitulo}>{subtitle}</Texto>
+            </View>
+
+        ) : <Vazia />}
+    </SafeAreaView >
 }
 
 const estilos = StyleSheet.create({

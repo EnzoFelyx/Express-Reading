@@ -1,12 +1,12 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import LivroRotas from "./LivroRotas";
 import CestaRotas from "./CestaRotas";
 import BibliotecaRotas from "./BibliotecaRotas";
 import Icones from "../componentes/Icones";
 import ExplorarRotas from "./ExplorarRotas";
+import { tabBar } from '../../config/text.json'
 
 export default function AppRotas() {
 
@@ -37,10 +37,10 @@ export default function AppRotas() {
             },
             tabBarHideOnKeyboard: true,
         })}>
-            <Tab.Screen name='Home' component={LivroRotas} />
-            <Tab.Screen name='Biblioteca' component={BibliotecaRotas} />
-            <Tab.Screen name='Explorar' component={ExplorarRotas} />
-            <Tab.Screen name='Carrinho' component={CestaRotas} />
+            <Tab.Screen name={tabBar.myHome} component={LivroRotas} />
+            <Tab.Screen name={tabBar.Biblioteca} component={BibliotecaRotas} />
+            <Tab.Screen name={tabBar.Explorar} component={ExplorarRotas} />
+            <Tab.Screen name={tabBar.Carrinho} component={CestaRotas} />
         </Tab.Navigator>
     </NavigationContainer>
 }
