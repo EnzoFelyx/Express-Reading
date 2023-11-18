@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Alert, Animated, FlatList, StyleSheet, View } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { produto } from '../../../../config/text.json';
 import Icones from "../../../componentes/Icones";
 import useEstoque from "../../../hooks/useEstoque";
 import { deletarLivroCesta } from "../../../services/requests/carrinho";
@@ -10,10 +10,8 @@ import Item from "./Item";
 
 export default function Detalhes({ topo: Topo, total: Total }) {
 
-    const { removed, removeError } = produto.warnings
-
+    const { t, i18n } = useTranslation();
     const lista = useEstoque();
-
     const [totalPrice, setTotalPrice] = useState(0);
     const [itemTotals, setItemTotals] = useState({});
     const [livros, setLivros] = useState([]);
@@ -38,13 +36,13 @@ export default function Detalhes({ topo: Topo, total: Total }) {
     async function handleDelete(id, price) {
         const resultado = await deletarLivroCesta(id);
         if (resultado === "sucesso") {
-            Alert.alert(removed);
+            Alert.alert(t('cesta.warnings.removed'));
             const novaLista = livros.filter((livro) => livro.id !== id);
             setLivros(novaLista);
 
             setTotalPrice(totalPrice - price);
         } else {
-            Alert.alert(removeError);
+            Alert.alert(t('cesta.warnings.removeError'));
         }
     }
 
@@ -70,7 +68,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
         })
         return <View style={estilos.RightActions}>
             <Animated.View style={{ transform: [{ scale: scale }] }} >
-                <Icones icone={'delete-outline'} cor={'white'} interagivel={false} tipo={'cesta'}/>
+                <Icones icone={'delete-outline'} cor={'white'} interagivel={false} tipo={'cesta'} />
             </Animated.View>
         </View >
     }

@@ -1,15 +1,15 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FlatList, View } from "react-native";
-import { home } from '../../../../config/text.json';
 import { useBarato, useJovens, useMelhores } from "../../../hooks/useHome";
+
 
 export default function Index({ topo: Topo, trends: Trends }) {
 
+    const { t, i18n } = useTranslation();
     const melhores = useMelhores();
     const barato = useBarato();
     const jovens = useJovens();
-
-    const { trend1, trend2, trend3 } = home.corpo;
 
     return (
         <FlatList
@@ -21,10 +21,10 @@ export default function Index({ topo: Topo, trends: Trends }) {
                     <Trends
                         titulo={
                             index === 0
-                                ? trend1
+                                ? t('home.corpo.trend1')
                                 : index === 1
-                                    ? trend2
-                                    : trend3
+                                    ? t('home.corpo.trend2')
+                                    : t('home.corpo.trend3')
                         }
                         lista={item}
                     />

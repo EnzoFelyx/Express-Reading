@@ -1,16 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
-import { produto } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 import Voltar from "../../../componentes/Voltar";
 
 export default function Topo() {
 
-    const title = produto.title
+    const { t, i18n } = useTranslation();
 
     return <>
         <View style={estilos.topo}>
-            <Texto style={estilos.titulo}>{title}</Texto>
+            <Texto style={estilos.titulo}>{t('produto.title')}</Texto>
         </View>
         <Voltar />
     </>

@@ -1,17 +1,16 @@
 import { StackActions, useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Dimensions, Image, ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import book from "../../../../assets/buyBook.png";
 import Texto from "../../../componentes/Texto";
 import Voltar from "../../../componentes/Voltar";
-import { cesta } from '../../../../config/text.json';
 
 const width = Dimensions.get('screen').width;
 
 export default function FeedBack() {
 
-    const { title, subtitle, thanku, biblioteca, home } = cesta.feedBack;
-
+    const { t, i18n } = useTranslation();
     const navigation = useNavigation();
 
     const aoPressionar = (destino) => {
@@ -21,24 +20,24 @@ export default function FeedBack() {
 
     return <ScrollView>
         <View style={estilos.topo}>
-            <Texto style={estilos.titulo}>{title}</Texto>
+            <Texto style={estilos.titulo}>{t('cesta.feedBack.title')}</Texto>
         </View>
         <Voltar />
         <View style={{ backgroundColor: '#FFFF', paddingTop: 50, flex: 1, }}>
             <Image source={book} style={estilos.image} />
-            <Texto style={estilos.subtitulo}>{subtitle}</Texto>
-            <Texto style={estilos.legenda}>{thanku}</Texto>
+            <Texto style={estilos.subtitulo}>{t('cesta.feedBack.subtitle')}</Texto>
+            <Texto style={estilos.legenda}>{t('cesta.feedBack.thanku')}</Texto>
 
             <TouchableOpacity
                 style={estilos.botao2.caixa}
                 onPress={() => aoPressionar('Biblioteca')}>
-                <Texto style={estilos.botao2.texto}>{biblioteca}</Texto>
+                <Texto style={estilos.botao2.texto}>{t('cesta.feedBack.biblioteca')}</Texto>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={estilos.botao1.caixa}
                 onPress={() => aoPressionar('Home')}>
-                <Texto style={estilos.botao1.texto}>{home}</Texto>
+                <Texto style={estilos.botao1.texto}>{t('cesta.feedBack.home')}</Texto>
             </TouchableOpacity>
 
         </View>

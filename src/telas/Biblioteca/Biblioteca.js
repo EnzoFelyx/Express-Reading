@@ -9,6 +9,6 @@ export default function Biblioteca() {
     const loading = useLoading();
 
     return <FakeBiblioteca visible={loading}>
-            <Estante topo={Topo} />
-        </FakeBiblioteca>
+        <Estante topo={Topo} />
+    </FakeBiblioteca>
 }

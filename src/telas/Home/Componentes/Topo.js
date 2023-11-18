@@ -1,21 +1,17 @@
 import { useIsFocused } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { FlatList, StyleSheet, TextInput, View } from "react-native";
-import { home } from '../../../../config/text.json';
 import Livro from "../../../componentes/Livro";
 import Texto from "../../../componentes/Texto";
 import estilos from "../../../estilos";
 import useBusca from "../../../hooks/useBusca";
-import '../../../utils/i18n';
-import { useTranslation } from 'react-i18next';
 
 export default function Home() {
 
     const [nomeLivro, setnomeLivro] = useState('');
     const lista = useBusca(nomeLivro);
     const isFocused = useIsFocused();
-
-    const { welcome, search } = home.topo;
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
@@ -27,12 +23,12 @@ export default function Home() {
     return <View>
 
         <View style={estilos.topo}>
-            <Texto style={estilos.titulo}>{t('title')}</Texto>
-            <Texto style={estilos.legenda}>{welcome}</Texto>
+            <Texto style={estilos.titulo}>{t('home.topo.title')}</Texto>
+            <Texto style={estilos.legenda}>{t('home.topo.welcome')}</Texto>
         </View>
 
         <TextInput
-            placeholder={search}
+            placeholder={t('home.topo.search')}
             value={nomeLivro}
             onChangeText={setnomeLivro}
             style={myEstilos.entrada}

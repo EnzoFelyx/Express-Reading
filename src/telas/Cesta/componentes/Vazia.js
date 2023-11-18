@@ -1,22 +1,22 @@
 import React from "react";
-import Texto from "../../../componentes/Texto";
-import empty from '../../../../assets/vazio.png'
+import { useTranslation } from "react-i18next";
 import { Dimensions, Image, StyleSheet, View } from "react-native";
-import { cesta } from '../../../../config/text.json';
+import empty from '../../../../assets/vazio.png';
+import Texto from "../../../componentes/Texto";
 
 const width = Dimensions.get('screen').width;
 
 
 export default function Vazia() {
 
-    const { title, carrinho, acessar } = cesta.vazio;
+    const { t, i18n } = useTranslation();
 
     return <>
         <View style={estilos.vazio}>
-            <Texto style={estilos.titulo}>{title}</Texto>
-            <Texto style={estilos.subtitulo}>{carrinho}</Texto>
+            <Texto style={estilos.titulo}>{t('cesta.vazio.title')}</Texto>
+            <Texto style={estilos.subtitulo}>{t('cesta.vazio.carrinho')}</Texto>
             <Image source={empty} style={estilos.imagem} />
-            <Texto style={estilos.subtitulo}>{acessar}</Texto>
+            <Texto style={estilos.subtitulo}>{t('cesta.vazio.acessar')}</Texto>
         </View>
     </>
 }

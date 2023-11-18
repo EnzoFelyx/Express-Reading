@@ -7,9 +7,11 @@ import BibliotecaRotas from "./BibliotecaRotas";
 import Icones from "../componentes/Icones";
 import ExplorarRotas from "./ExplorarRotas";
 import { tabBar } from '../../config/text.json'
+import { useTranslation } from "react-i18next";
 
 export default function AppRotas() {
 
+    const { t, i18n } = useTranslation();
     const Tab = createBottomTabNavigator();
     return <NavigationContainer>
         <Tab.Navigator screenOptions={({ route }) => ({
@@ -37,10 +39,10 @@ export default function AppRotas() {
             },
             tabBarHideOnKeyboard: true,
         })}>
-            <Tab.Screen name={tabBar.myHome} component={LivroRotas} />
-            <Tab.Screen name={tabBar.Biblioteca} component={BibliotecaRotas} />
-            <Tab.Screen name={tabBar.Explorar} component={ExplorarRotas} />
-            <Tab.Screen name={tabBar.Carrinho} component={CestaRotas} />
+            <Tab.Screen name={t('tabBar.Home')} component={LivroRotas} />
+            <Tab.Screen name={t('tabBar.Biblioteca')} component={BibliotecaRotas} />
+            <Tab.Screen name={t('tabBar.Explorar')} component={ExplorarRotas} />
+            <Tab.Screen name={t('tabBar.Carrinho')} component={CestaRotas} />
         </Tab.Navigator>
     </NavigationContainer>
 }

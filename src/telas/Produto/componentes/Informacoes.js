@@ -1,19 +1,16 @@
 import { useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import Texto from "../../../componentes/Texto";
 import { buscaCesta } from "../../../services/requests/carrinho";
 import Adicionar from "./Adicionar";
-import { produto } from '../../../../config/text.json';
 
 export default function Informacoes() {
 
-    const description = produto.description
-
+    const { t, i18n } = useTranslation();
     const [verificaResultado, setVerificaResultado] = useState();
-
     const route = useRoute();
-
     const { preco, descricao } = route.params
 
     async function verifica() {
@@ -36,7 +33,7 @@ export default function Informacoes() {
     return <>
         <View style={estilos.informacoes}>
             <View style={{ padding: 14 }}>
-                <Texto style={estilos.subtitle}>{description}</Texto>
+                <Texto style={estilos.subtitle}>{t('produto.description')}</Texto>
                 <Texto style={estilos.texto}>{descricao}</Texto>
             </View>
             <View style={estilos.botaoCaixa}>

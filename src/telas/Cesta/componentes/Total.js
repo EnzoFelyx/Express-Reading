@@ -1,8 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Alert, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { cesta } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 import { resetarCesta } from "../../../services/requests/carrinho";
 import Vazia from './Vazia';
@@ -11,24 +11,21 @@ export default function Total({ totalPrice }) {
 
     const navigation = useNavigation();
 
-    const { title, description, buy, subtitle } = cesta.detalhes;
-
-    const { warn, ask, confirm, goback, wrong } = cesta.warning
+    const { t, i18n } = useTranslation();
 
     const aoPressionar = () => {
-        Alert.alert(warn, ask, [
+        Alert.alert(t('cesta.warning.warn'), t('cesta.warning.ask'), [
             {
-                text: goback,
-
+                text: t('cesta.warning.goback'),
             },
             {
-                text: confirm,
+                text: t('cesta.warning.confirm'),
                 onPress: async () => {
                     const resultado = await resetarCesta();
                     if (resultado === "sucesso") {
                         navigation.navigate('FeedBack')
                     } else {
-                        Alert.alert(wrong);
+                        Alert.alert(t('cesta.warning.wrong'));
                     }
 
                 }
@@ -39,8 +36,8 @@ export default function Total({ totalPrice }) {
     return <SafeAreaView>
         {totalPrice > 0 ? (
             <View style={estilos.cesta}>
-                <Texto style={estilos.nome}>{title}</Texto>
-                <Texto style={estilos.descricao}>{description}</Texto>
+                <Texto style={estilos.nome}>{t('cesta.detalhes.title')}</Texto>
+                <Texto style={estilos.descricao}>{t('cesta.detalhes.description')}</Texto>
                 <Texto style={estilos.preco}>
                     {Intl.NumberFormat('pt-BR', {
                         style: 'currency', currency: 'BRL'
@@ -50,9 +47,9 @@ export default function Total({ totalPrice }) {
                     style={estilos.botaoCaixa}
                     onPress={aoPressionar}
                 >
-                    <Texto style={estilos.botaoTexto}>{buy}</Texto>
+                    <Texto style={estilos.botaoTexto}>{t('cesta.detalhes.buy')}</Texto>
                 </TouchableOpacity>
-                <Texto style={estilos.itenTitulo}>{subtitle}</Texto>
+                <Texto style={estilos.itenTitulo}>{t('cesta.detalhes.subtitle')}</Texto>
             </View>
 
         ) : <Vazia />}

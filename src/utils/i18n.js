@@ -7,8 +7,8 @@ i18n.use(initReactI18next).init({
     compatibilityJSON: 'v3',
     lng: 'pt',
     resources: {
-        en: en,
-        pt: pt
+        pt: pt,
+        en: en
     },
     react: {
         useSuspense: false,
@@ -18,4 +18,4 @@ i18n.use(initReactI18next).init({
     }
 })
 
-export default i18n
+export default i18n;

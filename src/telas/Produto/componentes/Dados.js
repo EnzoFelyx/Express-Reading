@@ -1,16 +1,16 @@
 import { useRoute } from "@react-navigation/native";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
-import { produto } from '../../../../config/text.json';
 import Icones from '../../../componentes/Icones';
 import Texto from "../../../componentes/Texto";
 
 export default function Dados() {
 
     const route = useRoute();
-    
+
     const { avaliacao, paginas, capa, lingua } = route.params;
-    const { star, pag, type, language } = produto.dados
+    const { t, i18n } = useTranslation();
 
     const Infomation = ({ icone, cor, val, legend, family = null, }) => <View>
         <View style={{ flexDirection: "row" }}>
@@ -22,10 +22,10 @@ export default function Dados() {
 
 
     return <View style={estilos.dados}>
-        <Infomation icone={'star'} cor={"#FEB555"} val={avaliacao} legend={star} />
-        <Infomation icone={'book-open-page-variant-outline'} cor={"#D672CF"} val={paginas} legend={pag} />
-        <Infomation icone={'book-outline'} cor={"#EC7A7A"} val={capa} legend={type} />
-        <Infomation icone={'world-o'} cor={"#2590C8"} val={lingua} legend={language} family={'Fontisto'} />
+        <Infomation icone={'star'} cor={"#FEB555"} val={avaliacao} legend={t('produto.dados.star')} />
+        <Infomation icone={'book-open-page-variant-outline'} cor={"#D672CF"} val={paginas} legend={t('produto.dados.pag')} />
+        <Infomation icone={'book-outline'} cor={"#EC7A7A"} val={capa} legend={t('produto.dados.type')} />
+        <Infomation icone={'world-o'} cor={"#2590C8"} val={lingua} legend={t('produto.dados.language')} family={'Fontisto'} />
     </View>
 }
 

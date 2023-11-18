@@ -1,8 +1,8 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import Icones from "../../../componentes/Icones";
 import Texto from "../../../componentes/Texto";
-import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get('screen').width;
 

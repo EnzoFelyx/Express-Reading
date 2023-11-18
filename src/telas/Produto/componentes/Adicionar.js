@@ -1,34 +1,33 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Alert, StyleSheet, TouchableOpacity, View } from "react-native";
-import { produto } from '../../../../config/text.json';
 import Icones from "../../../componentes/Icones";
 import { deletarLivroCesta, salvarCesta } from "../../../services/requests/carrinho";
 
 export default function Adicionar({ parametro, id }) {
 
     const navigation = useNavigation();
-
-    const { removed, removeError, add, addError } = produto.warnings
+    const { t, i18n } = useTranslation();
 
     async function deletar() {
         const resultado = await deletarLivroCesta(id);
         if (resultado === "sucesso") {
-            Alert.alert(removed);
+            Alert.alert(t('produto.warnings.removed'));
             navigation.goBack();
         } else {
-            Alert.alert(removeError);
+            Alert.alert(t('produto.warnings.removeError'));
         }
     }
 
     async function salvar() {
         const resultado = await salvarCesta(id)
         if (resultado === 'sucesso') {
-            Alert.alert(add);
+            Alert.alert(t('produto.warnings.add'));
             navigation.goBack();
         }
         else {
-            Alert.alert(addError);
+            Alert.alert(t('produto.warnings.addError'));
         }
     }
 
