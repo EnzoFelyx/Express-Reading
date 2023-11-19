@@ -30,13 +30,13 @@ export default function FeedBack() {
 
             <TouchableOpacity
                 style={estilos.botao2.caixa}
-                onPress={() => aoPressionar('Biblioteca')}>
+                onPress={() => aoPressionar(t('tabBar.Biblioteca'))}>
                 <Texto style={estilos.botao2.texto}>{t('cesta.feedBack.biblioteca')}</Texto>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={estilos.botao1.caixa}
-                onPress={() => aoPressionar('Home')}>
+                onPress={() => aoPressionar(t('tabBar.Home'))}>
                 <Texto style={estilos.botao1.texto}>{t('cesta.feedBack.home')}</Texto>
             </TouchableOpacity>
 

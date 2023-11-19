@@ -62,10 +62,10 @@ const estilos = StyleSheet.create({
     botaoCaixa: {
         marginTop: 24,
         backgroundColor: "#ffff",
-        paddingVertical: 8,
-        width: "60%",
+        flexDirection: "row",
         alignSelf: "flex-end",
         borderRadius: 20,
+        alignItems: "center"
     },
 
     preco: {
@@ -73,6 +73,7 @@ const estilos = StyleSheet.create({
         marginLeft: 16,
         fontWeight: "bold",
         lineHeight: 32,
+        marginRight: 8
     },
 
     subtitle: {

@@ -24,6 +24,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
         else {
             setLivros(lista)
             setTotalPrice(0)
+            setItemTotals([])
         }
     }, [lista]);
 
@@ -32,6 +33,8 @@ export default function Detalhes({ topo: Topo, total: Total }) {
             updateTotalPrice();
         }
     }, [lista, itemTotals]);
+
+    console.log(itemTotals)
 
     async function handleDelete(id, price) {
         const resultado = await deletarLivroCesta(id);

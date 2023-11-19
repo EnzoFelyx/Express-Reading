@@ -36,6 +36,10 @@ export default function AppRotas() {
             tabBarInactiveTintColor: '#C7C7C7',
             tabBarLabelStyle: {
                 fontSize: 14,
+                marginBottom: 5,
+            },
+            tabBarStyle: {
+                height: 55
             },
             tabBarHideOnKeyboard: true,
         })}>

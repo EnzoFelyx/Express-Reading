@@ -1,17 +1,9 @@
 
 Version 1.0:
 
-    fazer versonização para english i8n (resolver categorias)
-
-    resetar totalprice após compra
-
-    fazer api via git
+    Baixar no celular 
 
     mudar splash screen e icone no app.json
-
-    Arrumar portabilidade para Moto g22
-
-    Baixar no celular 
 
     Upar no vercel       
 
@@ -21,6 +13,8 @@ Version 1.0:
 Version 2.0:
 
      fazer monitoramento de perfomace (monitorar os useEffect)
+
+     arrumar logica de categorias para evitar acentos
 
     Descobrir como tirar lag (armazenamento interno resolveria)
 

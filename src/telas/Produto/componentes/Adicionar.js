@@ -47,11 +47,10 @@ const estilos = StyleSheet.create({
 
     adicionar: {
         backgroundColor: "#2A9F85",
-        padding: 14,
-        width: "45%",
-        alignSelf: "flex-end",
+        paddingVertical: 14,
+        paddingHorizontal: 30,
+        marginLeft: "auto",
         borderRadius: 20,
-        position: "absolute"
     },
 
     remover: {
