@@ -1,4 +1,3 @@
-
 const generos = {
 
     categorias: [
@@ -9,7 +8,6 @@ const generos = {
                 nome: "run-fast",
             },
             nomeGeneroBr: "Ação",
-            nomeGeneroEn: "",
         },
 
         {
@@ -19,7 +17,6 @@ const generos = {
                 nome: "ship",
             },
             nomeGeneroBr: "Aventura",
-            nomeGeneroEn: ""
         },
 
         {
@@ -29,7 +26,6 @@ const generos = {
                 nome: "typewriter",
             },
             nomeGeneroBr: "Biografia",
-            nomeGeneroEn: ""
         },
 
         {
@@ -39,7 +35,6 @@ const generos = {
                 nome: "hat-fedora",
             },
             nomeGeneroBr: "Comédia",
-            nomeGeneroEn: ""
         },
 
         {
@@ -49,7 +44,6 @@ const generos = {
                 nome: "drama-masks",
             },
             nomeGeneroBr: "Drama",
-            nomeGeneroEn: ""
         },
 
         {
@@ -59,7 +53,6 @@ const generos = {
                 nome: "wizard-hat",
             },
             nomeGeneroBr: "Fantasia",
-            nomeGeneroEn: ""
         },
 
         {
@@ -69,7 +62,6 @@ const generos = {
                 nome: "alien-outline",
             },
             nomeGeneroBr: "Ficção",
-            nomeGeneroEn: ""
         },
 
         {
@@ -79,7 +71,6 @@ const generos = {
                 nome: "ghost-outline",
             },
             nomeGeneroBr: "Horror",
-            nomeGeneroEn: ""
         },
 
         {
@@ -89,7 +80,6 @@ const generos = {
                 nome: "account-child-outline",
             },
             nomeGeneroBr: "Infantil",
-            nomeGeneroEn: ""
         },
 
         {
@@ -99,7 +89,6 @@ const generos = {
                 nome: "sword",
             },
             nomeGeneroBr: "Mangá",
-            nomeGeneroEn: ""
         },
 
         {
@@ -109,7 +98,6 @@ const generos = {
                 nome: "progress-question",
             },
             nomeGeneroBr: "Mistério",
-            nomeGeneroEn: ""
         },
 
         {
@@ -119,7 +107,6 @@ const generos = {
                 nome: "car-wireless",
             },
             nomeGeneroBr: "Policial",
-            nomeGeneroEn: ""
         },
 
         {
@@ -129,7 +116,6 @@ const generos = {
                 nome: "calendar-heart",
             },
             nomeGeneroBr: "Romance",
-            nomeGeneroEn: ""
         },
 
         {
@@ -139,7 +125,6 @@ const generos = {
                 nome: "surgical-knife",
             },
             nomeGeneroBr: "Suspense",
-            nomeGeneroEn: ""
         }
     ]
 }

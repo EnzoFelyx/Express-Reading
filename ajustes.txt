@@ -1,19 +1,15 @@
 
 Version 1.0:
 
-    fazer versonização para english i8n
+    fazer versonização para english i8n (resolver categorias)
 
     resetar totalprice após compra
-
-    fazer monitoramento de perfomace (monitorar os useEffect)
 
     fazer api via git
 
     mudar splash screen e icone no app.json
 
     Arrumar portabilidade para Moto g22
-
-    Descobrir como tirar lag (armazenamento interno resolveria?)
 
     Baixar no celular 
 
@@ -24,7 +20,13 @@ Version 1.0:
 
 Version 2.0:
 
+     fazer monitoramento de perfomace (monitorar os useEffect)
+
+    Descobrir como tirar lag (armazenamento interno resolveria)
+
     refatorar toda lógica de preços em cesta
+
+    fazer useEffect para mostrar qual linguagem ta selecionada.
 
     imagem com legenda para iten nao encotrado (figma curso)
 

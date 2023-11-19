@@ -26,6 +26,7 @@ export async function listaLivros() {
 export async function buscaGenero(genero) {
     try {
         const resultado = await api.get(`/livros?generos_like=${genero}`);
+        console.log(genero)
         return resultado.data;
     }
     catch (error) {

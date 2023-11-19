@@ -3,18 +3,22 @@ import React from "react";
 import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import Icones from "../../../componentes/Icones";
 import Texto from "../../../componentes/Texto";
+import { useTranslation } from "react-i18next";
 
 const width = Dimensions.get('screen').width;
 
 export default function Genero({
     icon,
     nomeGeneroBr,
-    nomeGeneroEn,
 }) {
+
+    const { t, i18n } = useTranslation();
+
+    const genres = t(`explorar.categorias.${nomeGeneroBr}`);
 
     const navigation = useNavigation();
 
-    const aoPressionar = () => { navigation.navigate('ExibirGenero', { nomeGeneroBr }) }
+    const aoPressionar = () => { navigation.navigate('ExibirGenero', { genres, nomeGeneroBr }) }
 
     let { familia, nome } = { ...icon }
 
@@ -27,7 +31,7 @@ export default function Genero({
                 interagivel={false}
                 tipo={'explorar'}
             />
-            <Texto style={estilos.legenda}>{nomeGeneroBr}</Texto>
+            <Texto style={estilos.legenda}>{genres}</Texto>
         </TouchableOpacity>
 
     </>

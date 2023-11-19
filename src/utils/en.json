@@ -50,6 +50,22 @@
             "topo": {
                 "titulo": "Explore",
                 "legenda": "Check out our genres"
+            },
+            "categorias":{
+                "Ação": "Action",
+                "Aventura": "Adventure",
+                "Biografia": "Biography",
+                "Comédia": "Comedy",
+                "Drama": "Drama",
+                "Fantasia": "Fantasy",
+                "Ficção": "Sci-fi",
+                "Horror": "Horror",
+                "Infantil": "Children's",
+                "Mangá": "Manga",
+                "Mistério": "Mystery",
+                "Policial": "Crime",
+                "Romance": "Romance",
+                "Suspense": "Thriller"
             }
         },
         "home": {

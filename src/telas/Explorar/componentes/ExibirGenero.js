@@ -10,14 +10,14 @@ export default function ExibirGeneros() {
 
     const route = useRoute();
 
-    const { nomeGeneroBr } = route.params;
+    const { genres, nomeGeneroBr} = route.params;
 
     const lista = useCategoria(nomeGeneroBr);
 
     const TopoLista = () => {
         return <>
             <View style={estilos.topo}>
-                <Texto style={estilos.titulo}>{nomeGeneroBr}</Texto>
+                <Texto style={estilos.titulo}>{genres}</Texto>
             </View>
             <Voltar />
         </>
