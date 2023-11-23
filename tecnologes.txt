@@ -13,4 +13,3 @@ gesture handler
 hooks
 navegator (tab, stack)
 github
-
