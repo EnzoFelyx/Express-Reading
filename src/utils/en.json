@@ -17,8 +17,7 @@
                 "subtitle": "Basket of books"
             },
             "botao": {
-                "title": "Finish Order",
-                "legenda": "Are you sure you want to complete your purchase?"
+                "title": "Finish Order"
             },
             "warning": {
                 "warn": "Finish Order",

@@ -17,8 +17,7 @@
                 "subtitle": "Livros da cesta"
             },
             "botao": {
-                "title": "Finalizar Compra",
-                "legenda": "Tem certeza que deseja finalizar sua compra?"
+                "title": "Finalizar Compra"
             },
             "warning": {
                 "warn": "Finalizar Compra",

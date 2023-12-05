@@ -26,9 +26,11 @@ export async function listaBarato() {
 
 export async function listaJovens() {
     try {
-        const resultado = await api.get(`/livros?generos_like=Mangá`);
+        const resultado = await api.get(`/livros`);
         const livrosJovens = resultado.data;
-        return livrosJovens;
+        const livrosFiltrados = livrosJovens.filter(livro => livro.generos.includes("Mangá"));
+
+        return livrosFiltrados;
     } catch (error) {
         console.log(error);
         return [];

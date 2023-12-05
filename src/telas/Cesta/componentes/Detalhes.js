@@ -34,18 +34,16 @@ export default function Detalhes({ topo: Topo, total: Total }) {
         }
     }, [lista, itemTotals]);
 
-    console.log(itemTotals)
-
     async function handleDelete(id, price) {
         const resultado = await deletarLivroCesta(id);
         if (resultado === "sucesso") {
-            Alert.alert(t('cesta.warnings.removed'));
+            Alert.alert(t('produto.warnings.removed'));
             const novaLista = livros.filter((livro) => livro.id !== id);
             setLivros(novaLista);
 
             setTotalPrice(totalPrice - price);
         } else {
-            Alert.alert(t('cesta.warnings.removeError'));
+            Alert.alert(t('produto.warning.removeError'));
         }
     }
 

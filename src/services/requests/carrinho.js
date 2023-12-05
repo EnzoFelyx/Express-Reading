@@ -34,18 +34,19 @@ export async function salvarCesta(idLivro) {
 }
 
 export async function deletarLivroCesta(idLivro) {
-
-    const resultadoCesta = await api.get(`/cesta`);
-    const cesta = resultadoCesta.data;
-    const itemParaDeletar = cesta.find(item => item.idLivro === idLivro);
-
     try {
-        await api.delete(`/cesta/${itemParaDeletar.id}`);
-        return 'sucesso'
-    }
-    catch (error) {
-        console.log(error)
-        return 'erro'
+        const resultadoCesta = await api.get(`/cesta`);
+        const cesta = resultadoCesta.data;
+        const itemParaDeletar = cesta.find(item => item.idLivro === idLivro);
+
+        if (!itemParaDeletar) {
+            return 'Item não encontrado na cesta';
+        }
+        await api.delete('/cesta', { data: { id: itemParaDeletar.id } });
+        return 'sucesso';
+    } catch (error) {
+        console.log(error);
+        return 'erro';
     }
 }
 
@@ -65,11 +66,7 @@ export async function buscaCesta(idLivro) {
 
 export async function resetarCesta() {
     try {
-        const resultadoCesta = await api.get(`/cesta`);
-        const cesta = resultadoCesta.data;
-        for (const item of cesta) {
-            await api.delete(`/cesta/${item.id}`);
-        }
+        await api.delete(`/cesta/`);
         return 'sucesso';
     } catch (error) {
         console.log(error);

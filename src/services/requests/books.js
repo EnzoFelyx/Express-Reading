@@ -3,8 +3,10 @@ import api from "../api";
 export async function buscaLivro(nomeLivro) {
 
     try {
-        const resultado = await api.get(`/livros?nome_like=${nomeLivro}`);
-        return resultado.data;
+        const resultado = await api.get(`/livros`);
+        const livroProcurado = resultado.data;
+        const livroAchado = livroProcurado.filter(livro => livro.nome.toLowerCase().includes(nomeLivro.toLowerCase()));
+        return livroAchado;
     }
     catch (error) {
         console.log(error);
@@ -25,8 +27,10 @@ export async function listaLivros() {
 
 export async function buscaGenero(genero) {
     try {
-        const resultado = await api.get(`/livros?generos_like=${genero}`);
-        return resultado.data;
+        const resultado = await api.get(`/livros`);
+        const generoBuscado = resultado.data
+        const generoAchado = generoBuscado.filter(livro => livro.generos.includes(genero));
+        return generoAchado;
     }
     catch (error) {
         console.log(error);
