@@ -10,12 +10,12 @@ export default function useLoading() {
                 await api();
                 setTimeout(() => {
                     setLoading(false);
-                }, 2000); // 2 segundos para mostrar o skeleton
+                }, ); // 2 segundos para mostrar o skeleton
             } catch (error) {
                 console.error("Erro ao buscar dados da API:", error);
                 setTimeout(() => {
                     setLoading(false);
-                }, 2000);
+                }, );
             }
         }
 
