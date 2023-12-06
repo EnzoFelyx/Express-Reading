@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import AnimetedView from "../componentes/AnimatedView";
 import Texto from "../componentes/Texto";
 const width = Dimensions.get('screen').width;
@@ -36,7 +36,7 @@ export default function FakeHome({ visible, children }) {
     </>
 
     if (visible) {
-        return <ScrollView>
+        return <>
             <View style={estilos.topo}>
                 <Texto style={estilos.titulo}>Home</Texto>
                 <View style={estilos.legenda}>
@@ -52,7 +52,7 @@ export default function FakeHome({ visible, children }) {
             <SkeletonPrateleira />
             <SkeletonPrateleira />
             <SkeletonPrateleira />
-        </ScrollView>
+        </>
     }
 
     return (

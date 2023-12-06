@@ -18,35 +18,38 @@ export default function FeedBack() {
         navigation.dispatch(StackActions.popToTop());
     }
 
-    return <ScrollView>
+    return <ScrollView style={estilos.container}>
         <View style={estilos.topo}>
             <Texto style={estilos.titulo}>{t('cesta.feedBack.title')}</Texto>
         </View>
         <Voltar />
-        <View style={{ backgroundColor: '#FFFF', paddingTop: 50, flex: 1, }}>
+        <View style={estilos.corpo}>
             <Image source={book} style={estilos.image} />
-            <Texto style={estilos.subtitulo}>{t('cesta.feedBack.subtitle')}</Texto>
-            <Texto style={estilos.legenda}>{t('cesta.feedBack.thanku')}</Texto>
-
-            <TouchableOpacity
-                style={estilos.botao2.caixa}
-                onPress={() => aoPressionar(t('tabBar.Biblioteca'))}>
-                <Texto style={estilos.botao2.texto}>{t('cesta.feedBack.biblioteca')}</Texto>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                style={estilos.botao1.caixa}
-                onPress={() => aoPressionar(t('tabBar.Home'))}>
-                <Texto style={estilos.botao1.texto}>{t('cesta.feedBack.home')}</Texto>
-            </TouchableOpacity>
-
         </View>
+
+        <Texto style={estilos.subtitulo}>{t('cesta.feedBack.subtitle')}</Texto>
+        <Texto style={estilos.legenda}>{t('cesta.feedBack.thanku')}</Texto>
+        <TouchableOpacity
+            style={estilos.botao2.caixa}
+            onPress={() => aoPressionar(t('tabBar.Biblioteca'))}>
+            <Texto style={estilos.botao2.texto}>{t('cesta.feedBack.biblioteca')}</Texto>
+        </TouchableOpacity>
+        <TouchableOpacity
+            style={estilos.botao1.caixa}
+            onPress={() => aoPressionar(t('tabBar.Home'))}>
+            <Texto style={estilos.botao1.texto}>{t('cesta.feedBack.home')}</Texto>
+        </TouchableOpacity>
+
     </ScrollView>
 }
 
 const estilos = StyleSheet.create({
+    container:{
+        flex: 1, 
+        backgroundColor: '#FFFF'
+    },
     topo: {
-        backgroundColor: "#FFFFF",
+        backgroundColor: "#FFFF",
         padding: 8,
     },
     titulo: {
@@ -58,56 +61,62 @@ const estilos = StyleSheet.create({
         textAlign: "center",
         width: "100%",
     },
-    legenda: {
-        color: '#B4B4B4',
-        paddingHorizontal: 20,
-        marginTop: 8,
-        fontSize: 18,
-        lineHeight: 26,
+    corpo: {
+        backgroundColor: '#F8FAEF',
+        paddingTop: 50,
+        marginBottom: 20
+    },
 
-    },
+    legenda: {
+    color: '#B4B4B4',
+    paddingHorizontal: 20,
+    marginTop: 8,
+    fontSize: 18,
+    lineHeight: 26,
+
+},
     subtitulo: {
-        fontSize: 30,
-        lineHeight: 42,
-        fontWeight: "bold",
-        marginLeft: 20,
-        color: '#2A9F85'
-    },
+    fontSize: 30,
+    lineHeight: 42,
+    fontWeight: "bold",
+    marginLeft: 20,
+    color: '#2A9F85'
+},
     image: {
-        height: (768 / 1024) * width,
-        width: "100%",
-    },
+    height: (768 / 1024) * width,
+    width: "100%",
+},
 
     botao1: {
-        caixa: {
-            marginTop: 16,
-            paddingVertical: 14,
-            marginHorizontal: 32,
-            borderRadius: 15,
-            borderWidth: 1,
-            marginBottom: 30,
-        },
-        texto: {
-            textAlign: "center",
-            fontSize: 16,
-            lineHeight: 26,
-            fontWeight: "bold",
-        }
+    caixa: {
+        marginTop: 16,
+        paddingVertical: 14,
+        marginHorizontal: 32,
+        borderRadius: 15,
+        borderWidth: 1,
+        marginBottom: 30,
     },
-    botao2: {
-        caixa: {
-            marginTop: 16,
-            backgroundColor: "#2A9F85",
-            paddingVertical: 14,
-            marginHorizontal: 32,
-            borderRadius: 15,
-        },
-        texto: {
-            color: "#FFFFFF",
-            textAlign: "center",
-            fontSize: 16,
-            lineHeight: 26,
-            fontWeight: "bold",
-        }
+    texto: {
+        textAlign: "center",
+        fontSize: 16,
+        lineHeight: 26,
+        fontWeight: "bold",
     }
+},
+    botao2: {
+    caixa: {
+        marginTop: 16,
+        backgroundColor: "#2A9F85",
+        paddingVertical: 14,
+        marginHorizontal: 32,
+        borderRadius: 15,
+    },
+    texto: {
+        color: "#FFFFFF",
+        textAlign: "center",
+        fontSize: 16,
+        lineHeight: 26,
+        fontWeight: "bold",
+    }
+}
 })

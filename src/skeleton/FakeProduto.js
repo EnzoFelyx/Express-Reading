@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import AnimetedView from "../componentes/AnimatedView";
 import Estrelas from "../componentes/Estrelas";
 import Icones from "../componentes/Icones";
@@ -25,7 +25,7 @@ export default function FakeProduto({ visible, children }) {
     </View>
 
     if (visible) {
-        return <ScrollView>
+        return <>
 
             <Topo />
 
@@ -110,7 +110,7 @@ export default function FakeProduto({ visible, children }) {
             </View>
 
 
-        </ScrollView>
+        </>
     }
     return <>
         {children}

@@ -40,14 +40,13 @@ const estilos = StyleSheet.create({
         justifyContent: "space-between",
         marginVertical: 12,
         flex: 1,
+        marginLeft: 0.015 * width,
     },
 
     prateleira: {
         borderWidth: 0.6,
         width: 0.30 * width,
         borderRadius: 8,
-        marginLeft: 0.025 * width,
-
     },
 
     imagemLivro: {

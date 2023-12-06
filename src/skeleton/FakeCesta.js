@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import AnimetedView from "../componentes/AnimatedView";
 import Topo from "../telas/Cesta/componentes/Topo";
 
@@ -8,7 +8,7 @@ const width = Dimensions.get('screen').width;
 export default function FakeCesta({ visible, children }) {
 
     if (visible) {
-        return <ScrollView>
+        return <>
             <Topo />
             <View style={estilos.cesta}>
                 <View style={estilos.nome}>
@@ -58,7 +58,7 @@ export default function FakeCesta({ visible, children }) {
                 </View>
             </View>
 
-        </ScrollView>
+        </>
     }
     return <>
         {children}

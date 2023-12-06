@@ -42,7 +42,10 @@ export async function deletarLivroCesta(idLivro) {
         if (!itemParaDeletar) {
             return 'Item não encontrado na cesta';
         }
-        await api.delete('/cesta', { data: { id: itemParaDeletar.id } });
+        console.log(itemParaDeletar.id);
+
+        // Utilize a URL diretamente para enviar o id do item a ser deletado
+        await api.delete(`/cesta/${itemParaDeletar.id}`);
         return 'sucesso';
     } catch (error) {
         console.log(error);

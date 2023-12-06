@@ -1,9 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { View } from "react-native";
-import { biblioteca } from '../../../../config/text.json';
 import Texto from "../../../componentes/Texto";
 import estilos from "../../../estilos";
-import { useTranslation } from "react-i18next";
 
 export default function Topo() {
 

@@ -19,6 +19,5 @@ export default function Estante({ topo: Topo }) {
         ListHeaderComponent={TopoLista}
         keyExtractor={({ nome }) => String(nome)}
         numColumns={3}
-
     />
 }

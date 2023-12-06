@@ -55,10 +55,9 @@ const estilos = StyleSheet.create({
 
     remover: {
         backgroundColor: "red",
-        padding: 14,
-        width: "45%",
-        alignSelf: "flex-end",
+        paddingVertical: 14,
+        paddingHorizontal: 30,
+        marginLeft: "auto",
         borderRadius: 20,
-        position: "absolute"
     }
 })

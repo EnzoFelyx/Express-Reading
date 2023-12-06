@@ -1,9 +1,8 @@
 import React from "react";
-import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
-import { biblioteca } from '../../config/text.json';
+import { useTranslation } from "react-i18next";
+import { Dimensions, StyleSheet, View } from "react-native";
 import AnimetedView from "../componentes/AnimatedView";
 import Texto from "../componentes/Texto";
-import { useTranslation } from "react-i18next";
 const width = Dimensions.get('screen').width;
 
 export default function FakeBiblioteca({ visible, children }) {
@@ -39,7 +38,7 @@ export default function FakeBiblioteca({ visible, children }) {
 
     if (visible) {
 
-        return <ScrollView>
+        return <>
 
             <View style={estilos.topo}>
                 <Texto style={estilos.titulo}>{t('biblioteca.topo.titulo')}</Texto>
@@ -55,7 +54,7 @@ export default function FakeBiblioteca({ visible, children }) {
             <SkeletonPrateleira />
 
 
-        </ScrollView>
+        </>
     }
     return <>
         {children}
