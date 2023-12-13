@@ -1,12 +1,9 @@
 
 Version 1.0:
 
-    Testar portabil
 
     usar gitignore para tirar desnecessários
     
-    mudar splash screen e icone no app.json
-
     Fazer read.me
 
     Publicar linkedin
