@@ -2,8 +2,6 @@
 Version 1.0:
 
     Testar portabil
-    
-    Biblioteca de ajustar texto
 
     usar gitignore para tirar desnecessários
     

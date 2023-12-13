@@ -60,13 +60,15 @@ const estilos = StyleSheet.create({
     conteudo: {
         flex: 1,
         flexDirection: "row",
-        marginLeft: 8,
-        marginVertical: 4
+        marginVertical: 4,
+        
+        paddingHorizontal: 10
     },
 
     informacao: {
         justifyContent: "space-between",
         marginVertical: 6,
+        flex: 1
     },
 
     nome: {
