@@ -7,34 +7,38 @@ import Texto from "../../../componentes/Texto";
 import { resetarCesta } from "../../../services/requests/carrinho";
 import Vazia from './Vazia';
 
-export default function Total({ totalPrice }) {
+export default function Total({ cestinha, totalPrice }) {
 
     const navigation = useNavigation();
-
     const { t, i18n } = useTranslation();
 
     const aoPressionar = () => {
-        Alert.alert(t('cesta.warning.warn'), t('cesta.warning.ask'), [
-            {
-                text: t('cesta.warning.goback'),
-            },
-            {
-                text: t('cesta.warning.confirm'),
-                onPress: async () => {
-                    const resultado = await resetarCesta();
-                    if (resultado === "sucesso") {
-                        navigation.navigate('FeedBack')
-                    } else {
-                        Alert.alert(t('cesta.warning.wrong'));
-                    }
+        if (totalPrice > 0) {
+            Alert.alert(t('cesta.warning.warn'), t('cesta.warning.ask'), [
+                {
+                    text: t('cesta.warning.goback'),
+                },
+                {
+                    text: t('cesta.warning.confirm'),
+                    onPress: async () => {
+                        const resultado = await resetarCesta();
+                        if (resultado === "sucesso") {
+                            navigation.navigate('FeedBack')
+                        } else {
+                            Alert.alert(t('cesta.warning.wrong'));
+                        }
 
+                    }
                 }
-            }
-        ])
+            ])
+        }
+        else{
+            Alert.alert(t('cesta.warning.quantidade'))
+        }
     }
 
     return <SafeAreaView>
-        {totalPrice > 0 ? (
+        {cestinha > 0 ? (
             <View style={estilos.cesta}>
                 <Texto style={estilos.nome}>{t('cesta.detalhes.title')}</Texto>
                 <Texto style={estilos.descricao}>{t('cesta.detalhes.description')}</Texto>

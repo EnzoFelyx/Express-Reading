@@ -73,7 +73,7 @@ export default function FakeProduto({ visible, children }) {
                     <AnimetedView width={'40%'} length={400} />
                 </View>
                 <View style={estilos.autor}>
-                    <AnimetedView width={'40%'} length={200} />
+                    <AnimetedView width={'40%'} length={300} />
                 </View>
             </View>
 

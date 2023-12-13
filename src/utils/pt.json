@@ -24,6 +24,7 @@
                 "ask": "Tem certeza que deseja finalizar sua compra?",
                 "confirm": "OK",
                 "goback": "CANCELAR",
+                "quantidade": "Quantidade de livros inválida!",
                 "wrong": "Erro ao retirar livro da cesta"
             },
             "feedBack": {

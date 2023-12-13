@@ -20,13 +20,13 @@ export default function AppRotas() {
 
                 let Icon = <Icones familia={'Feather'} icone={'home'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />;
 
-                if (route.name === 'Carrinho') {
+                if (route.name === t('tabBar.Carrinho')) {
                     Icon = <Icones familia={'Feather'} icone={'shopping-cart'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
-                else if (route.name === 'Biblioteca') {
+                else if (route.name === t('tabBar.Biblioteca')) {
                     Icon = <Icones familia={'MaterialCommunityIcons'} icone={'bookshelf'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
-                else if (route.name === 'Explorar') {
+                else if (route.name === t('tabBar.Explorar')) {
                     Icon = <Icones familia={'Fontisto'} icone={'compass-alt'} tipo={'tabBar'} interagivel={false} cor={focused ? "#2a9f08" : "#C7C7C7"} />
                 }
                 return Icon
@@ -37,13 +37,14 @@ export default function AppRotas() {
             tabBarLabelStyle: {
                 fontSize: 14,
                 marginBottom: 5,
+                
             },
             tabBarStyle: {
-                height: 55
+                height: 60,
             },
             tabBarHideOnKeyboard: true,
         })}>
-            <Tab.Screen name={t('tabBar.Home')} component={LivroRotas} />
+            <Tab.Screen name={t('tabBar.Home')} component={LivroRotas}/>
             <Tab.Screen name={t('tabBar.Biblioteca')} component={BibliotecaRotas} />
             <Tab.Screen name={t('tabBar.Explorar')} component={ExplorarRotas} />
             <Tab.Screen name={t('tabBar.Carrinho')} component={CestaRotas} />

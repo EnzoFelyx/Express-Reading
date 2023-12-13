@@ -12,6 +12,7 @@ import useBusca from "../../../hooks/useBusca";
 export default function Home() {
 
     const [nomeLivro, setnomeLivro] = useState('');
+    const [thisFlag, setFlag] = useState(true);
     const lista = useBusca(nomeLivro);
     const isFocused = useIsFocused();
     const { t, i18n } = useTranslation();
@@ -26,6 +27,14 @@ export default function Home() {
         }
     }, [isFocused]);
 
+    useEffect(() => {
+        if (i18n.language == 'pt') {
+            setFlag(true)
+        }
+        else
+            setFlag(false)
+    })
+    
     return <View>
 
         <View style={estilos.topo}>
@@ -33,11 +42,11 @@ export default function Home() {
                 <Texto style={estilos.titulo}>{t('home.topo.title')}</Texto>
                 <View style={myEstilos.flags}>
                     <TouchableOpacity onPress={() => changeLanguage('pt')}>
-                        <Image source={brazil} style={myEstilos.flag} />
+                        <Image source={brazil} style={[myEstilos.flag, { borderColor: 'blue', borderWidth: thisFlag ? 3 : 0 }]} />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => changeLanguage('en')}>
-                        <Image source={usa} style={myEstilos.flag} />
+                        <Image source={usa} style={[myEstilos.flag, { borderColor: 'red', borderWidth: thisFlag ? 0 : 3 }]} />
                     </TouchableOpacity>
 
                 </View>
@@ -105,6 +114,7 @@ const myEstilos = StyleSheet.create({
     flag: {
         width: 30,
         height: 30,
-        marginHorizontal: 4
+        marginHorizontal: 4,
+        borderRadius: 15,
     }
 })

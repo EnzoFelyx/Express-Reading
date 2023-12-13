@@ -15,9 +15,11 @@ export default function Detalhes({ topo: Topo, total: Total }) {
     const [totalPrice, setTotalPrice] = useState(0);
     const [itemTotals, setItemTotals] = useState({});
     const [livros, setLivros] = useState([]);
+    const [cestinha, setCestinha] = useState(0);
 
     useEffect(() => {
         if (lista.length > 0) {
+            setCestinha(lista.length)
             setLivros(lista);
             updateTotalPrice();
         }
@@ -56,7 +58,7 @@ export default function Detalhes({ topo: Topo, total: Total }) {
         return (
             <SafeAreaView>
                 <Topo />
-                <Total totalPrice={totalPrice} />
+                <Total cestinha={cestinha} totalPrice={totalPrice} />
             </SafeAreaView>
         )
     }

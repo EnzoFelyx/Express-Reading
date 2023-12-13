@@ -13,7 +13,7 @@ export default function Dados() {
     const { t, i18n } = useTranslation();
 
     const Infomation = ({ icone, cor, val, legend, family = null, }) => <View>
-        <View style={{ flexDirection: "row" }}>
+        <View style={estilos.container}>
             <Icones familia={family} icone={icone} tipo={'capa'} cor={cor} />
             <Texto style={estilos.titulo}>{val}</Texto>
         </View>
@@ -31,6 +31,11 @@ export default function Dados() {
 
 const estilos = StyleSheet.create({
 
+    container: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+
     dados: {
         marginLeft: 20,
         justifyContent: "space-between",
@@ -38,7 +43,6 @@ const estilos = StyleSheet.create({
     },
     titulo: {
         fontSize: 16,
-        marginTop: 4,
         fontWeight: "bold",
         marginLeft: 8,
     },

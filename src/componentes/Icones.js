@@ -60,7 +60,8 @@ export default function Icones({ familia, icone, tipo, cor, interagivel = true }
 const estilos = StyleSheet.create({
 
     tabBar: {
-        fontSize: 20,
+        fontSize: 22,
+        marginTop: 5,
     },
 
     capa: {

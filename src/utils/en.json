@@ -24,6 +24,7 @@
                 "ask": "Are you sure you want to complete your purchase?",
                 "confirm": "OK",
                 "goback": "CANCEL",
+                "quantidade": "Invalid quantity of books!",
                 "wrong": "Error on removing book"
             },
             "feedBack": {
@@ -70,12 +71,12 @@
         "home": {
             "topo": {
                 "title": "Home",
-                "welcome": "Welcome, check out the new trends in the literary world!",
+                "welcome": "Welcome, check out the latest news from the literary world!",
                 "search": "Search for a book"
             },
             "corpo": {
                 "trend1": "Our best books (5☆)",
-                "trend2": "On sale (Bellow R$29,99)",
+                "trend2": "On sale (Till R$29,99)",
                 "trend3": "HQs best-sellers"
             }
         },

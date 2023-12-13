@@ -1,16 +1,24 @@
 
 Version 1.0:
 
-    Baixar no celular 
+    Testar portabil
+    
+    Biblioteca de ajustar texto
 
+    usar gitignore para tirar desnecessários
+    
     mudar splash screen e icone no app.json
 
-    Upar no vercel       
+    Fazer read.me
+
+    Publicar linkedin
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Version 2.0:
+
+Rever toda lógica da cesta
 
      fazer monitoramento de perfomace (monitorar os useEffect)
 
